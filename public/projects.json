@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Roots - Plantbased Café",
+    "abbr": "roots",
+    "desc": "is a vegan kitchen and grocery targeting the expat community in Da Nang, Vietnam.",
+    "blocks1": [
+      "Roots is indeed in Vietnam, but is situated in an area populated mostly with English-speaking expats, thus needing to cater to both forgeign customers as well as the local Vietnamese. ",
+      "Their online presence suffered from two central issues. First, the website was an older WordPress site whose design was dated and unappealing, as well as quite slow, due to a lack of maintenance. The second was the increasing reliance on third party delivery services for both delivery as well as visibility. ",
+      "The first issue was mostly a matter of modernizing the design of the site. The client wanted something clean that put the mission and the food first, but that would also communicate their modern practices. My approach was to keep the design stark and simple, and to use some more modern animation and interaction to emphasize the contemporary feel they were after."
+    ],
+    "blocks2": [
+      "A key element to any site is the call to action. In this case, the desired action is to place an order - to that end the menu is essential. My approach to this reality is two-fold. First, the menu button is fixed and accessible from anywhere on the website. Second, the menu itself eschews the typical screenshot or PDF of an existing menu - instead it’s the most interactive aspect of the application.",
+      "The menu is organized into categories, with accompanying visuals that both give more context and entice. Once an item is selected, the current order also becomes easily accessible from anywhere on the page. This allows quick and intuitive editing, and a frictionless experience that nets more conversions into actual orders."
+    ],
+    "blocks3": [
+      "The other priority for Roots was to free itself of dependence on third-party delivery services. These companies charge a hefty premium for the convenience and reach they provide, so the task was to build an application that could fill the same role without losing customers. ",
+      "The first element of this to tackle was the ease of use. The very accessible and intuitive menu design was step one of this process, but the other half comes when we consider the actual ordering process. Handling payments, validating addresses, offering shipping and order tracking information - these are all elements offered by the third-party delivery services we’re trying to supersede. ",
+      "To this end I employed the use of another third-party service. However, this third party simply provides an API whose code can be used to manage all the stated concerns, and at a fraction of the extended cost incurred by their current delivery system."
+    ]
+  },
+  {
+    "name": "Shades - Eyewear Boutique",
+    "abbr": "shdz",
+    "desc": "is a fashion forward sunglasses boutique based in Santa Monica, CA.",
+    "blocks1": [
+      "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
+      "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
+    ],
+    "blocks2": [
+      "This being a largely photography based fashion boutique, I wanted to focus the design around the excellent photos taken for the redesign. However, I also wanted to avoid the pitfall of image heavy sites where users get lost in a sea of images without knowing really where they are. ",
+      "To this end, I fixed navigation to the edges of the page, and centered the image content in scrollable containers, and had each of them link to a product, rather than just a larger image. ",
+      "Invididual product pages function similarly, with product details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
+    ],
+    "blocks3": [
+      "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
+      "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
+    ],
+    "blocks4": [
+      "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
+      "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
+    ]
+  }
+]

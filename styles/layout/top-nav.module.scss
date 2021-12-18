@@ -1,0 +1,69 @@
+.topNav {
+  width: 100%;
+  padding-top: 6vh;
+  display: grid;
+  gap: 0 var(--grid-gap);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: 'name label rsme rsme avail avail';
+  @media (max-width: 1024px) {
+    padding-top: 2vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 10vh);
+    grid-template-areas:
+      'name label'
+      'rsme avail'
+      '.    avail';
+  }
+  .name,
+  .label,
+  .rsme,
+  .avail {
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .name {
+    grid-area: name;
+  }
+  .label {
+    grid-area: label;
+  }
+  .rsme {
+    grid-area: rsme;
+    color: var(--primary);
+  }
+  .avail {
+    grid-area: avail;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      .availBtn {
+        width: 80% !important;
+        margin-left: 0 !important;
+        margin-top: 2vh;
+        button { 
+          height: 5vh !important;
+        }
+      }
+    }
+    .availLabel {
+      b {
+        color: var(--primary);
+        font-weight: 200 !important;
+      }
+    }
+    .availBtn {
+      height: 100%;
+      width: 10vw;
+      margin-left: var(--grid-gap);
+      button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
