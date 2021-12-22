@@ -36,7 +36,7 @@ export const Contact = () => {
         seeking fulltime employment. Either way, let’s have
         a conversation.
       </p>
-      <a href='/#' className={email}>
+      <a href='mailto:me@jmswlkr.devg' className={email}>
         me@jmswlkr.dev
       </a>
     </section>
