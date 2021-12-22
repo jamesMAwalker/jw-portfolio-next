@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    `http://localhost:1234/projects.json`
+    `${process.env.DATA_URL}/projects.json`
   )
   const data = await res.json()
 
@@ -23,7 +23,7 @@ export const getStaticProps = async (context) => {
   const { id } = context.params
 
   const res = await fetch(
-    `http://localhost:1234/projects.json`
+    `${process.env.DATA_URL}/projects.json`
   )
   const data = await res.json()
   const pageData = data.filter((d) => d.abbr === id)[0]

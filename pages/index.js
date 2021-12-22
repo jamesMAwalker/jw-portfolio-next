@@ -11,7 +11,7 @@ import { layout, content, footer, social, design, linkout } from '../styles/layo
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://localhost:1234/projects.json`
+    `${process.env.DATA_URL}/projects.json`
   )
   const data = await res.json()
 
