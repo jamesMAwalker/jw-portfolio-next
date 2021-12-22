@@ -1,9 +1,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+import { server } from '../../config/index'
+
 export const getStaticPaths = async () => {
   const res = await fetch(
-    `${process.env.DATA_URL}/projects.json`
+    `${server}/projects.json`
   )
   const data = await res.json()
 
@@ -23,7 +25,7 @@ export const getStaticProps = async (context) => {
   const { id } = context.params
 
   const res = await fetch(
-    `${process.env.DATA_URL}/projects.json`
+    `${server}/projects.json`
   )
   const data = await res.json()
   const pageData = data.filter((d) => d.abbr === id)[0]
@@ -34,8 +36,6 @@ export const getStaticProps = async (context) => {
 }
 
 const Project = ({ project }) => {
-  const router = useRouter()
-
   return (
     <div>
       <h1>{project.name}</h1>

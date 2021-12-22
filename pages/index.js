@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { server } from '../config/index'
+
 import { Hero } from '../components/home/01-hero'
 import { ProjectList } from '../components/home/02-project-list'
 import { TechStack } from '../components/home/03-tech-stack'
@@ -6,12 +8,13 @@ import { Writing } from '../components/home/04-writing'
 import { Contact } from '../components/home/05-contact'
 import { TopNav } from '../components/layout/top-nav'
 
+
 import { layout, content, footer, social, design, linkout } from '../styles/layout/layout.module.scss'
 
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `${process.env.DATA_URL}/projects.json`
+    `${server}/projects.json`
   )
   const data = await res.json()
 
