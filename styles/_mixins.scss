@@ -1,0 +1,39 @@
+@mixin blurb {
+  width: 40vw;
+  font-family: var(--font-body);
+  font-weight: var(--medium);
+  font-size: clamp(var(--text-md), 2vmin, var(--text-3xl));
+  letter-spacing: var(--open);
+}
+
+@mixin label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-md) !important;
+  font-weight: var(--light);
+  text-transform: uppercase;
+}
+
+@mixin list {
+  width: 40vw;
+  padding: 0;
+  margin: 0;
+  margin: var(--vp-md) 0;
+  font-family: var(--font-title);
+  font-size: var(--text-3xl);
+  text-transform: uppercase;
+  list-style: none;
+}
+
+@mixin homeSection {
+  position: relative;
+  padding-top: 10vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

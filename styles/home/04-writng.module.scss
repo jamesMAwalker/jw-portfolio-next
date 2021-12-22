@@ -1,0 +1,35 @@
+@import '../mixins.scss';
+
+.writing {
+  position: relative;
+  padding-top: 10vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--vp-lg);
+  .label {
+    @include label;
+  }
+  .blurb {
+    @include blurb;
+  }
+  .writingList {
+    @include list;
+    font-size: var(--text-display);
+  }
+  .writingRow {
+    &:not(:last-child) {
+      margin-bottom: var(--vp-lg);
+    }
+  }
+  .button {
+    margin-top: var(--vp-md);
+    width: 40vw;
+    button {
+      padding: 0 var(--vp-md);
+    }
+  }
+}

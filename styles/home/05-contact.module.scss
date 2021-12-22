@@ -1,0 +1,47 @@
+@import '../mixins.scss';
+
+.contact {
+  @include homeSection;
+  min-height: 100vh;
+  .label {
+    @include label;
+  }
+  .banners {
+    width: 100%;
+    padding: var(--vp-sm);
+    font-family: var(--font-title);
+    font-size: var(--text-9xl);
+    text-transform: uppercase;
+    border-top: 1px solid var(--grey-10);
+    border-bottom: 1px solid var(--grey-10);
+  }
+  .line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    &.lineOne {
+      
+    }
+    &.lineTwo {
+  
+    }
+  }
+  .phrase {
+    width: auto;
+    white-space: nowrap;
+  }
+  .blurb {
+    @include blurb;
+    margin: var(--vp-xl) 0;
+    font-weight: var(--bold);
+    letter-spacing: var(--even);
+  }
+  .email {
+    font-family: var(--font-title);
+    font-size: var(--text-5xl);
+    letter-spacing: var(--open);
+    color: var(--text-color);
+    text-transform: uppercase;
+  }
+}

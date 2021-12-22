@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 as uuid } from 'uuid'
 
 import {
   hero,
@@ -14,30 +15,30 @@ import {
   arrow,
   arrowOne,
   arrowTwo,
-} from '../../styles/home/hero.module.scss'
+} from '../../styles/home/01-hero.module.scss'
 
 import { DownArrow } from '../svg/down-arr'
 
 export const Hero = () => {
   return (
-    <div className={hero}>
+    <section className={hero}>
       <div className={lineOne}>
         <span>
           {' '}
-          {'Front'.split('').map((lett) => (
-            <span className={letter}>{lett}</span>
+          {'Front'.split('').map((lett, idx) => (
+            <span className={letter} key={uuid()}>{lett}</span>
           ))}
         </span>
         <div className={separator} />
         <span>
           {'End'.split('').map((lett) => (
-            <span className={letter}>{lett}</span>
+            <span className={letter} key={uuid()}>{lett}</span>
           ))}
         </span>
       </div>
       <div className={lineTwo}>
         {'Developer'.split('').map((lett) => (
-          <span className={letter}>{lett}</span>
+          <span className={letter} key={uuid()}>{lett}</span>
         ))}{' '}
         <span className={aboutImg}>
           <img
@@ -67,6 +68,6 @@ export const Hero = () => {
           </span>
         </button>
       </div>
-    </div>
+    </section>
   )
 }

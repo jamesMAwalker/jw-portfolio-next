@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import { Hero } from '../components/home/01-hero'
 import { ProjectList } from '../components/home/02-project-list'
+import { TechStack } from '../components/home/03-tech-stack'
+import { Writing } from '../components/home/04-writing'
+import { Contact } from '../components/home/05-contact'
 import { TopNav } from '../components/layout/top-nav'
 
-import { layout, content } from '../styles/layout/layout.module.scss'
+import { layout, content, footer, social, design, linkout } from '../styles/layout/layout.module.scss'
 
 
 export const getStaticProps = async () => {
@@ -57,7 +60,19 @@ export default function Home({ projects }) {
         <TopNav />
         <Hero />
         <ProjectList projects={projects} />
+        <TechStack />
+        <Writing />
+        <Contact />
       </main>
+      <footer className={footer}>
+        <div className={social}>
+          <span>Github</span>
+          <span>Codepen</span>
+          <span>LinkedIn</span>
+          <span>Strava</span>
+        </div>
+        <div className={design}>Design adapted from <span className={linkout}>Isaac Fayemi</span></div>
+      </footer>
     </div>
   )
 }

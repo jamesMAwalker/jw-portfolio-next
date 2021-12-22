@@ -1,8 +1,12 @@
 [
   {
-    "name": "Roots - Plantbased Café",
+    "name": ["Roots -", "Plantbased Café"],
     "abbr": "roots",
     "desc": "is a vegan kitchen and grocery targeting the expat community in Da Nang, Vietnam.",
+    "previewImg": {
+      "long": "roots--long_drenqp",
+      "short": "roots--short_ylcaef"
+    },
     "blocks1": [
       "Roots is indeed in Vietnam, but is situated in an area populated mostly with English-speaking expats, thus needing to cater to both forgeign customers as well as the local Vietnamese. ",
       "Their online presence suffered from two central issues. First, the website was an older WordPress site whose design was dated and unappealing, as well as quite slow, due to a lack of maintenance. The second was the increasing reliance on third party delivery services for both delivery as well as visibility. ",
@@ -19,9 +23,13 @@
     ]
   },
   {
-    "name": "Shades - Eyewear Boutique",
+    "name": ["Shades - ", "Eyewear Boutique"],
     "abbr": "shdz",
     "desc": "is a fashion forward sunglasses boutique based in Santa Monica, CA.",
+    "previewImg": {
+      "long": "shdz--long_ao9uvi",
+      "short": "shdz--short_xmdp4w"
+    },
     "blocks1": [
       "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
       "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
@@ -38,6 +46,54 @@
     "blocks4": [
       "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
       "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
+    ]
+  },
+  {
+    "name": ["Plant ", "Power Racing"],
+    "abbr": "ppr",
+    "desc": "is an all vegan road cycling team based in Santa Monica, CA, with chapters around the world.",
+    "previewImg": {
+      "long": "ppr--long_inxyir",
+      "short": "ppr--short_zfvbar"
+    },
+    "blocks1": [
+      "Plant Power Racing posed a unique challenge in terms of design. Their target audience is not monolithic, needing to appeal to potential sponsors, potential new recruits, casual visitors, and importantly, those who may want to support the team’s cause with donations. ",
+      "My solution to this problem of a multifarious audience was to use the team’s stated mission as a sort of seed to which all aspects of the team’s doings could be traced. To this end, I chose to begin with photography that would set the tone for the rest of the ‘narrative’;  communicating a feeling that would color the words in the mission statement set below it.",
+      "From this point, the various groups visiting the website are immediately presented with the information most relevant to them."
+    ],
+    "blocks2": [
+      "Each section of the landing page acts as a sort of kiosk at which relevant information is presented, and an easy path towards more granular information is available. In the right column of the persistent navigation layout is a slider link that changes direction based on the section currently in view.",
+      "The pages that follow this exist as a series of expanding windows that first present high level information, but when expanded offer more granular detail, as well as paths to further information and where appropriate, links to third-party web sites.",
+      "Invididual product pages function similarly, with product details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
+    ],
+    "blocks3": [
+      "A major part of PPR’s work is the excellent writing they do on a variety of subjects in the cycling world. Building an interface in which they could write, edit, and preview their content was one of the top priorities for the project. ",
+      "To ensure this would always be a frictionless process for the team, I opted to use the Sanity’s tried and true headless CMS. Their very lightweight and incredibly configurable system made them ideal for the variable and manifold content the team would be producing.",
+      "Using Sanity, I built a custom React interface in which the team would find any and all editing tools they’d need, a device adjustable preview, and an easy to navigate authorship system. The result is a well oiled system that is always being optimized, and is easily altered to accommodate any additional features the team might request."
+    ],
+    "blocks4": [
+      "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
+      "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
+    ]
+  },
+  {
+    "name": ["Nishelle Marie -", "Photographer"],
+    "abbr": "NMP",
+    "desc": "is a photographer who needed something more than a SquareSpace site.",
+    "previewImg": {
+      "long": "nwp--long_rmgfwz",
+      "short": "nwp--short_yv9nfv"
+    },
+    "blocks1": [
+      "Photographers and other freelance artists often start by using one of the many drag and drop site builder tools available. While these can be a great way to get started, they’re limited in scope and presentation, and their neccessarily cookie cutter design can leave visitors to the site with a feeling of the ordinary.",
+      "Nishelle wanted to level up into something that would present her work in a uniquely interactive and exciting fashion, only really possible through custom design and and build. We worked closely to develop something in line with her artistic sensibilities, and ultimately created one of my favorite designs."
+    ],
+    "blocks2": [
+      "The primary goal with any photography site is to present the work in a fashion that reflects the artist’s ethos, while maintaining the visitor’s focus on the photography itself. Working in concert, we chose fonts, colors, and other design cues that would communicate both her passion for the art form, as well as her experience and competence, with a dash of the playful for good measure.",
+      "In practice, I took the approach of using full screen renderings of the most arresting photography, and then positioning and coloring the page elements in harmony with the image. This communicates the necessary information while also keeping it at a lower volume than the work. I also make extensive use of the cursor for displaying actions, rather than having persistent buttons."
+    ],
+    "blocks3": [
+      "Photography sites necessarily use a large number of high resolution images. Because photo quality cannot be sacrificed for speed, we needed a solution that would give us the the best of both worlds. Enter WebGL, an API that is normally used to render 3D interactive graphics. This powerful piece of technology renders images in a way that makes them much faster to load, and even uses the device’s GPU to distribute calculations, further increasing load times and overall smoothness. "
     ]
   }
 ]
