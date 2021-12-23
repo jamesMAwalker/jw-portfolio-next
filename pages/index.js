@@ -17,21 +17,21 @@ import {
   linkout,
 } from '../styles/layout/layout.module.scss'
 
-// export const getStaticProps = async () => {
-//   const res = await fetch(`${server}/projects.json`)
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/projects.json`)
 
-//  if (res.status !== 200) {
-//    throw new Error(
-//      `There was an error! Status code is ${res.status}`
-//    )
-//  }
+ if (res.status !== 200) {
+   throw new Error(
+     `There was an error! Status code is ${res.status}`
+   )
+ }
 
-//   const data = await res.json()
+  const data = await res.json()
 
-//   return {
-//     props: { projects: data },
-//   }
-// }
+  return {
+    props: { projects: data },
+  }
+}
 
 export default function Home({ projects }) {
   return (
