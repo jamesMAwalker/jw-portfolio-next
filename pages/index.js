@@ -72,7 +72,7 @@ export default function Home({ projects }) {
       <main className={content}>
         <TopNav />
         <Hero />
-        {/* <ProjectList projects={projects} /> */}
+        <ProjectList projects={projects} />
         <TechStack />
         <Writing />
         <Contact />
