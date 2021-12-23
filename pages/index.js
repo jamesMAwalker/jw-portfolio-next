@@ -8,25 +8,30 @@ import { Writing } from '../components/home/04-writing'
 import { Contact } from '../components/home/05-contact'
 import { TopNav } from '../components/layout/top-nav'
 
+import {
+  layout,
+  content,
+  footer,
+  social,
+  design,
+  linkout,
+} from '../styles/layout/layout.module.scss'
 
-import { layout, content, footer, social, design, linkout } from '../styles/layout/layout.module.scss'
+// export const getStaticProps = async () => {
+//   const res = await fetch(`${server}/projects.json`)
 
+//  if (res.status !== 200) {
+//    throw new Error(
+//      `There was an error! Status code is ${res.status}`
+//    )
+//  }
 
-export const getStaticProps = async () => {
-  const res = await fetch(`${server}/projects.json`, {
-    method: 'GET',
-    headers: {
-      'User-Agent':
-        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',
-      Accept: 'application/json; charset=UTF-8',
-    },
-  })
-  const data = await res.json()
+//   const data = await res.json()
 
-  return {
-    props: { projects: data },
-  }
-}
+//   return {
+//     props: { projects: data },
+//   }
+// }
 
 export default function Home({ projects }) {
   return (
@@ -41,13 +46,13 @@ export default function Home({ projects }) {
           rel='preload'
           href='/fonts/MPLUSCodeLatin-Bold.ttf'
           as='font'
-          // crossOrigin="true"`1111111111222222222222222222222222222222222222222222222222222222222222
+          crossOrigin='true'
         />
         <link
           rel='preload'
           href='/fonts/MPLUSCodeLatin-SemiBold.ttf'
           as='font'
-          crossOrigin="true"
+          crossOrigin='true'
         />
         <link rel='icon' href='/favicon.ico' />
         <link
@@ -57,7 +62,7 @@ export default function Home({ projects }) {
         <link
           rel='preconnect'
           href='https://fonts.gstatic.com'
-          crossOrigin="true"
+          crossOrigin='true'
         />
         <link
           href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap'
@@ -67,7 +72,7 @@ export default function Home({ projects }) {
       <main className={content}>
         <TopNav />
         <Hero />
-        <ProjectList projects={projects} />
+        {/* <ProjectList projects={projects} /> */}
         <TechStack />
         <Writing />
         <Contact />
@@ -79,7 +84,10 @@ export default function Home({ projects }) {
           <span>LinkedIn</span>
           <span>Strava</span>
         </div>
-        <div className={design}>Design adapted from <span className={linkout}>Isaac Fayemi</span></div>
+        <div className={design}>
+          Design adapted from{' '}
+          <span className={linkout}>Isaac Fayemi</span>
+        </div>
       </footer>
     </div>
   )
