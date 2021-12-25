@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+import gsap from 'gsap'
+
+import { WritingCursor } from './writing-cursor'
 
 import {
   writing,
@@ -6,14 +10,52 @@ import {
   blurb,
   writingList,
   writingRow,
-  cursorImg,
-  cursorPointer,
   button,
 } from '../../styles/home/04-writng.module.scss'
 
+const writings = [
+  {
+    title: `Making the Most of 15.6"`,
+    slug: `giphy_hpbbwp`,
+  },
+  {
+    title: `The ESM Revolution`,
+    slug: `image-shootout_nx51uw`,
+  },
+  {
+    title: `SVG is Everything`,
+    slug: `qZXmip97ej4JEZTWwRCyHZ-970-80_wjskwn`,
+  },
+  {
+    title: `Why State Machines`,
+    slug: `giphy_tip2fy`,
+  },
+]
+
 export const Writing = () => {
+  const {
+    ref: writingRef,
+    inView: writingInView,
+  } = useInView({
+    threshold: 0.3,
+  })
+
+  // track which writing title is hovered
+  const [cursorImg, setCursorImg] = useState(0)
+
+  useEffect(() => {
+    console.log(cursorImg);
+  }, [cursorImg])
+
   return (
-    <section className={writing}>
+    <section className={writing} ref={writingRef}>
+      {writingInView && (
+        <WritingCursor
+          writingInView={writingInView}
+          imgList={writings}
+          currImg={cursorImg}
+        />
+      )}
       <h3 className={label}>WRITING</h3>
       <p className={blurb}>
         I like to write about my experiences as a developer
@@ -23,12 +65,14 @@ export const Writing = () => {
         lately.{' '}
       </p>
       <ul className={writingList}>
-        <li className={writingRow}>
-          Making the Most of 15.6”
-        </li>
-        <li className={writingRow}>Why State Machines</li>
-        <li className={writingRow}>The ESM Revolution</li>
-        <li className={writingRow}>SVG is Everything</li>
+        {writings.map((wrtg, idx) => (
+          <li
+            className={writingRow}
+            onMouseEnter={() => setCursorImg(idx)}
+          >
+            {wrtg.title}
+          </li>
+        ))}
       </ul>
       <div className={button}>
         <button className='pill-btn emph'>

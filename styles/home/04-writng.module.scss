@@ -10,6 +10,9 @@
   align-items: center;
   justify-content: center;
   padding-bottom: var(--vp-lg);
+  & > * {
+    z-index: var(--level-one);
+  }
   .label {
     @include label;
   }
@@ -30,6 +33,55 @@
     width: 40vw;
     button {
       padding: 0 var(--vp-md);
+    }
+  }
+  .cursorImg {
+    z-index: var(--ground);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 25vw;
+    height: 200px;
+    background-color: var(--grey-10);
+    border-radius: var(--radius-rounded);
+    opacity: 0;
+    display: none;
+    overflow: hidden;
+    .cursorGif {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition: var(--trans);
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
+  .cursorPointer {
+    z-index: var(--ground);
+    position: fixed;
+    top: 100px;
+    left: 12.5vw;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-3-smooth);
+    .dot {
+      height: var(--space-xl);
+      width: var(--space-xl);
+      background-color: var(--white);
+      border-radius: var(--radius-rounded);
+    }
+    .text {
+      text-transform: uppercase;
+      font-size: var(--text-md);
+      color: var(--white);
+      margin-left: var(--space-lg);
+      letter-spacing: var(--open)
     }
   }
 }

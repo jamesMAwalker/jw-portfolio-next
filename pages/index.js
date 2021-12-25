@@ -86,7 +86,7 @@ export default function Home({ projects }) {
         </div>
         <div className={design}>
           Design adapted from{' '}
-          <span className={linkout}>Isaac Fayemi</span>
+          <span className={linkout}>&nbsp; Isaac Fayemi</span>
         </div>
       </footer>
     </div>
