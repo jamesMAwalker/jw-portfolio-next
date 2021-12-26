@@ -34,7 +34,15 @@
   }
   .rsme {
     grid-area: rsme;
-    color: var(--primary);
+    color: var(--primary-mute);
+    transition: var(--transition-3-smooth);
+    button {
+      width: 35%;
+      height: 100%;
+    }
+    &:hover {
+      color: var(--primary);
+    }
   }
   .avail {
     grid-area: avail;

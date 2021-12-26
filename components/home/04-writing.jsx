@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 import { WritingCursor } from './writing-cursor'
 
@@ -9,6 +10,7 @@ import {
   writingList,
   writingRow,
   button,
+  dot,
 } from '../../styles/home/04-writng.module.scss'
 
 const writings = [
@@ -31,15 +33,44 @@ const writings = [
 ]
 
 export const Writing = () => {
+  const { ref: writingRef, inView: writingInView } =
+    useInView()
   const [cursorVisible, setCursorVisible] = useState(false)
 
   // track which writing title is hovered
   const [cursorImg, setCursorImg] = useState(0)
 
+  // cursorImg off logic
+  const hideCursor = (wheeledClass) => {
+    const showCursorElements = [
+      writingList,
+      writingRow,
+      dot,
+    ]
+
+    if (!showCursorElements.includes(wheeledClass)) {
+      setCursorVisible(false)
+    }
+  }
+
+  useEffect(() => {
+    if (writingInView) {
+      window.addEventListener('wheel', (e) => {
+        hideCursor(e.target.className)
+      })
+    } else {
+      window.removeEventListener('wheel', (e) => {})
+    }
+  })
+
   return (
     <section
       className={writing}
       onMouseLeave={() => setCursorVisible(false)}
+      onWheel={(e) => {
+        hideCursor(e.target.className)
+      }}
+      ref={writingRef}
     >
       <WritingCursor
         cursorVisible={cursorVisible}
@@ -67,7 +98,10 @@ export const Writing = () => {
           </li>
         ))}
       </ul>
-      <div className={button}>
+      <div
+        className={button}
+        onMouseOver={() => setCursorVisible(false)}
+      >
         <button className='pill-btn emph'>
           MORE ON DEV.TO
         </button>

@@ -20,28 +20,61 @@
     align-items: center;
     justify-content: center;
     overflow: visible;
+    white-space: nowrap;
+    color: var(--grey-10);
+    div {
+      transition: var(--transition-3-smooth);
+    }
+    &:hover {
+      animation-play-state: paused !important;
+      div {
+        color: var(--primary-mute);
+        transform: skewX(-10deg);
+      }
+    }
     &.lineOne {
-      
+      animation: marqueeLeft 20s linear infinite;
     }
     &.lineTwo {
-  
+      animation: marqueeRight 25s linear infinite;
     }
   }
   .phrase {
     width: auto;
     white-space: nowrap;
+    transition: var(--transition-3-smooth);
   }
   .blurb {
     @include blurb;
     margin: var(--vp-xl) 0;
     font-weight: var(--bold);
     letter-spacing: var(--even);
+    span {
+      color: var(--primary);
+    }
   }
   .email {
+    position: relative;
     font-family: var(--font-title);
     font-size: var(--text-5xl);
     letter-spacing: var(--open);
     color: var(--text-color);
     text-transform: uppercase;
+    transition: var(--transition-3-smooth);
+    &:hover {
+      transform: skewX(-10deg);
+      color: var(--primary);
+    }
+  }
+}
+
+@keyframes marqueeLeft {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marqueeRight {
+  100% {
+    transform: translateX(100%);
   }
 }

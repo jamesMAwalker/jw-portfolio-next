@@ -3,6 +3,8 @@
 .writing {
   @include homeSection;
   padding-bottom: var(--vp-lg);
+  overflow: hidden;
+  cursor: crosshair;
   & > * {
     z-index: var(--level-one);
   }
@@ -25,6 +27,7 @@
     margin-top: var(--vp-md);
     width: 40vw;
     button {
+      width: 40%;
       padding: 0 var(--vp-md);
     }
   }
@@ -35,7 +38,6 @@
     left: 12.5vw;
     top: 0;
     left: 0;
-    transform: translate(-50vw, -50vw);
     width: 25vw;
     height: 200px;
     background-color: var(--grey-10);
@@ -61,7 +63,7 @@
       object-fit: cover;
       object-position: center;
       opacity: 0;
-      transition: var(--trans);
+      transition: var(--transition-3-smooth);
       &.visible {
         opacity: 1;
       }
@@ -70,8 +72,8 @@
   .cursorPointer {
     z-index: var(--level-two);
     position: fixed;
-    top: 100px;
-    left: 12.5vw;
+    top: 175px;
+    left: 20vw;
     align-items: center;
     justify-content: center;
     transition: var(--transition-3-smooth);

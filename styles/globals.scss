@@ -1,13 +1,12 @@
 @font-face {
-  font-family: "M Plus Code Latin B";
-  src: url("/fonts/MPLUSCodeLatin-Bold.ttf");
+  font-family: 'M Plus Code Latin B';
+  src: url('/fonts/MPLUSCodeLatin-Bold.ttf');
 }
 
 @font-face {
-  font-family: "M Plus Code Latin SB";
-  src: url("/fonts/MPLUSCodeLatin-SemiBold.ttf");
+  font-family: 'M Plus Code Latin SB';
+  src: url('/fonts/MPLUSCodeLatin-SemiBold.ttf');
 }
-
 
 :root {
   /* tokens */
@@ -115,7 +114,6 @@
   --text-10xl: 144px;
   --text-11xl: 156px;
 
-
   // * role-based tokens * //
 
   /* colors */
@@ -124,25 +122,24 @@
   --primary-muter: var(--ocean-blue);
   --background: var(--white);
   --text-color: var(--black);
-  
+
   /* bezier curves */
   --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);
   --punchitchewy: cubic-bezier(1, 0, 0.115, 0.995);
 
   /* transitions */
   --transition-1: all 1s var(--punchitchewy);
-  --transition-2: all .6s var(--punchitchewy);
+  --transition-2: all 0.6s var(--punchitchewy);
   --transition-3: all 0.3s var(--punchitchewy);
   --transition-4: all 0.1s var(--punchitchewy);
   --transition-1-smooth: all 1.25s var(--smooth);
-  --transition-2-smooth: all .6s var(--smooth);
+  --transition-2-smooth: all 0.6s var(--smooth);
   --transition-3-smooth: all 0.3s var(--smooth);
   --transition-4-smooth: all 0.1s var(--smooth);
 
   /* shadows */
   --shadow: 4px 4px 12px var(--black-fade-10);
 
-  
   /* text size */
   --text-hero: clamp(240px, 15vmax, 400px);
   --text-hero: 16vmax;
@@ -222,6 +219,8 @@ p {
 }
 
 .pill-btn {
+  cursor: pointer;
+  position: relative;
   min-height: 3.5vh;
   border: 1px solid var(--primary);
   border-radius: var(--radius-rounded);
@@ -229,6 +228,12 @@ p {
   color: var(--primary);
   text-transform: uppercase;
   letter-spacing: var(--even);
+  overflow: hidden;
+  transition: var(--transition-3-smooth);
+  &:hover {
+    letter-spacing: var(--tracked);
+    font-style: italic;
+  } 
 }
 
 .emph {
