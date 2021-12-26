@@ -1,9 +1,10 @@
 .hero {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   .letter {
     transition: var(--transition-1-smooth);
-    &:hover {
+    letter-spacing: -5px;
+  &:hover {
       color: var(--primary-mute);
       filter: blur(2px);
     }
@@ -13,11 +14,11 @@
     font-family: var(--font-title);
     font-size: var(--text-hero);
     text-transform: uppercase;
+    margin-bottom: -10vh;
   }
   .lineOne {
     display: flex;
     align-items: center;
-    margin-bottom: -5vh;
     span {
       width: auto;
     }
@@ -78,9 +79,10 @@
     }
   }
   .lineThree {
+    margin-top: 5vh;
     height: 25vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     .about {
       width: 54vw;

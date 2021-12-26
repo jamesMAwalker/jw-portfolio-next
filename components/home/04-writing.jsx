@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
-import gsap from 'gsap'
 
 import { WritingCursor } from './writing-cursor'
 
@@ -33,29 +31,21 @@ const writings = [
 ]
 
 export const Writing = () => {
-  const {
-    ref: writingRef,
-    inView: writingInView,
-  } = useInView({
-    threshold: 0.3,
-  })
+  const [cursorVisible, setCursorVisible] = useState(false)
 
   // track which writing title is hovered
   const [cursorImg, setCursorImg] = useState(0)
 
-  useEffect(() => {
-    console.log(cursorImg);
-  }, [cursorImg])
-
   return (
-    <section className={writing} ref={writingRef}>
-      {writingInView && (
-        <WritingCursor
-          writingInView={writingInView}
-          imgList={writings}
-          currImg={cursorImg}
-        />
-      )}
+    <section
+      className={writing}
+      onMouseLeave={() => setCursorVisible(false)}
+    >
+      <WritingCursor
+        cursorVisible={cursorVisible}
+        imgList={writings}
+        currImg={cursorImg}
+      />
       <h3 className={label}>WRITING</h3>
       <p className={blurb}>
         I like to write about my experiences as a developer
@@ -68,7 +58,10 @@ export const Writing = () => {
         {writings.map((wrtg, idx) => (
           <li
             className={writingRow}
-            onMouseEnter={() => setCursorImg(idx)}
+            onMouseEnter={() => {
+              setCursorVisible(true)
+              setCursorImg(idx)
+            }}
           >
             {wrtg.title}
           </li>

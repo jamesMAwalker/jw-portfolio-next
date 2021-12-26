@@ -10,14 +10,14 @@ import {
   visible
 } from '../../styles/home/04-writng.module.scss'
 
-export const WritingCursor = ({ writingInView, imgList, currImg }) => {
+export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
   const cursorRef = useRef(null)
   const cursorTextRef = useRef(null)
 
   // cursor exit/enter animation
   useEffect(() => {
-    const cursorTL = gsap.timeline()
-    if (writingInView) {
+    const cursorTL = gsap.timeline({ ease: "Power2.inOut" })
+    if (cursorVisible) {
       cursorTL
         .to('.cursorImg, .cursorPointer', {
           display: 'flex',
@@ -34,7 +34,7 @@ export const WritingCursor = ({ writingInView, imgList, currImg }) => {
           display: 'none',
         })
     }
-  }, [writingInView])
+  }, [cursorVisible])
 
   // Set custom cursor location 
   useEffect(() => {

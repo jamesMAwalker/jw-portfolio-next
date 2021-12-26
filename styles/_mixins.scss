@@ -10,6 +10,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--grey-10);
   font-family: var(--font-body);
   font-size: var(--text-md) !important;
   font-weight: var(--light);
@@ -29,11 +32,27 @@
 
 @mixin homeSection {
   position: relative;
-  padding-top: 10vh;
-  height: 100%;
+  margin-top: 20vh;
+  padding-top: 15vh;
+  height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+@mixin pseudoSlide {
+  position: absolute;
+  z-index: var(--base-one);
+  content: '';
+  top: 0;
+  left: -150vw;
+  height: 100%;
+  width: 500vw;
+  background-color: var(--primary-mute);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  transition: var(--transition-1-smooth);
+}
+

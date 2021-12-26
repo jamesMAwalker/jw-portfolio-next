@@ -121,6 +121,7 @@
   /* colors */
   --primary: var(--blue);
   --primary-mute: var(--french-blue);
+  --primary-muter: var(--ocean-blue);
   --background: var(--white);
   --text-color: var(--black);
   
@@ -133,7 +134,7 @@
   --transition-2: all .6s var(--punchitchewy);
   --transition-3: all 0.3s var(--punchitchewy);
   --transition-4: all 0.1s var(--punchitchewy);
-  --transition-1-smooth: all 1s var(--smooth);
+  --transition-1-smooth: all 1.25s var(--smooth);
   --transition-2-smooth: all .6s var(--smooth);
   --transition-3-smooth: all 0.3s var(--smooth);
   --transition-4-smooth: all 0.1s var(--smooth);
@@ -144,7 +145,7 @@
   
   /* text size */
   --text-hero: clamp(240px, 15vmax, 400px);
-  --text-hero: 15vmax;
+  --text-hero: 16vmax;
   --text-header: var(--text-11xl);
   --text-display: var(--text-7xl);
   --text-prose: var(--text-2xl);

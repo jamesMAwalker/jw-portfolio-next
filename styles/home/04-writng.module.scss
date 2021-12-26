@@ -1,14 +1,7 @@
 @import '../mixins.scss';
 
 .writing {
-  position: relative;
-  padding-top: 10vh;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include homeSection;
   padding-bottom: var(--vp-lg);
   & > * {
     z-index: var(--level-one);
@@ -38,8 +31,11 @@
   .cursorImg {
     z-index: var(--ground);
     position: fixed;
+    top: 100px;
+    left: 12.5vw;
     top: 0;
     left: 0;
+    transform: translate(-50vw, -50vw);
     width: 25vw;
     height: 200px;
     background-color: var(--grey-10);
@@ -47,6 +43,15 @@
     opacity: 0;
     display: none;
     overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: var(--black-fade-20);
+    }
     .cursorGif {
       position: absolute;
       top: 0;
@@ -63,7 +68,7 @@
     }
   }
   .cursorPointer {
-    z-index: var(--ground);
+    z-index: var(--level-two);
     position: fixed;
     top: 100px;
     left: 12.5vw;
@@ -73,15 +78,16 @@
     .dot {
       height: var(--space-xl);
       width: var(--space-xl);
-      background-color: var(--white);
+      background-color: var(--primary);
       border-radius: var(--radius-rounded);
     }
     .text {
       text-transform: uppercase;
       font-size: var(--text-md);
-      color: var(--white);
+      color: var(--primary);
       margin-left: var(--space-lg);
-      letter-spacing: var(--open)
+      letter-spacing: var(--open);
+      font-weight: var(--semibold);
     }
   }
 }
