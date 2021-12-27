@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
 import {
   contact,
@@ -34,11 +35,17 @@ export const Contact = () => {
             const lineNum = idx === 0 ? lineOne : lineTwo
 
             return (
-              <div className={`${line} ${lineNum}`}>
+              <div
+                className={`${line} ${lineNum}`}
+                key={uuid()}
+              >
                 <a href='mailto:me@jmswlkr.dev'>
                   {Array.from({ length: 24 }).map(
                     (phraseChunk) => (
-                      <span className={phraseStyle}>
+                      <span
+                        className={phraseStyle}
+                        key={uuid()}
+                      >
                         {phrase}
                       </span>
                     )

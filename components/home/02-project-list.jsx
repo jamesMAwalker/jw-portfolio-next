@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { v4 as uuid } from 'uuid'
 
 import {
   label,
@@ -61,7 +62,7 @@ export const ProjectList = ({ projects }) => {
               className={`${projectRowSlide} ${translate} row__${idx}`}
             >
               {Array.from({ length: 3 }).map((segment) => (
-                <div className={projectRow}>
+                <div className={projectRow} key={uuid()}>
                   <div className={`${projectImg} ${small}`}>
                     <img
                       src={`https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1639980948/Portfolio/${prj.previewImg.short}.png`}
