@@ -1,5 +1,6 @@
 import React from 'react'
 import { v4 as uuid } from 'uuid'
+import Link from 'next/link'
 
 import {
   hero,
@@ -63,17 +64,21 @@ export const Hero = () => {
           web. Currently developing and designing work for
           Radiance Photography in Los Angeles, CA.
         </p>
-        <a href='/#projects' className={scrollInd}>
-          <span className={scrollLabel}>scroll for more </span>
-          <span className={scrollWindow}>
-            <span className={`${arrowOne} ${arrow}`}>
-              <DownArrow />
+        <Link href='/#projects'>
+          <a className={scrollInd}>
+            <span className={scrollLabel}>
+              scroll for more{' '}
             </span>
-            <span className={`${arrowTwo} ${arrow}`}>
-              <DownArrow />
+            <span className={scrollWindow}>
+              <span className={`${arrowOne} ${arrow}`}>
+                <DownArrow />
+              </span>
+              <span className={`${arrowTwo} ${arrow}`}>
+                <DownArrow />
+              </span>
             </span>
-          </span>
-        </a>
+          </a>
+        </Link>
       </div>
     </section>
   )
