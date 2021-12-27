@@ -4,7 +4,7 @@
   .letter {
     transition: var(--transition-1-smooth);
     letter-spacing: -5px;
-  &:hover {
+    &:hover {
       color: var(--primary-mute);
       filter: blur(2px);
     }
@@ -101,14 +101,16 @@
       align-items: center;
       justify-content: space-between;
       background-color: transparent;
-      color: var(--text-color);
-      text-transform: lowercase;
-      font-family: var(--font-title);
-      font-size: clamp(
-        var(--text-md),
-        2vmin,
-        var(--text-3xl)
-      );
+      .scrollLabel {
+        color: var(--text-color) !important;
+        text-transform: lowercase;
+        font-family: var(--font-title);
+        font-size: clamp(
+          var(--text-md),
+          2vmin,
+          var(--text-3xl)
+        );
+      }
     }
     .scrollWindow {
       position: relative;

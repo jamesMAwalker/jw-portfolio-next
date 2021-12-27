@@ -11,6 +11,7 @@ import {
   aboutImg,
   about,
   scrollInd,
+  scrollLabel,
   scrollWindow,
   arrow,
   arrowOne,
@@ -26,19 +27,25 @@ export const Hero = () => {
         <span>
           {' '}
           {'Front'.split('').map((lett, idx) => (
-            <span className={letter} key={uuid()}>{lett}</span>
+            <span className={letter} key={uuid()}>
+              {lett}
+            </span>
           ))}
         </span>
         <div className={separator} />
         <span>
           {'End'.split('').map((lett) => (
-            <span className={letter} key={uuid()}>{lett}</span>
+            <span className={letter} key={uuid()}>
+              {lett}
+            </span>
           ))}
         </span>
       </div>
       <div className={lineTwo}>
         {'Developer'.split('').map((lett) => (
-          <span className={letter} key={uuid()}>{lett}</span>
+          <span className={letter} key={uuid()}>
+            {lett}
+          </span>
         ))}{' '}
         <span className={aboutImg}>
           <img
@@ -56,8 +63,8 @@ export const Hero = () => {
           web. Currently developing and designing work for
           Radiance Photography in Los Angeles, CA.
         </p>
-        <button className={scrollInd}>
-          scroll for more{' '}
+        <a href='/#projects' className={scrollInd}>
+          <span className={scrollLabel}>scroll for more </span>
           <span className={scrollWindow}>
             <span className={`${arrowOne} ${arrow}`}>
               <DownArrow />
@@ -66,7 +73,7 @@ export const Hero = () => {
               <DownArrow />
             </span>
           </span>
-        </button>
+        </a>
       </div>
     </section>
   )

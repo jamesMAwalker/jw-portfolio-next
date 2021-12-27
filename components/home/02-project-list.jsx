@@ -42,7 +42,7 @@ export const ProjectList = ({ projects }) => {
   }, [])
 
   return (
-    <section className={`${projectList} project-list`}>
+    <section className={`${projectList} project-list`} id="projects">
       <h3 className={label}>
         Featured <br /> Projects
       </h3>
