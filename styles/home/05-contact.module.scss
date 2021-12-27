@@ -40,7 +40,7 @@
     &:hover {
       animation-play-state: paused !important;
       a {
-        color: var(--primary-mute);
+        color: var(--primary);
         transform: skewX(-10deg);
       }
     }
