@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { v4 as uuid } from 'uuid'
 
 import {
   cursorImg,
@@ -61,9 +62,12 @@ export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
       >
         {imgList.map((image, idx) => (
           <img
+            key={uuid()}
             src={`https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1627636122/${image.slug}.gif`}
             alt='writing'
-            className={`${cursorGif} ${currImg === idx ? visible : null}`}
+            className={`${cursorGif} ${
+              currImg === idx ? visible : null
+            }`}
           />
         ))}
       </div>

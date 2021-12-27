@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { v4 as uuid } from 'uuid'
 
 import { WritingCursor } from './writing-cursor'
 
@@ -89,6 +90,7 @@ export const Writing = () => {
         {writings.map((wrtg, idx) => (
           <li
             className={writingRow}
+            key={uuid()}
             onMouseEnter={() => {
               setCursorVisible(true)
               setCursorImg(idx)
