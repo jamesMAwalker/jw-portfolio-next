@@ -7,13 +7,25 @@
     @include label;
   }
   .banners {
+    position: relative;
     width: 100%;
     padding: var(--vp-sm);
     font-family: var(--font-title);
     font-size: var(--text-9xl);
     text-transform: uppercase;
-    border-top: 1px solid var(--grey-10);
-    border-bottom: 1px solid var(--grey-10);
+    letter-spacing: var(--even);
+    isolation: isolate;
+    &::after {
+      content: '';
+      z-index: var(--base-one);
+      position: absolute;
+      top: 0;
+      left: -10vw;
+      height: 100%;
+      width: 120vw;
+      background-color: var(--grey-10);
+      opacity: 0.2;
+    }
   }
   .line {
     display: flex;
@@ -21,13 +33,13 @@
     justify-content: center;
     overflow: visible;
     white-space: nowrap;
-    color: var(--grey-10);
-    div {
+    a {
+      color: var(--grey-10);
       transition: var(--transition-3-smooth);
     }
     &:hover {
       animation-play-state: paused !important;
-      div {
+      a {
         color: var(--primary-mute);
         transform: skewX(-10deg);
       }
@@ -60,10 +72,60 @@
     letter-spacing: var(--open);
     color: var(--text-color);
     text-transform: uppercase;
-    transition: var(--transition-3-smooth);
+    & > * {
+      transition: var(--transition-3-smooth);
+    }
     &:hover {
-      transform: skewX(-10deg);
+      .emailText {
+        transform: skewX(-10deg);
+        color: var(--primary);
+      }
+      .emailToolTip {
+        opacity: 1;
+      }
+      .toolTipSlider {
+        transform: translate(-50%, -50%) !important;
+      }
+    }
+    .emailToolTip {
+      opacity: 0;
+      position: absolute;
+      height: 5vh;
+      width: 25vw;
+      bottom: -70%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: var(--text-md);
+      font-style: italic;
       color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: var(--transition-3-smooth);
+      .toolTipSlider {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 10vh;
+        width: 25vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        transition: var(--transition-3-smooth);
+        &.off {
+          transform: translateX(-50%) !important;
+        }
+        span {
+          height: 5vh;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     }
   }
 }
