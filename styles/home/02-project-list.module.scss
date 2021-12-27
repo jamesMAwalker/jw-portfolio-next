@@ -25,6 +25,7 @@
   justify-content: center;
   overflow-x: visible;
   transition: var(--transition-1-smooth);
+  color: var(--text-color);
   &.notPushed {
     &::after {
       @include pseudoSlide;
