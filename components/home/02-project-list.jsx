@@ -58,7 +58,7 @@ export const ProjectList = ({ projects }) => {
             key={prj.abbr}
             className={`${projectRowSlide}`}
           >
-            <div
+            <a
               className={`${projectRowSlide} ${translate} row__${idx}`}
             >
               {Array.from({ length: 3 }).map((segment) => (
@@ -83,7 +83,7 @@ export const ProjectList = ({ projects }) => {
                   </h4>
                 </div>
               ))}
-            </div>
+            </a>
           </Link>
         )
       })}

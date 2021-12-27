@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { server } from '../config/index'
 
 import { Hero } from '../components/home/01-hero'
@@ -32,9 +33,16 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Home({ projects }) {
+export default function Home({ projects })  {
   return (
     <div className={layout}>
+      <Head>
+        <title>jmswlkr.dev</title>
+        <meta
+          name='description'
+          content='Front-end developer portfolio site - James Walker'
+        />
+      </Head>
       <main className={content}>
         <TopNav />
         <Hero />
