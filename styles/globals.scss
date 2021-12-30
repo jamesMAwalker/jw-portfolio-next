@@ -181,8 +181,6 @@ body {
   max-width: 100vw !important;
   background-color: var(--background) !important;
   font-family: var(--font-body);
-  font-family: 'Urbanist', sans-serif;
-  font-family: 'Noto Sans JP', sans-serif;
   color: var(--text-color);
   letter-spacing: var(--tracked);
   margin: 0;
@@ -227,6 +225,7 @@ p {
   border-radius: var(--radius-rounded);
   background: transparent;
   color: var(--primary);
+  font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: var(--even);
   overflow: hidden;
