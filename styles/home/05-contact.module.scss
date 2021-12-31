@@ -15,6 +15,7 @@
     text-transform: uppercase;
     letter-spacing: var(--even);
     isolation: isolate;
+    user-select: none;
     &::after {
       content: '';
       z-index: var(--base-one);
@@ -66,6 +67,7 @@
     }
   }
   .email {
+    cursor: copy;
     position: relative;
     font-family: var(--font-title);
     font-size: var(--text-5xl);

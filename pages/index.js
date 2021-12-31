@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import { server } from '../config/index'
 
@@ -14,7 +15,9 @@ import {
   footer,
   social,
   design,
+  footerLink,
   linkout,
+  progressBar,
 } from '../styles/layout/layout.module.scss'
 
 export const getStaticProps = async () => {
@@ -33,7 +36,25 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Home({ projects })  {
+export default function Home({ projects }) {
+  // progress bar logic
+  const layoutRef = useRef(null)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  useEffect(() => {
+    const totalHeight = layoutRef.current.clientHeight
+    const maxScroll = totalHeight - window.innerHeight
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY
+
+      setScrollProgress((currentScroll / maxScroll) * 100.1)
+    })
+    return () => {
+      window.removeEventListener('scroll', () => {})
+    }
+  }, [])
+
   return (
     <div className={layout}>
       <Head>
@@ -43,7 +64,7 @@ export default function Home({ projects })  {
           content='Front-end developer portfolio site - James Walker'
         />
       </Head>
-      <main className={content}>
+      <main className={content} ref={layoutRef}>
         <TopNav />
         <Hero />
         <ProjectList projects={projects} />
@@ -53,10 +74,18 @@ export default function Home({ projects })  {
       </main>
       <footer className={footer}>
         <div className={social}>
-          <span>Github</span>
-          <span>Codepen</span>
-          <span>LinkedIn</span>
-          <span>Strava</span>
+          <span className={`${footerLink} pill-btn`}>
+            Github
+          </span>
+          <span className={`${footerLink} pill-btn`}>
+            Codepen
+          </span>
+          <span className={`${footerLink} pill-btn`}>
+            LinkedIn
+          </span>
+          <span className={`${footerLink} pill-btn`}>
+            Strava
+          </span>
         </div>
         <div className={design}>
           Design adapted from{' '}
@@ -65,6 +94,10 @@ export default function Home({ projects })  {
           </span>
         </div>
       </footer>
+      <div
+        className={progressBar}
+        style={{ width: `${scrollProgress}vw` }}
+      />
     </div>
   )
 }

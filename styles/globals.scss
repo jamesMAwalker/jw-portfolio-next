@@ -32,9 +32,11 @@
   --off-white: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
-  --blue: hsl(197, 100%, 50%);
-  --french-blue: hsl(197, 35%, 43%);
+  --blue: #00b7ff;
+  --soft-blue: #2191bd;
+  --french-blue: #266680;
   --ocean-blue: hsl(198, 27%, 29%);
+  --ocean-blue: #005B80;
 
   /* z-indeces */
   --base-two: -200;
@@ -118,6 +120,7 @@
 
   /* colors */
   --primary: var(--blue);
+  --primary-soft: var(--soft-blue);
   --primary-mute: var(--french-blue);
   --primary-muter: var(--ocean-blue);
   --background: var(--white);
@@ -195,11 +198,11 @@ body {
   }
   & > * {
     ::-moz-selection {
-      color: var(--primary);
+      color: var(--primary-soft);
       background-color: transparent;
     }
     ::selection {
-      color: var(--primary);
+      color: var(--primary-soft);
       background-color: transparent;
     }
   }
@@ -223,6 +226,9 @@ p {
   min-height: 3.5vh;
   border: 1px solid var(--primary);
   border-radius: var(--radius-rounded);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--primary);
   font-family: var(--font-body);
