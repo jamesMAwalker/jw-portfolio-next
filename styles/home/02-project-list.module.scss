@@ -29,14 +29,11 @@
   &.notPushed {
     &::after {
       @include pseudoSlide;
-      transform: translateX(-200%) skewX(-10deg);
     }
   }
   &.projectPushed {
-    transform: translateX(-50vw);
     &::after {
       @include pseudoSlide;
-      transform: translateX(200%) skewX(-10deg);
     }
   }
   &:hover {

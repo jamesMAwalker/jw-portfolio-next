@@ -10,21 +10,10 @@ import {
   lineTwo,
   phrase as phraseStyle,
   blurb,
-  email,
-  emailText,
-  emailToolTip,
-  toolTipSlider,
-  off
 } from '../../styles/home/05-contact.module.scss'
+import { EmailBtn } from './email-btn'
 
 export const Contact = () => {
-  // boolean for controlling tt slider position and therefore its content
-  const [sliderOff, setSliderOff] = useState(true)
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText('me@jmswlkr.dev')
-    setSliderOff(false)    
-  }
 
   return (
     <section className={contact}>
@@ -41,7 +30,7 @@ export const Contact = () => {
               >
                 <a href='mailto:me@jmswlkr.dev'>
                   {Array.from({ length: 24 }).map(
-                    (phraseChunk) => (
+                    () => (
                       <span
                         className={phraseStyle}
                         key={uuid()}
@@ -61,19 +50,7 @@ export const Contact = () => {
         but also seeking fulltime employment. Either way,
         let’s have a conversation.
       </p>
-      <div className={email} onClick={copyEmail} onMouseLeave={() => {
-        setTimeout(() => {
-          setSliderOff(true)
-        }, 200);
-      }}>
-        <div className={emailText}>me@jmswlkr.dev</div>
-        <div className={emailToolTip}>
-          <div className={`${toolTipSlider} ${sliderOff ? off : null}`}>
-            <span>click to copy</span>
-            <span>copied!</span>
-          </div>
-        </div>
-      </div>
+      <EmailBtn />
     </section>
   )
 }

@@ -17,7 +17,11 @@ export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
 
   // cursor exit/enter animation
   useEffect(() => {
-    const cursorTL = gsap.timeline({ ease: "Power2.inOut" })
+    const cursorTL = gsap.timeline({ defaults: {
+      duration: ".2",
+      ease: "Power2.inOut" }
+    })
+     
     if (cursorVisible) {
       cursorTL
         .to('.cursorImg, .cursorPointer', {

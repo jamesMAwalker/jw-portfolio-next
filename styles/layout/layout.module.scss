@@ -27,13 +27,29 @@
   letter-spacing: var(--even);
   text-transform: uppercase;
   .social {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     span {
       margin-right: var(--space-2xl);
     }
   }
-  .design {
+  .footerLink {
+    min-width: 15% !important;
   }
   .linkout {
     color: var(--grey-40);
   }
+}
+
+.progressBar {
+  z-index: var(--level-top);
+  opacity: 0.8;
+  position: fixed;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(12,26,33,1) 18%, rgba(0,91,128,1) 48%, rgba(0,183,255,1) 100%);
+  transition: var(--transition-1-smooth);
 }

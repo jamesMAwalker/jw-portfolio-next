@@ -4,6 +4,7 @@
   .letter {
     transition: var(--transition-1-smooth);
     letter-spacing: -5px;
+    user-select: none;
     &:hover {
       color: var(--primary-mute);
       filter: blur(2px);
