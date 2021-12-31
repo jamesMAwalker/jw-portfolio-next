@@ -16,6 +16,9 @@
   }
   .buttons {
     width: 40vw;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
     button {
       width: 25%;
       padding: 0 2vh;
