@@ -36,7 +36,7 @@
   --soft-blue: #2191bd;
   --french-blue: #266680;
   --ocean-blue: hsl(198, 27%, 29%);
-  --ocean-blue: #005B80;
+  --ocean-blue: #005b80;
 
   /* z-indeces */
   --base-two: -200;
@@ -72,6 +72,7 @@
   --space-5xl: 70px;
 
   /* viewport-spacing */
+  --vp-xs: 1.5vh;
   --vp-sm: 2.5vh;
   --vp-md: 5vh;
   --vp-lg: 9vh;
@@ -85,11 +86,16 @@
   --loose: 2;
 
   /* letter-spacing */
-  --loose: 0.25em;
-  --even: 0.15em;
-  --open: 0.08em;
-  --tracked: 0.02em;
+  --push-xl: 0.25em;
+  --push-lg: 0.15em;
+  --push-md: 0.08em;
+  --push-sm: 0.02em;
   --tight: -0.015em;
+  // --loose: 0.25em;
+  // --even: 0.15em;
+  // --open: 0.08em;
+  // --tracked: 0.02em;
+  // --tight: -0.015em;
 
   /* font-weight */
   --light: 200;
@@ -140,6 +146,8 @@
   --transition-3-smooth: all 0.3s var(--smooth);
   --transition-4-smooth: all 0.1s var(--smooth);
 
+  --transition-primary: var(--transition-3-smooth);
+
   /* shadows */
   --shadow: 4px 4px 12px var(--black-fade-10);
 
@@ -154,18 +162,21 @@
   --gen-margin: var(--space-2xl);
   --grid-gap: 1.38vw;
   --grid-col: 14.4vw;
+
+  /* mobile sizing */
   --mobile-content-width: 80vw;
+  --mobile-blurb-width: 63vw;
 }
 
 /* role-based token adjustments per breakpoint */
 
 @media (max-width: 1024px) {
   :root {
-    --content-margin: 25vh;
-    // --text-hero: var(--text-5xl);
-    --text-hero-plus: var(--text-6xl);
-    --text-section-header: var(--text-7xl);
-    --text-section-header-plus: var(--text-9xl);
+    --text-hero: clamp(240px, 15vmax, 400px);
+    --text-hero: 16vmax;
+    --text-header: var(--text-7xl);
+    --text-display: var(--text-3xl);
+    --text-prose: var(--text-xl);
   }
 }
 @media (min-width: 2160px) {
@@ -235,11 +246,11 @@ p {
   text-transform: uppercase;
   letter-spacing: var(--even);
   overflow: hidden;
-  transition: var(--transition-3-smooth);
+  transition: var(--transition-primary) !important;
   &:hover {
     letter-spacing: var(--tracked);
     font-style: italic;
-  } 
+  }
 }
 
 .emph {

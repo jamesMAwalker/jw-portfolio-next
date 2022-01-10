@@ -7,7 +7,8 @@ import {
   rsme,
   avail,
   availLabel,
-  availBtn,
+  contact,
+  contactBtn,
 } from '../../styles/layout/top-nav.module.scss'
 
 export const TopNav = () => {
@@ -20,15 +21,15 @@ export const TopNav = () => {
         Developer Portfolio <br /> 2020 - 2021
       </span>
       <span className={rsme}>
-        <button className='pill-btn'>
-          View Resume{' '}
-        </button>
+        <button className='pill-btn'>View Resume </button>
       </span>
       <div className={avail}>
         <span className={availLabel}>
           Available From <br /> <b>November 2021</b>
         </span>
-        <span className={availBtn}>
+      </div>
+      <div className={contact}>
+        <span className={contactBtn}>
           <button className='pill-btn'>{`Let's talk`}</button>
         </span>
       </div>

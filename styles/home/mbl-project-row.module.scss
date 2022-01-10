@@ -1,0 +1,58 @@
+@import '../mixins';
+
+.projectBlock {
+  position: relative;
+  height: 40vh;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  letter-spacing: var(--push-lg);
+  isolation: isolate;
+  .lineOne {
+    margin-bottom: var(--vp-xs);
+    h4 {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      font-size: var(--text-display);
+    }
+  }
+  .lineTwo {
+    display: grid;
+    grid-template-columns: 1.25fr auto;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-header);
+  }
+  button {
+    justify-self: flex-end;
+    margin-top: var(--vp-xs);
+    transform-origin: top left;
+    &.selectedStyle {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.projectAbbr {
+  margin: 0;
+}
+
+.projectImg {
+  height: 80%;
+  width: auto;
+  margin-left: var(--space-lg);
+  border-radius: var(--radius-rounded);
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

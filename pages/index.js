@@ -42,6 +42,9 @@ export default function Home({ projects }) {
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
+    // only set scrollProgress on desktop
+    if (window.innerWidth <= 1024) return
+    
     const totalHeight = layoutRef.current.clientHeight
     const maxScroll = totalHeight - window.innerHeight
 

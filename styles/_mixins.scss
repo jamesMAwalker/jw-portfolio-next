@@ -1,3 +1,5 @@
+// Components
+
 @mixin blurb {
   width: 40vw;
   font-family: var(--font-body);
@@ -42,6 +44,10 @@
   justify-content: center;
 }
 
+
+
+// Pseudoelements
+
 @mixin pseudoSlide {
   position: absolute;
   z-index: var(--base-one);
@@ -56,3 +62,14 @@
   transition: var(--transition-1-smooth);
 }
 
+@mixin pseudoShade {
+  content: '';
+  position: absolute;  
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary);
+  opacity: 0;
+  transition: var(--transition-1-smooth);
+}
