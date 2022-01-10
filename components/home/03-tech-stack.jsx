@@ -7,35 +7,37 @@ import {
   techList,
   techRow,
   main,
+  outline,
   secondary,
+  bullet,
   buttons,
 } from '../../styles/home/03-tech-stack.module.scss'
 
 const techItems = [
   {
     id: 'js',
-    main: `Javascript (ES6+) •`,
-    secondary: `Typescript`,
+    main: `Javascript (ES6+)`,
+    secondary: [`Typescript`],
   },
   {
     id: 'react',
-    main: `React •`,
-    secondary: `NextJS • Gatsby`,
+    main: `React`,
+    secondary: [`NextJS`, `Gatsby`],
   },
   {
     id: 'css',
-    main: `CSS3 •`,
-    secondary: `SCSS • CSS-in-JS • Styled Components`,
+    main: `CSS3`,
+    secondary: [`SCSS`, `CSS-in-JS`, `Styled Components`],
   },
   {
     id: 'animation',
-    main: `GSAP • Framer Motion • AnimeJS`,
-    secondary: null,
+    main: `Animation`,
+    secondary: [`GSAP`, `Framer Motion`, `AnimeJS`],
   },
   {
     id: 'php',
-    main: `PHP •`,
-    secondary: `WordPress`,
+    main: `PHP`,
+    secondary: [`WordPress`],
   },
 ]
 
@@ -55,8 +57,15 @@ export const TechStack = () => {
         {techItems.map(tch => {
           return (
             <li className={techRow} key={tch.id}>
-              <span className={main}>{tch.main}</span>
-              <span className={secondary}>{tch.secondary}</span>
+              <span className={`${main}`}>{tch.main}</span>
+              <div className={secondary}>{tch.secondary.map(st => {
+                return (
+                  <>
+                    <span className={bullet}>•</span>
+                    <span>{st}</span>
+                  </>
+                )
+              })}</div>
             </li>
           )
         })}

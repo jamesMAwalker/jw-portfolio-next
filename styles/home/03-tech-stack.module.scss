@@ -2,27 +2,68 @@
 
 .tech {
   @include homeSection;
+  width: 100%;
   .label {
     @include label;
   }
   .blurb {
     @include blurb;
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+    }
   }
   .techList {
     @include list;
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+      font-size: var(--text-2xl);
+    }
   }
   .techRow {
+    display: flex;
+    align-items: center;
+    justify-content: start;
     margin-bottom: var(--vp-sm);
+    white-space: nowrap;
+    font-weight: var(--light);
+    letter-spacing: var(--push-ms);
+    span {
+      padding-bottom: var(--vp-xxs);
+    }
+    .secondary {
+      display: flex;
+      color: var(--primary-mute);
+    }
+    .bullet {
+      margin: 0 var(--space-lg);
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: var(--vp-md);
+      .bullet {
+        display: none;
+      }
+      .secondary {
+        flex-direction: column;
+      }
+    }
   }
   .buttons {
     width: 40vw;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: 10vw 10vw;
     button {
-      width: 25%;
+      width: 100%;
       padding: 0 2vh;
       margin-right: var(--space-3xl);
+    }
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+      gap: 0 5vw;
+      grid-template-columns:  repeat(2, 1fr);
     }
   }
 }
