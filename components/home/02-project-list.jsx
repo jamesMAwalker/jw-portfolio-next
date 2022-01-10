@@ -1,9 +1,4 @@
-import React, {
-  Fragment,
-  useEffect,
-  useState,
-} from 'react'
-import { v4 as uuid } from 'uuid'
+import React, { Fragment, useEffect, useState } from 'react'
 
 import { ProjectRow } from './project-row'
 import { ProjectRowMobile } from './mbl-project-row'
@@ -14,17 +9,12 @@ import {
   mobileSelectShade,
 } from '../../styles/home/02-project-list.module.scss'
 
-export const ProjectList = ({ projects }) => {
-  const [isMobile, setisMobile] = useState(false)
+export const ProjectList = ({ projects, isMobile }) => {
   const [selectedProject, setSelectedProject] = useState(0)
 
   const handleSelect = (idx) => {
     setSelectedProject(idx)
   }
-
-  useEffect(() => {
-    setisMobile(window.innerWidth <= 1024)
-  }, [])
 
   return (
     <section
@@ -48,7 +38,7 @@ export const ProjectList = ({ projects }) => {
         let pushed = idx % 2 === 0
 
         return (
-          <Fragment key={uuid()}>
+          <Fragment key={prj.abbr}>
             {isMobile ? (
               <ProjectRowMobile
                 prj={prj}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import Head from 'next/head'
 import { server } from '../config/index'
+import { useWindowSize } from 'react-use'
 
 import { Hero } from '../components/home/01-hero'
 import { ProjectList } from '../components/home/02-project-list'
@@ -40,11 +41,20 @@ export default function Home({ projects }) {
   // progress bar logic
   const layoutRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+  const { width } = useWindowSize()
+
+  useEffect(() => {
+    if (window.innerWidth <= 1024) {
+      setIsMobile(true)
+    }
+  }, [width])
+
 
   useEffect(() => {
     // only set scrollProgress on desktop
     if (window.innerWidth <= 1024) return
-    
+
     const totalHeight = layoutRef.current.clientHeight
     const maxScroll = totalHeight - window.innerHeight
 
@@ -70,7 +80,7 @@ export default function Home({ projects }) {
       <main className={content} ref={layoutRef}>
         <TopNav />
         <Hero />
-        <ProjectList projects={projects} />
+        <ProjectList projects={projects} isMobile={isMobile} />
         <TechStack />
         <Writing />
         <Contact />
