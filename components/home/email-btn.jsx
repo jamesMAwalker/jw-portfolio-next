@@ -17,6 +17,8 @@ export const EmailBtn = () => {
     setSliderOff(false)
   }
 
+  // TODO - Adapt tooltip for mobile.
+
   return (
     <div
       className={email}

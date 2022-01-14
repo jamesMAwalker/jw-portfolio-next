@@ -9,7 +9,7 @@ import {
   text,
   dot,
   visible
-} from '../../styles/home/04-writng.module.scss'
+} from '../../styles/home/04-writing.module.scss'
 
 export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
   const cursorRef = useRef(null)

@@ -3,6 +3,9 @@
 .contact {
   @include homeSection;
   min-height: 100vh;
+  @media (max-width: 1024px) {
+    min-height: unset;
+  }
   .label {
     @include label;
   }
@@ -27,8 +30,11 @@
       background-color: var(--grey-10);
       opacity: 0.2;
     }
+    @media (max-width: 1024px) {
+      font-size: var(--text-5xl);
+    }
   }
-  .line {
+  .bannerLine {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,9 +67,13 @@
     @include blurb;
     margin: var(--vp-xl) 0;
     font-weight: var(--bold);
-    letter-spacing: var(--even);
+    letter-spacing: var(--push-md);
     span {
       color: var(--primary);
+    }
+    @media (max-width: 1024px) {
+      margin: var(--vp-lg);
+      width: var(--mobile-blurb-width);
     }
   }
   .email {
@@ -71,9 +81,20 @@
     position: relative;
     font-family: var(--font-title);
     font-size: var(--text-5xl);
-    letter-spacing: var(--open);
+    letter-spacing: var(--push-xl);
     color: var(--text-color);
     text-transform: uppercase;
+    @media (max-width: 1024px) {
+      height: 15vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-2xl-plus);
+      letter-spacing: var(--push-xl);
+      border-top: 1px solid var(--text-color);
+      border-bottom: 1px solid var(--text-color);
+    }
     & > * {
       transition: var(--transition-3-smooth);
     }
@@ -118,7 +139,7 @@
         transform: translate(-50%, -50%);
         transition: var(--transition-3-smooth);
         &.off {
-          transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important; 
         }
         span {
           height: 5vh;

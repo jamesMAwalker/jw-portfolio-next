@@ -10,9 +10,13 @@ import {
   blurb,
   writingList,
   writingRow,
+  writingImg,
+  writingBtn,
   button,
   dot,
-} from '../../styles/home/04-writng.module.scss'
+} from '../../styles/home/04-writing.module.scss'
+
+const BASE_IMG_URL = `https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1627636122`
 
 const writings = [
   {
@@ -21,7 +25,7 @@ const writings = [
   },
   {
     title: `The ESM Revolution`,
-    slug: `image-shootout_nx51uw`,
+    slug: `french-rev_peyiuz`,
   },
   {
     title: `SVG is Everything`,
@@ -29,11 +33,11 @@ const writings = [
   },
   {
     title: `Why State Machines`,
-    slug: `giphy_tip2fy`,
+    slug: `machine-head_yaxs00`,
   },
 ]
 
-export const Writing = () => {
+export const Writing = ({ isMobile }) => {
   const { ref: writingRef, inView: writingInView } =
     useInView()
   const [cursorVisible, setCursorVisible] = useState(false)
@@ -73,11 +77,13 @@ export const Writing = () => {
       }}
       ref={writingRef}
     >
-      <WritingCursor
-        cursorVisible={cursorVisible}
-        imgList={writings}
-        currImg={cursorImg}
-      />
+      {!isMobile && (
+        <WritingCursor
+          cursorVisible={cursorVisible}
+          imgList={writings}
+          currImg={cursorImg}
+        />
+      )}
       <h3 className={label}>WRITING</h3>
       <p className={blurb}>
         I like to write about my experiences as a developer
@@ -96,7 +102,15 @@ export const Writing = () => {
               setCursorImg(idx)
             }}
           >
+            {isMobile && (
+              <div className={writingImg}>
+                <img src={`${BASE_IMG_URL}/${wrtg.slug}`} alt={wrtg.title} />
+              </div>
+            )}
             {wrtg.title}
+            {isMobile && (
+              <button className={`pill-btn ${writingBtn}`}>...Read More</button>
+            )}
           </li>
         ))}
       </ul>

@@ -5,7 +5,7 @@ import {
   contact,
   label,
   banners,
-  line,
+  bannerLine,
   lineOne,
   lineTwo,
   phrase as phraseStyle,
@@ -14,6 +14,8 @@ import {
 import { EmailBtn } from './email-btn'
 
 export const Contact = () => {
+
+  // TODO - Fix email actions in mobile version.
 
   return (
     <section className={contact}>
@@ -25,7 +27,7 @@ export const Contact = () => {
 
             return (
               <div
-                className={`${line} ${lineNum}`}
+                className={`${bannerLine} ${lineNum}`}
                 key={uuid()}
               >
                 <a href='mailto:me@jmswlkr.dev'>

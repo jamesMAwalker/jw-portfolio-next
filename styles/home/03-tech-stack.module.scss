@@ -15,6 +15,7 @@
   .techList {
     @include list;
     @media (max-width: 1024px) {
+      margin-bottom: 0;
       width: var(--mobile-blurb-width);
       font-size: var(--text-2xl);
     }

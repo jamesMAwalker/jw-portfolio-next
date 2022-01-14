@@ -19,6 +19,9 @@
   font-size: var(--text-md) !important;
   font-weight: var(--light);
   text-transform: uppercase;
+  @media (max-width: 1024px) {
+    // padding-left: var(--vp-md);
+  }
 }
 
 @mixin list {

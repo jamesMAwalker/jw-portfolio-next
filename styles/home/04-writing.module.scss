@@ -2,7 +2,7 @@
 
 .writing {
   @include homeSection;
-  padding-bottom: var(--vp-lg);
+  // padding-bottom: var(--vp-lg);
   overflow: hidden;
   cursor: crosshair;
   & > * {
@@ -13,9 +13,14 @@
   }
   .blurb {
     @include blurb;
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+      margin-bottom: var(--vp-md);
+    }
   }
   .writingList {
     @include list;
+    width: var(--mobile-blurb-width);
     font-size: var(--text-display);
   }
   .writingRow {
@@ -23,12 +28,40 @@
       margin-bottom: var(--vp-lg);
     }
   }
+  .writingImg {
+    height: 14vh;
+    width: 55vw;
+    background-color: var(--primary-soft);
+    border-radius: var(--radius-rounded);
+    margin-bottom: var(--vp-sm);
+    margin-left: var(--pill-overshoot);
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .writingBtn {
+    margin-top: var(--vp-xxs);
+    border: none;
+    letter-spacing: var(--push-md);
+    font-weight: var(--semibold);
+  }
   .button {
-    margin-top: var(--vp-md);
+    margin-top: var(--vp-sm);
     width: 40vw;
     button {
       width: 50%;
       padding: 0 var(--vp-md);
+    }
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+      white-space: nowrap;
+      button {
+        width: 60%;
+        margin-left: 20%;
+      } 
     }
   }
   .cursorImg {

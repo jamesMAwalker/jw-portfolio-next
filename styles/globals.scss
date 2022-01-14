@@ -63,6 +63,7 @@
   /* spacing */
   --space-xs: 2px;
   --space-sm: 4px;
+  --space-ms: 6px;
   --space-md: 8px;
   --space-lg: 16px;
   --space-xl: 20px;
@@ -75,7 +76,9 @@
   --vp-xxs: 1vh;
   --vp-xs: 1.5vh;
   --vp-sm: 2.5vh;
+  --vp-ms: 3.5vh;
   --vp-md: 5vh;
+  --vp-ml: 6.5vh;
   --vp-lg: 9vh;
   --vp-xl: 13vh;
   --vp-2xl: 26vh;
@@ -113,6 +116,7 @@
   --text-lg: 18px;
   --text-xl: 20px;
   --text-2xl: 24px;
+  --text-2xl-plus: 28px;
   --text-3xl: 32px;
   --text-3xl-plus: 40px;
   --text-4xl: 48px;
@@ -168,6 +172,9 @@
   /* mobile sizing */
   --mobile-content-width: 80vw;
   --mobile-blurb-width: 63vw;
+
+  /* margin */
+  --pill-overshoot: -5px;
 }
 
 /* role-based token adjustments per breakpoint */

@@ -13,13 +13,14 @@ import { TopNav } from '../components/layout/top-nav'
 import {
   layout,
   content,
-  footer,
-  social,
-  design,
-  footerLink,
-  linkout,
+  // footer,
+  // social,
+  // design,
+  // footerLink,
+  // linkout,
   progressBar,
 } from '../styles/layout/layout.module.scss'
+import { Footer } from '../components/layout/footer'
 
 export const getStaticProps = async () => {
   const res = await fetch(`${server}/projects.json`)
@@ -80,33 +81,15 @@ export default function Home({ projects }) {
       <main className={content} ref={layoutRef}>
         <TopNav />
         <Hero />
-        <ProjectList projects={projects} isMobile={isMobile} />
+        <ProjectList
+          projects={projects}
+          isMobile={isMobile}
+        />
         <TechStack />
-        <Writing />
+        <Writing isMobile={isMobile} />
         <Contact />
       </main>
-      <footer className={footer}>
-        <div className={social}>
-          <span className={`${footerLink} pill-btn`}>
-            Github
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            Codepen
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            LinkedIn
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            Strava
-          </span>
-        </div>
-        <div className={design}>
-          Design adapted from{' '}
-          <span className={linkout}>
-            &nbsp; Isaac Fayemi
-          </span>
-        </div>
-      </footer>
+      <Footer isMobile={isMobile} />
       <div
         className={progressBar}
         style={{ width: `${scrollProgress}vw` }}
