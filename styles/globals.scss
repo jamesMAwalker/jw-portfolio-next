@@ -17,6 +17,7 @@
 
   /* palette */
   --full-black: rgb(0, 0, 0);
+  --black: #464646;
   --black: rgb(70, 70, 70);
   --black-fade-5: hsla(0, 0%, 0%, 0.05);
   --black-fade-10: hsla(0, 0%, 0%, 0.1);
@@ -137,6 +138,7 @@
   --primary-muter: var(--ocean-blue);
   --background: var(--white);
   --text-color: var(--black);
+  --text-color-inv: #b9b9b9;
 
   /* bezier curves */
   --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);

@@ -20,8 +20,17 @@
   }
   .writingList {
     @include list;
-    width: var(--mobile-blurb-width);
+    background-color: transparent;
     font-size: var(--text-display);
+    @media (max-width: 1024px) {
+      width: var(--mobile-blurb-width);
+    }
+  }
+  .writingTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .writingRow {
     &:not(:last-child) {
@@ -61,7 +70,7 @@
       button {
         width: 60%;
         margin-left: 20%;
-      } 
+      }
     }
   }
   .cursorImg {
@@ -79,7 +88,7 @@
     display: none;
     overflow: hidden;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;

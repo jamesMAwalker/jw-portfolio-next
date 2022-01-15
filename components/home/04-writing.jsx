@@ -10,6 +10,7 @@ import {
   blurb,
   writingList,
   writingRow,
+  writingTitle,
   writingImg,
   writingBtn,
   button,
@@ -20,19 +21,39 @@ const BASE_IMG_URL = `https://res.cloudinary.com/jameswalker-work/image/upload/f
 
 const writings = [
   {
-    title: `Making the Most of 15.6"`,
+    title: (
+      <>
+        <span>Making the </span>
+        <span>Most of 15.6"</span>
+      </>
+    ),
     slug: `giphy_hpbbwp`,
   },
   {
-    title: `The ESM Revolution`,
+    title: (
+      <>
+        <span>The ESM </span>
+        <span>Revolution</span>
+      </>
+    ),
     slug: `french-rev_peyiuz`,
   },
   {
-    title: `SVG is Everything`,
+    title: (
+      <>
+        <span>SVG is </span>
+        <span>Everything</span>
+      </>
+    ),
     slug: `qZXmip97ej4JEZTWwRCyHZ-970-80_wjskwn`,
   },
   {
-    title: `Why State Machines`,
+    title: (
+      <>
+        <span>Why State </span>
+        <span>Machines</span>
+      </>
+    ),
     slug: `machine-head_yaxs00`,
   },
 ]
@@ -104,12 +125,17 @@ export const Writing = ({ isMobile }) => {
           >
             {isMobile && (
               <div className={writingImg}>
-                <img src={`${BASE_IMG_URL}/${wrtg.slug}`} alt={wrtg.title} />
+                <img
+                  src={`${BASE_IMG_URL}/${wrtg.slug}`}
+                  alt={wrtg.title}
+                />
               </div>
             )}
-            {wrtg.title}
+            <div className={writingTitle}>{wrtg.title}</div>
             {isMobile && (
-              <button className={`pill-btn ${writingBtn}`}>...Read More</button>
+              <button className={`pill-btn ${writingBtn}`}>
+                ...Read More
+              </button>
             )}
           </li>
         ))}
