@@ -257,10 +257,11 @@ p {
   text-transform: uppercase;
   letter-spacing: var(--even);
   overflow: hidden;
-  transition: var(--transition-primary) !important;
+  transition: var(--transition-primary) ;
+  transition: var(--transition-3-smooth) !important;
   &:hover {
-    letter-spacing: var(--tracked);
-    font-style: italic;
+    letter-spacing: var(--push-md);
+    transform: skewX(-5deg);
   }
 }
 
