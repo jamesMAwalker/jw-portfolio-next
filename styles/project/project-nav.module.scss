@@ -1,0 +1,103 @@
+.projectNav {
+  height: 4vh;
+  width: 100%;
+  padding-top: 5vh;
+  display: grid;
+  gap: 0 var(--grid-gap);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: 'name date . . . back';
+  @media (max-width: 1024px) {
+    padding-top: 2vh;
+    height: auto;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: repeat(3, 6.5vh);
+    grid-template-areas:
+      'name  .'
+      '.     .'
+      'date  .';
+  }
+  .name,
+  .date {
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-transform: uppercase;
+  }
+  .name {
+    grid-area: name;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    span {
+      color: var(--grey-40);
+    }
+    @media (max-width: 1024px) {
+      font-weight: var(--semibold);
+      font-size: var(--text-md);
+    }
+  }
+  .date {
+    grid-area: date;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    span {
+      color: var(--grey-40);
+    }
+  }
+  .back {
+    grid-area: back;
+    display: flex;
+    justify-content: flex-end;
+    transform-origin: right;
+    @media (max-width: 1024px) {
+      justify-content: center;
+      flex-direction: column;
+      transform: scale(.75);
+      .backBtn {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 2vh;
+        button {
+          height: 5vh !important;
+        }
+      }
+    }
+    .backBtn {
+      height: 100%;
+      width: 10vw;
+      margin-left: var(--grid-gap);
+      button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.projectsBtn {
+  z-index: var(--level-top);
+  position: fixed;
+  right: calc((100vw - 93.6vw) / 2);
+  bottom: calc((100vw - 93.6vw) / 2.5);
+  width: 10vw;
+  font-family: var(--font-title);
+  padding: var(--space-sm) var(--space-2xl);
+  color: var(--primary-muter);
+  border-color: var(--primary-muter);
+  background-color: var(--white);
+  &:hover {
+    letter-spacing: var(--push-md);
+    transform: unset;
+    background-color: var(--primary-light);
+  }
+  span {
+    transform: translateY(5%);
+  }
+}

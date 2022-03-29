@@ -13,15 +13,12 @@ import { TopNav } from '../components/layout/top-nav'
 import {
   layout,
   content,
-  // footer,
-  // social,
-  // design,
-  // footerLink,
-  // linkout,
   progressBar,
 } from '../styles/layout/layout.module.scss'
 import { Footer } from '../components/layout/footer'
 
+
+// get page paths
 export const getStaticProps = async () => {
   const res = await fetch(`${server}/projects.json`)
 
@@ -34,9 +31,11 @@ export const getStaticProps = async () => {
   const data = await res.json()
 
   return {
-    props: { projects: data },
+    props: { projects: data, fallback: false },
   }
 }
+
+
 
 export default function Home({ projects }) {
   // progress bar logic
@@ -50,7 +49,6 @@ export default function Home({ projects }) {
       setIsMobile(true)
     }
   }, [width])
-
 
   useEffect(() => {
     // only set scrollProgress on desktop

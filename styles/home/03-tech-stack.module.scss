@@ -23,7 +23,7 @@
   .techRow {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-bottom: var(--vp-sm);
     white-space: nowrap;
     font-weight: var(--light);

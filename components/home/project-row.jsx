@@ -50,8 +50,8 @@ export const ProjectRow = ({ prj, pushed, index }) => {
       <a
         className={`${projectRowSlide} ${isPushed} row__${index}`}
       >
-        {Array.from({ length: 3 }).map(() => (
-          <div className={projectRow} key={prj.abbr}>
+        {Array.from({ length: 3 }).map((sgmt, idx) => (
+          <div className={projectRow} key={idx}>
             <div className={`${projectImg} ${small}`}>
               <img
                 src={`https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1639980948/Portfolio/${prj.previewImg.short}.png`}

@@ -5,7 +5,7 @@
   font-family: var(--font-body);
   font-weight: var(--medium);
   font-size: clamp(var(--text-md), 2vmin, var(--text-3xl));
-  letter-spacing: var(--open);
+  letter-spacing: var(--push-md);
 }
 
 @mixin label {

@@ -1,12 +1,21 @@
 [
   {
     "name": ["Roots -", "Plantbased Café"],
+    "date": "2020 - 2021",
+    "number": "1 / 4",
     "abbr": "rpbc",
     "desc": "is a vegan kitchen and grocery targeting the expat community in Da Nang, Vietnam.",
+    "roles": ["UI/UX Design", "Web Development"],
+    "tech": ["React", "Gatsby", "GSAP", "Shopify API", "Instagram API"],
     "previewImg": {
       "long": "roots--long_drenqp",
       "short": "roots--short_ylcaef"
     },
+    "lead": [
+      "",
+      "is a fashion forward sunglasses boutique based in",
+      ""
+    ],
     "blocks1": [
       "Roots is indeed in Vietnam, but is situated in an area populated mostly with English-speaking expats, thus needing to cater to both forgeign customers as well as the local Vietnamese. ",
       "Their online presence suffered from two central issues. First, the website was an older WordPress site whose design was dated and unappealing, as well as quite slow, due to a lack of maintenance. The second was the increasing reliance on third party delivery services for both delivery as well as visibility. ",
@@ -24,38 +33,64 @@
   },
   {
     "name": ["Shades - ", "Eyewear Boutique"],
+    "date": "2020 - 2021",
+    "number": "2 / 4",
     "abbr": "shdz",
     "desc": "is a fashion forward sunglasses boutique based in Santa Monica, CA.",
+    "roles": ["UI/UX Design", "Web Development"],
+    "tech": ["React", "Gatsby", "GSAP", "Shopify API", "Instagram API"],
     "previewImg": {
-      "long": "shdz--long_ao9uvi",
+      "long": "shdz--long--2_h6l2hb",
       "short": "shdz--short_xmdp4w"
     },
-    "blocks1": [
-      "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
-      "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
+    "lead": [
+      "The Shadz",
+      "is a fashion forward sunglasses boutique based in",
+      "Santa Monica, CA."
     ],
-    "blocks2": [
-      "This being a largely photography based fashion boutique, I wanted to focus the design around the excellent photos taken for the redesign. However, I also wanted to avoid the pitfall of image heavy sites where users get lost in a sea of images without knowing really where they are. ",
-      "To this end, I fixed navigation to the edges of the page, and centered the image content in scrollable containers, and had each of them link to a product, rather than just a larger image. ",
-      "Invididual product pages function similarly, with product details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
-    ],
-    "blocks3": [
+    "block1": {
+      "header": "UI/UX Design",
+      "blocks": [
+        "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
+        "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
+      ],
+      "mockupUrl": "shdz-gif--2_sshm5e"
+    },
+    "block2": {
+      "header": "Mobile Design",
+      "blocks": [
+        "This being a largely photography based fashion boutique, I wanted to focus the design around the excellent photos taken for the redesign. However, I also wanted to avoid the pitfall of image heavy sites where users get lost in a sea of images without knowing really where they are. ",
+        "To this end, I fixed navigation to the edges of the page, and centered the image content in scrollable containers, and had each of them link to a product, rather than just a larger image. ",
+        "Invididual product pages function similarly, with product details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
+    },
+    "block3": [
       "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
       "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
     ],
-    "blocks4": [
+    "block4": [
       "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
       "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
     ]
   },
   {
     "name": ["Plant ", "Power Racing"],
+    "date": "2020 - 2021",
+    "number": "3 / 4",
     "abbr": "ppr",
     "desc": "is an all vegan road cycling team based in Santa Monica, CA, with chapters around the world.",
+    "roles": ["UI/UX Design", "Web Development"],
+    "tech": ["React", "Gatsby", "GSAP", "Shopify API", "Instagram API"],
     "previewImg": {
       "long": "ppr--long_inxyir",
       "short": "ppr--short_zfvbar"
     },
+    "lead": [
+      "",
+      "is a fashion forward sunglasses boutique based in",
+      ""
+    ],
     "blocks1": [
       "Plant Power Racing posed a unique challenge in terms of design. Their target audience is not monolithic, needing to appeal to potential sponsors, potential new recruits, casual visitors, and importantly, those who may want to support the team’s cause with donations. ",
       "My solution to this problem of a multifarious audience was to use the team’s stated mission as a sort of seed to which all aspects of the team’s doings could be traced. To this end, I chose to begin with photography that would set the tone for the rest of the ‘narrative’;  communicating a feeling that would color the words in the mission statement set below it.",
@@ -78,12 +113,21 @@
   },
   {
     "name": ["Nishelle Marie -", "Photographer"],
+    "date": "2020 - 2021",
+    "number": "4 / 4",
     "abbr": "NMP",
     "desc": "is a photographer who needed something more than a SquareSpace site.",
+    "roles": ["UI/UX Design", "Web Development"],
+    "tech": ["React", "Gatsby", "GSAP", "Shopify API", "Instagram API"],
     "previewImg": {
       "long": "nwp--long_rmgfwz",
       "short": "nwp--short_yv9nfv"
     },
+    "lead": [
+      "",
+      "is a fashion forward sunglasses boutique based in",
+      ""
+    ],
     "blocks1": [
       "Photographers and other freelance artists often start by using one of the many drag and drop site builder tools available. While these can be a great way to get started, they’re limited in scope and presentation, and their neccessarily cookie cutter design can leave visitors to the site with a feeling of the ordinary.",
       "Nishelle wanted to level up into something that would present her work in a uniquely interactive and exciting fashion, only really possible through custom design and and build. We worked closely to develop something in line with her artistic sensibilities, and ultimately created one of my favorite designs."

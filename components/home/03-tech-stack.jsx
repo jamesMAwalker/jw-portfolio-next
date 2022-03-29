@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import {
   tech,
@@ -58,12 +58,12 @@ export const TechStack = () => {
           return (
             <li className={techRow} key={tch.id}>
               <span className={`${main}`}>{tch.main}</span>
-              <div className={secondary}>{tch.secondary.map(st => {
+              <div className={secondary}>{tch.secondary.map((st) => {
                 return (
-                  <>
+                  <Fragment key={st}>
                     <span className={bullet}>•</span>
                     <span>{st}</span>
-                  </>
+                  </Fragment>
                 )
               })}</div>
             </li>

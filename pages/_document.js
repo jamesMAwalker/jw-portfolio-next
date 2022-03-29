@@ -10,12 +10,6 @@ export default function Document() {
           as='font'
           crossOrigin='true'
         />
-        <link
-          rel='preload'
-          href='/fonts/MPLUSCodeLatin-SemiBold.ttf'
-          as='font'
-          crossOrigin='true'
-        />
         <link rel='icon' href='/favicon.ico' />
         <link
           rel='preconnect'
