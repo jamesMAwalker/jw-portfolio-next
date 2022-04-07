@@ -1,0 +1,71 @@
+.phoneMockupContainer {
+  position: relative;
+  isolation: isolate;
+  // overflow: hidden;
+
+  .phoneMockup {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+  }
+  .phoneMockupContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 60px;
+    border-top-left-radius: 200px;
+    transform: scaleX(0.95) scaleY(0.95);
+    // overflow: hidden;
+    box-shadow: 1.5vh 3vh 3vh 0.5vh var(--black-fade-40);
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.laptopMockupContainer {
+  position: relative;
+  isolation: isolate;
+  .laptopMockup {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: contain;
+  }
+  .laptopShadow {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    object-fit: contain;
+  }
+  .laptopMockupContent {
+    z-index: 5;
+    position: absolute;
+    top: 3.5%;
+    left: 16.5%;
+    &::after {
+      z-index: 10;
+      content: "";
+      position: absolute;
+      top: -1.5%;
+      left: 50%;
+      border-radius: 0 0 4px 4px;
+      transform: translate(-50%);
+      height: 15px;
+      width: 10%;
+      background-color: black;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.01);
+      border-radius: 7px 7px 4px 4px;
+    }
+  }
+}

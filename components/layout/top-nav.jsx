@@ -11,7 +11,7 @@ import {
   contactBtn,
 } from '../../styles/layout/top-nav.module.scss'
 
-export const TopNav = () => {
+export const TopNav = ({ offList = [] }) => {
   return (
     <div className={topNav}>
       <span className={name}>

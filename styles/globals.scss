@@ -34,6 +34,7 @@
   --french-blue: #266680;
   --ocean-blue: hsl(198, 27%, 29%);
   --ocean-blue: #005b80;
+  --french-blue-fade-60: hsla(197, 54%, 33%, .4);
 
   /* z-indeces */
   --base-two: -200;
@@ -129,6 +130,7 @@
 
   /* colors */
   --primary: var(--blue);
+  --primary-tr: var(--french-blue-fade-60);
   --primary-light: var(--mist-blue);
   --primary-soft: var(--soft-blue);
   --primary-mute: var(--french-blue);
@@ -265,4 +267,11 @@ p {
 
 .emph {
   color: var(--primary);
+}
+
+
+// + Device Mockups | Custom Styling
+
+.device[data-device=MacbookPro][data-orientation=portrait][data-color=black] .screen {
+
 }

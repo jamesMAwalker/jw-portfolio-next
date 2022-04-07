@@ -46,8 +46,9 @@
     color: var(--primary-mute);
     transform-origin: right;
     transition: var(--transition-3-smooth);
+    white-space: nowrap;
     button {
-      width: 35%;
+      width: 40%;
       height: 100%;
     }
     &:hover {
@@ -59,6 +60,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      white-space: unset;
       button {
         width: 100% !important;
         height: 5vh;

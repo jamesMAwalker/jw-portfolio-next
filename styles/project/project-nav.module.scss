@@ -5,16 +5,16 @@
   display: grid;
   gap: 0 var(--grid-gap);
   grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: 'name date . . . back';
+  grid-template-areas: "name date . . . back";
   @media (max-width: 1024px) {
     padding-top: 2vh;
     height: auto;
     grid-template-columns: 1.25fr 1fr;
     grid-template-rows: repeat(3, 6.5vh);
     grid-template-areas:
-      'name  .'
-      '.     .'
-      'date  .';
+      "name  ."
+      ".     ."
+      "date  .";
   }
   .name,
   .date {
@@ -59,7 +59,7 @@
     @media (max-width: 1024px) {
       justify-content: center;
       flex-direction: column;
-      transform: scale(.75);
+      transform: scale(0.75);
       .backBtn {
         width: 100% !important;
         margin-left: 0 !important;
@@ -87,17 +87,35 @@
   right: calc((100vw - 93.6vw) / 2);
   bottom: calc((100vw - 93.6vw) / 2.5);
   width: 10vw;
+  height: 5vh;
   font-family: var(--font-title);
   padding: var(--space-sm) var(--space-2xl);
   color: var(--primary-muter);
   border-color: var(--primary-muter);
   background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
   &:hover {
     letter-spacing: var(--push-md);
     transform: unset;
     background-color: var(--primary-light);
   }
+  div {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 3%);
+    transform: translate(-50%, -46%);
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   span {
-    transform: translateY(5%);
+    height: 8vh;
+    white-space: nowrap;
   }
 }

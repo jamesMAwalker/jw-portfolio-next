@@ -47,14 +47,12 @@
   justify-content: center;
 }
 
-
-
 // Pseudoelements
 
 @mixin pseudoSlide {
   position: absolute;
   z-index: var(--base-one);
-  content: '';
+  content: "";
   top: 0;
   left: -150vw;
   height: 100%;
@@ -66,8 +64,8 @@
 }
 
 @mixin pseudoShade {
-  content: '';
-  position: absolute;  
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -75,4 +73,12 @@
   background-color: var(--primary);
   opacity: 0;
   transition: var(--transition-1-smooth);
+}
+
+// Typography
+
+@mixin outlineText($bgColor, $outlineColor) {
+  color: $bgColor;
+  text-shadow: -1px -1px 0 $outlineColor, 1px -1px 0 $outlineColor, -1px 1px 0 $outlineColor,
+    1px 1px 0 $outlineColor;
 }

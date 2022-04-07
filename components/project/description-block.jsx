@@ -1,6 +1,7 @@
 import React from 'react'
+// import { Pixel, MacbookPro } from 'react-device-mockups'
 
-import { Pixel, MacbookPro } from 'react-device-mockups'
+import { IPhone13Blue } from './iphone13-mockup'
 
 import {
   blockContainer,
@@ -8,10 +9,9 @@ import {
   header,
   blurb as blurbStyle,
   mockup as mockupStyle,
-  mockupScreen,
 } from '../../styles/project/description-block.module.scss'
 
-import { baseGifUrl } from '../../utils/baseImgUrl'
+import { MackBookPro } from './macbook-mockup'
 
 export const DescriptionBlock = ({
   title,
@@ -30,19 +30,22 @@ export const DescriptionBlock = ({
       </div>
       <div className={mockupStyle}>
         {mockup.device === 'MBP' ? (
-          <MacbookPro width={'40vw'}>
-            <img
-              src={baseGifUrl(mockup.url)}
-              alt={title}
+          // <MacbookPro width={'40vw'}>
+          //   <img src={baseGifUrl(mockup.url)} alt={title} />
+          // </MacbookPro>
+          <div className={mockupStyle}>
+            <MackBookPro
+              contentUrlFrag={mockup.url}
+              mockupHeight={60}
             />
-          </MacbookPro>
+          </div>
         ) : (
-          <Pixel height={300}>
-            <img
-              src={baseGifUrl(mockup.url)}
-              alt={title}
+          <div className={mockupStyle}>
+            <IPhone13Blue
+              contentUrlFrag={mockup.url}
+              mockupHeight={35}
             />
-          </Pixel>
+          </div>
         )}
       </div>
     </div>
