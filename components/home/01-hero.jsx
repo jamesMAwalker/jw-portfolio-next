@@ -42,11 +42,9 @@ export const Hero = () => {
         <span className={segOne}>
           {' '}
           {'Front'.split('').map((lett, idx) => (
-            <HeroLetter
-              resetting={letterResetActive}
-              lett={lett}
-              idx={idx}
-            />
+            <Fragment key={`${lett}-${idx}`}>
+              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+            </Fragment>
           ))}
         </span>
         <span className={segTwo}>
@@ -56,11 +54,9 @@ export const Hero = () => {
           />
           <span>
             {'End'.split('').map((lett, idx) => (
-              <HeroLetter
-                resetting={letterResetActive}
-                lett={lett}
-                idx={idx}
-              />
+              <Fragment key={`${lett}-${idx}`}>
+                <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+              </Fragment>
             ))}
           </span>
         </span>
@@ -68,20 +64,16 @@ export const Hero = () => {
       <div className={lineTwo}>
         <div className={segOne}>
           {'Deve'.split('').map((lett, idx) => (
-            <HeroLetter
-              resetting={letterResetActive}
-              lett={lett}
-              idx={idx}
-            />
+            <Fragment key={`${lett}-${idx}`}>
+              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+            </Fragment>
           ))}
         </div>
         <div className={segTwo}>
           {'loper'.split('').map((lett, idx) => (
-            <HeroLetter
-              resetting={letterResetActive}
-              lett={lett}
-              idx={idx}
-            />
+            <Fragment key={`${lett}-${idx}`}>
+              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+            </Fragment>
           ))}
         </div>
         <span className={aboutImg}>
