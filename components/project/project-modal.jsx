@@ -45,7 +45,7 @@ export const ProjectModal = ({ projects, closeModal }) => {
         <ul className={projectListStyle}>
           {projectList.map((prj) => {
             return (
-              <Link href={`/projects/${prj.abbr}`}>
+              <Link href={`/projects/${prj.abbr}`} key={prj.abbr}>
                 <a onClick={closeModal}>
                   <li className={projectRow} key={prj.abbr}>
                     <span

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
 
@@ -22,43 +22,66 @@ import {
 } from '../../styles/home/01-hero.module.scss'
 
 import { DownArrow } from '../svg/down-arr'
+import { HeroLetter } from './hero-letter'
 
 export const Hero = () => {
+  const [letterResetActive, setLetterResetActive] =
+    useState(false)
+
+  // Reset letters to black when user clicks reset bar
+  const resetLetterColor = () => {
+    setLetterResetActive(true)
+    setTimeout(() => {
+      setLetterResetActive(false)
+    }, 500)
+  }
+
   return (
     <section className={hero}>
       <div className={lineOne}>
         <span className={segOne}>
           {' '}
           {'Front'.split('').map((lett, idx) => (
-            <span className={letter} key={uuid()}>
-              {lett}
-            </span>
+            <HeroLetter
+              resetting={letterResetActive}
+              lett={lett}
+              idx={idx}
+            />
           ))}
         </span>
         <span className={segTwo}>
-          <div className={separator} />
+          <div
+            className={separator}
+            onClick={resetLetterColor}
+          />
           <span>
-            {'End'.split('').map((lett) => (
-              <span className={letter} key={uuid()}>
-                {lett}
-              </span>
+            {'End'.split('').map((lett, idx) => (
+              <HeroLetter
+                resetting={letterResetActive}
+                lett={lett}
+                idx={idx}
+              />
             ))}
           </span>
         </span>
       </div>
       <div className={lineTwo}>
         <div className={segOne}>
-          {'Deve'.split('').map((lett) => (
-            <span className={letter} key={uuid()}>
-              {lett}
-            </span>
+          {'Deve'.split('').map((lett, idx) => (
+            <HeroLetter
+              resetting={letterResetActive}
+              lett={lett}
+              idx={idx}
+            />
           ))}
         </div>
         <div className={segTwo}>
-          {'loper'.split('').map((lett) => (
-            <span className={letter} key={uuid()}>
-              {lett}
-            </span>
+          {'loper'.split('').map((lett, idx) => (
+            <HeroLetter
+              resetting={letterResetActive}
+              lett={lett}
+              idx={idx}
+            />
           ))}
         </div>
         <span className={aboutImg}>
@@ -72,12 +95,12 @@ export const Hero = () => {
         <p className={about}>
           <span className='emph'>Hi! </span>I’m James. I’m a
           frontend developer based out of Santa Monica, CA.
-          <br/>
-          <br/>
-          I specialize in using React and its associated
-          frameworks to create seamless experiences for the
-          web. Currently developing and designing work for
-          Radiance Photography in Los Angeles, CA.
+          <br />
+          <br />I specialize in using React and its
+          associated frameworks to create seamless
+          experiences for the web. Currently developing and
+          designing work for Radiance Photography in Los
+          Angeles, CA.
         </p>
         <Link href='/#projects'>
           <a className={scrollInd}>
