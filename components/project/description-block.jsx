@@ -16,7 +16,7 @@ import { MbpMockup } from './macbook-mockup'
 export const DescriptionBlock = ({
   title,
   blurb,
-  mockup,
+  mockup={url: ''},
 }) => {
   return (
     <div className={blockContainer}>

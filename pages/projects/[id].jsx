@@ -59,6 +59,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { id } = context.params
+  console.log('id from gsProps of [id]: ', id);
 
   const res = await fetch(`${server}/projects.json`)
 
@@ -84,6 +85,7 @@ const Project = (props) => {
   const layoutRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
+
 
   // modal animations
   const handleModalToggle = () => {
@@ -137,7 +139,7 @@ const Project = (props) => {
         modalOpen={modalOpen}
       />
       <div className={projectHero}>
-        <div className={lineOne}>
+        {/* <div className={lineOne}>
           <h1>
             {' '}
             {`${prj.abbr}`.split('').map((lett, idx) => (
@@ -190,10 +192,10 @@ const Project = (props) => {
               <span key={rl}>{rl}</span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
       <section className={projectContent}>
-        <h3 className={label}>
+        {/* <h3 className={label}>
           <span>Development/Design</span>
           <span>Case Study</span>
         </h3>
@@ -213,13 +215,14 @@ const Project = (props) => {
             url: prj.block2.mockupUrl,
             device: 'pixel',
           }}
-        />
+        /> */}
       </section>
       <div className={nextProject}>
         <h3 className={label}>
           <span>Next</span>
           <span>Project</span>
         </h3>
+
         <div className={lineTwo}>
           {['Next Project', prj.next.name.join(' ')].map(
             (phrase, idx) => {
@@ -248,6 +251,7 @@ const Project = (props) => {
             }
           )}
         </div>
+
         <div className={lineOne}>
           <h1>
             {' '}
@@ -271,6 +275,7 @@ const Project = (props) => {
             </a>
           </Link>
         </div>
+
       </div>
       <div
         className={progressBar}

@@ -18,12 +18,12 @@ export const HeroLetter = ({ resetting, lett }) => {
   }
 
   const randomBlue = () => {
-    let rIdx = Math.floor(Math.random() * blues.length - 1)
     const blues = [
       `var(--soft-blue)`,
       `var(--ocean-blue)`,
       `var(--french-blue)`,
     ]
+    let rIdx = Math.floor(Math.random() * blues.length - 1)
 
     return blues[rIdx]
   }

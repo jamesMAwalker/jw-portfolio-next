@@ -5,7 +5,7 @@
     "number": "1 / 4",
     "abbr": "rpbc",
     "next": {
-      "abbr": "SHDZ",
+      "abbr": "shdz",
       "path": "/projects/shdz",
       "name":  ["Shades - ", "Eyewear Boutique"],
       "imgUrlFrag": "shdz--long--2_h6l2hb" 
@@ -60,7 +60,7 @@
     "number": "2 / 4",
     "abbr": "shdz",
     "next": {
-      "abbr": "PPR",
+      "abbr": "ppr",
       "path": "/projects/ppr",
       "name": ["Plant ", "Power Racing"],
       "imgUrlFrag": "ppr--long_inxyir" 
@@ -115,7 +115,7 @@
     "number": "3 / 4",
     "abbr": "ppr",
     "next": {
-      "abbr": "NMP",
+      "abbr": "nmp",
       "path": "/projects/nmp",
       "name": ["Nishelle Marie -", "Photographer"],
       "imgUrlFrag": "nwp--long_rmgfwz" 
@@ -170,7 +170,7 @@
     "number": "4 / 4",
     "abbr": "nmp",
     "next": {
-      "abbr": "RPBC",
+      "abbr": "rpbc",
       "path": "/projects/rpbc",
       "name":  ["Roots -", "Plantbased Café"],
       "imgUrlFrag": "roots--long_drenqp" 
