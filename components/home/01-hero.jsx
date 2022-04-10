@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
 
@@ -23,6 +23,7 @@ import {
 
 import { DownArrow } from '../svg/down-arr'
 import { HeroLetter } from './hero-letter'
+import { Fragment } from 'react/cjs/react.production.min'
 
 export const Hero = () => {
   const [letterResetActive, setLetterResetActive] =
@@ -43,7 +44,10 @@ export const Hero = () => {
           {' '}
           {'Front'.split('').map((lett, idx) => (
             <Fragment key={`${lett}-${idx}`}>
-              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+              <HeroLetter
+                resetting={letterResetActive}
+                lett={lett}
+              />
             </Fragment>
           ))}
         </span>
@@ -55,7 +59,10 @@ export const Hero = () => {
           <span>
             {'End'.split('').map((lett, idx) => (
               <Fragment key={`${lett}-${idx}`}>
-                <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+                <HeroLetter
+                  resetting={letterResetActive}
+                  lett={lett}
+                />
               </Fragment>
             ))}
           </span>
@@ -65,14 +72,20 @@ export const Hero = () => {
         <div className={segOne}>
           {'Deve'.split('').map((lett, idx) => (
             <Fragment key={`${lett}-${idx}`}>
-              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+              <HeroLetter
+                resetting={letterResetActive}
+                lett={lett}
+              />
             </Fragment>
           ))}
         </div>
         <div className={segTwo}>
           {'loper'.split('').map((lett, idx) => (
             <Fragment key={`${lett}-${idx}`}>
-              <HeroLetter resetting={letterResetActive} lett={lett} idx={idx} />
+              <HeroLetter
+                resetting={letterResetActive}
+                lett={lett}
+              />
             </Fragment>
           ))}
         </div>

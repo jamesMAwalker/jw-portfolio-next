@@ -9,7 +9,7 @@ import {
 
 import { baseGifUrl } from '../../utils/baseImgUrl'
 
-export const MackBookPro = ({
+export const MbpMockup = ({
   contentUrlFrag,
   mockupHeight = 50,
 }) => {

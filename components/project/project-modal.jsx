@@ -12,7 +12,7 @@ import {
   projectNameL,
   projectNameR,
   footerSocial,
-  footerLink
+  footerLink,
 } from '../../styles/project/project-modal.module.scss'
 
 export const ProjectModal = ({ projects, closeModal }) => {
@@ -45,7 +45,10 @@ export const ProjectModal = ({ projects, closeModal }) => {
         <ul className={projectListStyle}>
           {projectList.map((prj) => {
             return (
-              <Link href={`/projects/${prj.abbr}`} key={prj.abbr}>
+              <Link
+                href={`/projects/${prj.abbr}`}
+                key={prj.abbr}
+              >
                 <a onClick={closeModal}>
                   <li className={projectRow} key={prj.abbr}>
                     <span
@@ -70,18 +73,20 @@ export const ProjectModal = ({ projects, closeModal }) => {
       </div>
       <footer className={modalFooter}>
         <div className={footerSocial}>
-          <span className={`${footerLink} pill-btn`}>
-            Github
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            Codepen
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            LinkedIn
-          </span>
-          <span className={`${footerLink} pill-btn`}>
-            Strava
-          </span>
+          {[
+            { display: 'Github', link: '' },
+            { display: 'Codepen', link: '' },
+            { display: 'LinkedIn', link: '' },
+            { display: 'Strava', link: '' },
+          ].map(({ display, link }) => {
+            return (
+              <Link href={link} key={display}>
+                <a className={`${footerLink} pill-btn`}>
+                  {display}
+                </a>
+              </Link>
+            )
+          })}
         </div>
       </footer>
     </div>

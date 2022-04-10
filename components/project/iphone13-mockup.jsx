@@ -8,7 +8,7 @@ import {
 
 import { baseGifUrl } from '../../utils/baseImgUrl'
 
-export const IPhone13Blue = ({ contentUrlFrag, mockupHeight=40 }) => {
+export const IP13Mockup = ({ contentUrlFrag, mockupHeight=40 }) => {
 
   const mockupSize = (height) => {
     return {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import { letter } from '../../styles/home/01-hero.module.scss'
 
-export const HeroLetter = ({ resetting, lett, idx }) => {
+export const HeroLetter = ({ resetting, lett }) => {
   const [isBlack, setIsBlack] = useState(true)
 
 
@@ -18,21 +18,19 @@ export const HeroLetter = ({ resetting, lett, idx }) => {
   }
 
   const randomBlue = () => {
+    let rIdx = Math.floor(Math.random() * blues.length - 1)
     const blues = [
       `var(--soft-blue)`,
       `var(--ocean-blue)`,
       `var(--french-blue)`,
     ]
 
-    return blues[
-      Math.floor(Math.random() * blues.length - 1)
-    ]
+    return blues[rIdx]
   }
 
   return (
     <span
       className={letter}
-      key={`${lett}-${idx}`}
       onClick={toggleColor}
       style={{
         color: isBlack ? 'var(--text-color)' : randomBlue(),

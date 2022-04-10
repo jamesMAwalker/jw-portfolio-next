@@ -54,10 +54,6 @@ export const ProjectNav = ({ name, date, num, toggleModal, modalOpen }) => {
         className={`${projectsBtn} pill-btn`}
         onClick={toggleModal}
       >
-        {/* <span>
-          {modalOpen ? `↘` : `↖`}{' '}
-          {modalOpen ? 'Close' : 'All Projects'}
-        </span> */}
         <div className='btn-inner'>
           <span className={closeText}>↘ Close</span>
           <span className={openText}>↖ All Projects</span>

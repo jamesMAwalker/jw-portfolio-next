@@ -39,7 +39,7 @@
       flex-direction: column;
       margin: var(--vp-lg) 0;
     }
-    span {
+    a {
       margin-right: var(--space-2xl);
       @media (max-width: 1024px) {
         width: 32.5vw;
