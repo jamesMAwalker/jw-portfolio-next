@@ -206,14 +206,14 @@ const Project = (props) => {
           <span></span>
         </h3>
         <ProjectHeader text={prj.lead} />
-        {/* <DescriptionBlock
+        <DescriptionBlock
           title={prj.block1.header}
           blurb={prj.block1.blocks}
           mockup={{
             url: prj.block1.mockupUrl,
             device: 'MBP',
           }}
-        /> */}
+        />
         {/* <DescriptionBlock
           title={prj.block2.header}
           blurb={prj.block2.blocks}
