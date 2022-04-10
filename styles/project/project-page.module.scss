@@ -32,6 +32,7 @@
   .projectImage {
     position: relative;
     width: auto;
+    width: 100%;
     flex-grow: 2;
     height: 29vh;
     margin: 0 var(--vp-xl);
@@ -213,6 +214,7 @@
     }
     .projectImage {
       cursor: pointer;
+      margin: 0;
       &:hover {
         .nextArrow {
           opacity: 1;

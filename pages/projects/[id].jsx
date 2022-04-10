@@ -84,13 +84,6 @@ const Project = (props) => {
   const layoutRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
-  const [projectContent, setProjectContent] = useState({})
-
-
-  useEffect(() => {
-    setProjectContent(prj)
-  }, [prj])
-  
 
   // modal animations
   const handleModalToggle = () => {
@@ -118,6 +111,8 @@ const Project = (props) => {
 
   // scroll progress functionality
   useEffect(() => {
+    // TODO: Stop this function from rerendering the page on each scroll tick
+
     // only set scrollProgress on desktop
     if (window.innerWidth <= 1024) return
 
@@ -136,15 +131,15 @@ const Project = (props) => {
 
   return (
     <div className={layout} ref={layoutRef}>
-      {/* <ProjectNav
+      <ProjectNav
         name={prj.name[0].replace('-', '')}
         date={prj.date}
         num={prj.number}
         toggleModal={handleModalToggle}
         modalOpen={modalOpen}
-      /> */}
+      />
       <div className={projectHero}>
-        {/* <div className={lineOne}>
+        <div className={lineOne}>
           <h1>
             {' '}
             {`${prj.abbr}`.split('').map((lett, idx) => (
@@ -197,13 +192,12 @@ const Project = (props) => {
               <span key={rl}>{rl}</span>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
       <section className={projectContent}>
         <h3 className={label}>
           <span>Development/Design</span>
           <span>Case Study</span>
-          <span></span>
         </h3>
         <ProjectHeader text={prj.lead} />
         <DescriptionBlock
@@ -214,14 +208,14 @@ const Project = (props) => {
             device: 'MBP',
           }}
         />
-        {/* <DescriptionBlock
+        <DescriptionBlock
           title={prj.block2.header}
           blurb={prj.block2.blocks}
           mockup={{
             url: prj.block2.mockupUrl ?? '',
             device: 'pixel',
           }}
-        /> */}
+        />
       </section>
       <div className={nextProject}>
         <h3 className={label}>
@@ -230,7 +224,7 @@ const Project = (props) => {
         </h3>
 
         <div className={lineTwo}>
-          {/* {['Next Project', prj.next.name.join(' ')].map(
+          {['Next Project', prj.next.name.join(' ')].map(
             (phrase, idx) => {
               const lineNum =
                 idx === 0 ? bannerOne : bannerTwo
@@ -255,11 +249,11 @@ const Project = (props) => {
                 </div>
               )
             }
-          )} */}
+          )}
         </div>
 
         <div className={lineOne}>
-          {/* <h1>
+          <h1>
             {' '}
             {`${prj.next.abbr}`
               .split('')
@@ -269,19 +263,18 @@ const Project = (props) => {
                 </span>
               ))}
           </h1>
-          <Link href={prj.next.path}>
-            <a>
-              <div className={projectImage}>
+          <div className={projectImage}>
+            <Link href={prj.next.path}>
+              <a>
                 <div className={nextArrow}>→</div>
                 <img
                   src={basePngUrl(prj.next.imgUrlFrag)}
                   alt={prj.next.name}
                 />
-              </div>
-            </a>
-          </Link> */}
+              </a>
+            </Link>
+          </div>
         </div>
-
       </div>
       {/* <div
         className={progressBar}
