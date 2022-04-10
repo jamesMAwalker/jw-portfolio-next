@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { Pixel, MacbookPro } from 'react-device-mockups'
 
 import { IP13Mockup } from './iphone13-mockup'
@@ -14,10 +14,13 @@ import {
 import { MbpMockup } from './macbook-mockup'
 
 export const DescriptionBlock = ({
-  title,
-  blurb,
-  mockup={url: ''},
+  title="title",
+  blurb=['test', 'blurb'],
+  mockup={url: '', device: 'pixel'},
 }) => {
+
+
+
   return (
     <div className={blockContainer}>
       <div className={textElements}>

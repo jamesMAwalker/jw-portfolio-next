@@ -59,7 +59,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const { id } = context.params
-  console.log('id from gsProps of [id]: ', id);
 
   const res = await fetch(`${server}/projects.json`)
 
@@ -85,7 +84,13 @@ const Project = (props) => {
   const layoutRef = useRef(null)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
+  const [projectContent, setProjectContent] = useState({})
 
+
+  useEffect(() => {
+    setProjectContent(prj)
+  }, [prj])
+  
 
   // modal animations
   const handleModalToggle = () => {
@@ -116,28 +121,28 @@ const Project = (props) => {
     // only set scrollProgress on desktop
     if (window.innerWidth <= 1024) return
 
-    const totalHeight = layoutRef.current.clientHeight
-    const maxScroll = totalHeight - window.innerHeight
+    // const totalHeight = layoutRef.current.clientHeight
+    // const maxScroll = totalHeight - window.innerHeight
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY
+    // window.addEventListener('scroll', () => {
+    //   const currentScroll = window.scrollY
 
-      setScrollProgress((currentScroll / maxScroll) * 100.1)
-    })
-    return () => {
-      window.removeEventListener('scroll', () => {})
-    }
-  }, [])
+    //   setScrollProgress((currentScroll / maxScroll) * 100.1)
+    // })
+    // return () => {
+    //   window.removeEventListener('scroll', () => {})
+    // }
+  }, [layoutRef])
 
   return (
     <div className={layout} ref={layoutRef}>
-      <ProjectNav
+      {/* <ProjectNav
         name={prj.name[0].replace('-', '')}
         date={prj.date}
         num={prj.number}
         toggleModal={handleModalToggle}
         modalOpen={modalOpen}
-      />
+      /> */}
       <div className={projectHero}>
         {/* <div className={lineOne}>
           <h1>
@@ -195,24 +200,25 @@ const Project = (props) => {
         </div> */}
       </div>
       <section className={projectContent}>
-        {/* <h3 className={label}>
+        <h3 className={label}>
           <span>Development/Design</span>
           <span>Case Study</span>
+          <span></span>
         </h3>
         <ProjectHeader text={prj.lead} />
-        <DescriptionBlock
+        {/* <DescriptionBlock
           title={prj.block1.header}
           blurb={prj.block1.blocks}
           mockup={{
             url: prj.block1.mockupUrl,
             device: 'MBP',
           }}
-        />
-        <DescriptionBlock
+        /> */}
+        {/* <DescriptionBlock
           title={prj.block2.header}
           blurb={prj.block2.blocks}
           mockup={{
-            url: prj.block2.mockupUrl,
+            url: prj.block2.mockupUrl ?? '',
             device: 'pixel',
           }}
         /> */}
@@ -224,7 +230,7 @@ const Project = (props) => {
         </h3>
 
         <div className={lineTwo}>
-          {['Next Project', prj.next.name.join(' ')].map(
+          {/* {['Next Project', prj.next.name.join(' ')].map(
             (phrase, idx) => {
               const lineNum =
                 idx === 0 ? bannerOne : bannerTwo
@@ -249,11 +255,11 @@ const Project = (props) => {
                 </div>
               )
             }
-          )}
+          )} */}
         </div>
 
         <div className={lineOne}>
-          <h1>
+          {/* <h1>
             {' '}
             {`${prj.next.abbr}`
               .split('')
@@ -273,14 +279,14 @@ const Project = (props) => {
                 />
               </div>
             </a>
-          </Link>
+          </Link> */}
         </div>
 
       </div>
-      <div
+      {/* <div
         className={progressBar}
         style={{ width: `${scrollProgress}vw` }}
-      />
+      /> */}
       {modalOpen && (
         <ProjectModal
           projects={projects}

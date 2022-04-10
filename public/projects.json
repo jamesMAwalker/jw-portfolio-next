@@ -1,17 +1,26 @@
 [
   {
-    "name": ["Roots -", "Plantbased Café"],
+    "name": [
+      "Roots -",
+      "Plantbased Café"
+    ],
     "date": "2020 - 2021",
     "number": "1 / 4",
     "abbr": "rpbc",
     "next": {
       "abbr": "shdz",
       "path": "/projects/shdz",
-      "name":  ["Shades - ", "Eyewear Boutique"],
-      "imgUrlFrag": "shdz--long--2_h6l2hb" 
+      "name": [
+        "Shades - ",
+        "Eyewear Boutique"
+      ],
+      "imgUrlFrag": "shdz--long--2_h6l2hb"
     },
     "desc": "is a vegan kitchen and grocery targeting the expat community in Da Nang, Vietnam.",
-    "roles": ["UI/UX Design", "Web Development"],
+    "roles": [
+      "UI/UX Design",
+      "Web Development"
+    ],
     "tech": [
       "React",
       "Vite",
@@ -51,22 +60,32 @@
         "The other priority for Roots was to free itself of dependence on third-party delivery services. These companies charge a hefty premium for the convenience and reach they provide, so the task was to build an application that could fill the same role without losing customers. ",
         "The first element of this to tackle was the ease of use. The very accessible and intuitive menu design was step one of this process, but the other half comes when we consider the actual ordering process. Handling payments, validating addresses, offering shipping and order tracking information - these are all elements offered by the third-party delivery services we’re trying to supersede. ",
         "To this end I employed the use of another third-party service. However, this third party simply provides an API whose code can be used to manage all the stated concerns, and at a fraction of the extended cost incurred by their current delivery system."
-      ]
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
     }
   },
   {
-    "name": ["Shades - ", "Eyewear Boutique"],
+    "name": [
+      "Shades - ",
+      "Eyewear Boutique"
+    ],
     "date": "2020 - 2021",
     "number": "2 / 4",
     "abbr": "shdz",
     "next": {
       "abbr": "ppr",
       "path": "/projects/ppr",
-      "name": ["Plant ", "Power Racing"],
-      "imgUrlFrag": "ppr--long_inxyir" 
+      "name": [
+        "Plant",
+        "Power Racing"
+      ],
+      "imgUrlFrag": "ppr--long_inxyir"
     },
     "desc": "is a fashion forward sunglasses boutique based in Santa Monica, CA.",
-    "roles": ["UI/UX Design", "Web Development"],
+    "roles": [
+      "UI/UX Design",
+      "Web Development"
+    ],
     "tech": [
       "React",
       "Gatsby",
@@ -84,7 +103,7 @@
       "Santa Monica, CA."
     ],
     "block1": {
-      "header": "UI/UX Design",
+      "header": "UX Design",
       "blocks": [
         "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
         "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
@@ -92,7 +111,7 @@
       "mockupUrl": "shdz-gif--2_sshm5e"
     },
     "block2": {
-      "header": "Mobile Design",
+      "header": "UI Design",
       "blocks": [
         "This being a largely photography based fashion boutique, I wanted to focus the design around the excellent photos taken for the redesign. However, I also wanted to avoid the pitfall of image heavy sites where users get lost in a sea of images without knowing really where they are. ",
         "To this end, I fixed navigation to the edges of the page, and centered the image content in scrollable containers, and had each of them link to a product, rather than just a larger image. ",
@@ -100,28 +119,37 @@
       ],
       "mockupUrl": "shdz-gif--4_mxofu6"
     },
-    "block3": [
-      "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
-      "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
-    ],
-    "block4": [
-      "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
-      "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
-    ]
+    "block3": {
+      "header": "Mobile Design",
+      "blocks": [
+        "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
+        "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
+    }
   },
   {
-    "name": ["Plant ", "Power Racing"],
+    "name": [
+      "Plant ",
+      "Power Racing"
+    ],
     "date": "2020 - 2021",
     "number": "3 / 4",
     "abbr": "ppr",
     "next": {
-      "abbr": "nmp",
-      "path": "/projects/nmp",
-      "name": ["Nishelle Marie -", "Photographer"],
-      "imgUrlFrag": "nwp--long_rmgfwz" 
+      "abbr": "NMP",
+      "path": "/projects/NMP",
+      "name": [
+        "Nishelle Marie -",
+        "Photographer"
+      ],
+      "imgUrlFrag": "nwp--long_rmgfwz"
     },
     "desc": "is an all vegan road cycling team based in Santa Monica, CA, with chapters around the world.",
-    "roles": ["UI/UX Design", "Web Development"],
+    "roles": [
+      "UI/UX Design",
+      "Web Development"
+    ],
     "tech": [
       "React",
       "Gatsby",
@@ -135,7 +163,7 @@
     },
     "lead": [
       "PPR",
-      "is an all vegan road cycling team based in Santa Monica, CA, with chapters ",
+      "is an all vegan road cycling team based in Santa Monica, CA, with chapters",
       "around the world."
     ],
     "block1": {
@@ -153,7 +181,8 @@
         "Each section of the landing page acts as a sort of kiosk at which relevant information is presented, and an easy path towards more granular information is available. In the right column of the persistent navigation layout is a slider link that changes direction based on the section currently in view.",
         "The pages that follow this exist as a series of expanding windows that at first present high level information, but when expanded offer more granular detail as well as paths to further information.",
         "Invididual pages function similarly, with section details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
-      ]
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
     },
     "block3": {
       "header": "Tech Solutions",
@@ -165,18 +194,27 @@
     }
   },
   {
-    "name": ["Nishelle Marie -", "Photographer"],
+    "name": [
+      "Nishelle Marie -",
+      "Photographer"
+    ],
     "date": "2020 - 2021",
     "number": "4 / 4",
-    "abbr": "nmp",
+    "abbr": "NMP",
     "next": {
       "abbr": "rpbc",
       "path": "/projects/rpbc",
-      "name":  ["Roots -", "Plantbased Café"],
-      "imgUrlFrag": "roots--long_drenqp" 
+      "name": [
+        "Roots -",
+        "Plantbased Café"
+      ],
+      "imgUrlFrag": "roots--long_drenqp"
     },
     "desc": "is a photographer who needed something more than a SquareSpace site.",
-    "roles": ["UI/UX Design", "Web Development"],
+    "roles": [
+      "UI/UX Design",
+      "Web Development"
+    ],
     "tech": [
       "React",
       "Gatsby",
@@ -198,20 +236,23 @@
       "blocks": [
         "Photographers and other freelance artists often start by using one of the many drag and drop site builder tools available. While these can be a great way to get started, they’re limited in scope and presentation, and their neccessarily cookie cutter design can leave visitors to the site with a feeling of the ordinary.",
         "Nishelle wanted to level up into something that would present her work in a uniquely interactive and exciting fashion, only really possible through custom design and and build. We worked closely to develop something in line with her artistic sensibilities, and ultimately created one of my favorite designs."
-      ]
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
     },
     "block2": {
       "header": "UI/UX Design",
       "blocks": [
         "The primary goal with any photography site is to present the work in a fashion that reflects the artist’s ethos, while maintaining the visitor’s focus on the photography itself. Working in concert, we chose fonts, colors, and other design cues that would communicate both her passion for the art form, as well as her experience and competence, with a dash of the playful for good measure.",
         "In practice, I took the approach of using full screen renderings of the most arresting photography, and then positioning and coloring the page elements in harmony with the image. This communicates the necessary information while also keeping it at a lower volume than the work. I also make extensive use of the cursor for displaying actions, rather than having persistent buttons."
-      ]
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
     },
-    "blocks3": {
+    "block3": {
       "header": "Tech Solutions",
       "blocks": [
         "Photography sites necessarily use a large number of high resolution images. Because photo quality cannot be sacrificed for speed, we needed a solution that would give us the the best of both worlds. Enter WebGL, an API that is normally used to render 3D interactive graphics. This powerful piece of technology renders images in a way that makes them much faster to load, and even uses the device’s GPU to distribute calculations, further increasing load times and overall smoothness. "
-      ]
+      ],
+      "mockupUrl": "shdz-gif--4_mxofu6"
     }
   }
 ]
