@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 import { server } from '../../config/index'
 
@@ -259,20 +259,29 @@ const Project = (props) => {
                 </span>
               ))}
           </h1>
-          <div className={projectImage}>
-            <div className={nextArrow}>→</div>
-            <img
-              src={basePngUrl(prj.next.imgUrlFrag)}
-              alt={prj.next.name}
-            />
-          </div>
+          <Link href={prj.next.path}>
+            <a>
+              <div className={projectImage}>
+                <div className={nextArrow}>→</div>
+                <img
+                  src={basePngUrl(prj.next.imgUrlFrag)}
+                  alt={prj.next.name}
+                />
+              </div>
+            </a>
+          </Link>
         </div>
       </div>
       <div
         className={progressBar}
         style={{ width: `${scrollProgress}vw` }}
       />
-      {modalOpen && <ProjectModal projects={projects} closeModal={handleModalToggle} />}
+      {modalOpen && (
+        <ProjectModal
+          projects={projects}
+          closeModal={handleModalToggle}
+        />
+      )}
     </div>
   )
 }

@@ -168,12 +168,12 @@
     "name": ["Nishelle Marie -", "Photographer"],
     "date": "2020 - 2021",
     "number": "4 / 4",
-    "abbr": "NMP",
+    "abbr": "nmp",
     "next": {
       "abbr": "RPBC",
       "path": "/projects/rpbc",
       "name":  ["Roots -", "Plantbased Café"],
-      "imgUrlFrag": "" 
+      "imgUrlFrag": "roots--long_drenqp" 
     },
     "desc": "is a photographer who needed something more than a SquareSpace site.",
     "roles": ["UI/UX Design", "Web Development"],
@@ -190,8 +190,8 @@
     },
     "lead": [
       "Nishelle",
-      "is a photographer who needed something more than a ",
-      "a SquareSpace site."
+      "is a photographer who needed something more than a",
+      "SquareSpace site."
     ],
     "block1": {
       "header": "Mobile Design",
