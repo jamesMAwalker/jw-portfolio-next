@@ -32,6 +32,7 @@ import {
 } from '../../styles/project/project-page.module.scss'
 import { ProjectHeader } from '../../components/project/header'
 import { DescriptionBlock } from '../../components/project/description-block'
+import { ScrollProgressBar } from '../../components/layout/scroll-progress'
 
 export const getStaticPaths = async () => {
   const res = await fetch(`${server}/projects.json`)
@@ -56,7 +57,6 @@ export const getStaticPaths = async () => {
     fallback: false,
   }
 }
-
 export const getStaticProps = async (context) => {
   const { id } = context.params
 
@@ -82,8 +82,8 @@ const Project = (props) => {
   const { allProjects: projects } = props
 
   const layoutRef = useRef(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
+  const [descBlocks, setDescBlocks] = useState([])
 
   // modal animations
   const handleModalToggle = () => {
@@ -109,25 +109,29 @@ const Project = (props) => {
     }
   }
 
-  // scroll progress functionality
+  // close modal with esc key
   useEffect(() => {
-    // TODO: Stop this function from rerendering the page on each scroll tick
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        handleModalToggle()
+      }
+    }
+    window.addEventListener('keydown', close)
+    return () =>
+      window.removeEventListener('keydown', close)
+  }, [modalOpen, setModalOpen])
 
-    // only set scrollProgress on desktop
-    if (window.innerWidth <= 1024) return
 
-    // const totalHeight = layoutRef.current.clientHeight
-    // const maxScroll = totalHeight - window.innerHeight
-
-    // window.addEventListener('scroll', () => {
-    //   const currentScroll = window.scrollY
-
-    //   setScrollProgress((currentScroll / maxScroll) * 100.1)
-    // })
-    // return () => {
-    //   window.removeEventListener('scroll', () => {})
-    // }
-  }, [layoutRef])
+  // create blocks array from project data
+  useEffect(() => {
+    const blockNames = Object.keys(prj).filter((key) =>
+      key.includes('block')
+    )
+    const blocksToSet = blockNames.map((name) => {
+      return prj[name]
+    })
+    setDescBlocks(blocksToSet)
+  }, [prj])
 
   return (
     <div className={layout} ref={layoutRef}>
@@ -200,22 +204,22 @@ const Project = (props) => {
           <span>Case Study</span>
         </h3>
         <ProjectHeader text={prj.lead} />
-        <DescriptionBlock
-          title={prj.block1.header}
-          blurb={prj.block1.blocks}
-          mockup={{
-            url: prj.block1.mockupUrl,
-            device: 'MBP',
-          }}
-        />
-        <DescriptionBlock
-          title={prj.block2.header}
-          blurb={prj.block2.blocks}
-          mockup={{
-            url: prj.block2.mockupUrl ?? '',
-            device: 'pixel',
-          }}
-        />
+        {descBlocks.map(
+          ({ header, blocks, mockupUrl }, idx) => {
+            const device = idx % 2 === 0 ? 'MBP' : 'iPhone'
+            return (
+              <DescriptionBlock
+                key={header}
+                title={header}
+                blurb={blocks}
+                mockup={{
+                  url: mockupUrl,
+                  device,
+                }}
+              />
+            )
+          }
+        )}
       </section>
       <div className={nextProject}>
         <h3 className={label}>
@@ -276,10 +280,7 @@ const Project = (props) => {
           </div>
         </div>
       </div>
-      {/* <div
-        className={progressBar}
-        style={{ width: `${scrollProgress}vw` }}
-      /> */}
+      {/* <ScrollProgressBar layoutRef={layoutRef} /> */}
       {modalOpen && (
         <ProjectModal
           projects={projects}

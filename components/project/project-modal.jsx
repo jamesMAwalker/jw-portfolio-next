@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import {
   modal,
@@ -16,10 +17,18 @@ import {
 } from '../../styles/project/project-modal.module.scss'
 
 export const ProjectModal = ({ projects, closeModal }) => {
+  const { push } = useRouter()
+  
   const [projectList, setprojectList] = useState([])
+
   useEffect(() => {
     setprojectList(projects)
   }, [projects])
+
+  const handleContactBtn = () => {
+    closeModal()
+    push('/#contact')
+  }
 
   return (
     <div className={`${modal} modal-container`}>
@@ -36,7 +45,7 @@ export const ProjectModal = ({ projects, closeModal }) => {
           <span>
             <button
               className='pill-btn'
-              onClick={closeModal}
+              onClick={handleContactBtn}
             >{`Let's talk`}</button>
           </span>
         </div>

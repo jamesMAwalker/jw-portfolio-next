@@ -16,6 +16,7 @@ import {
   progressBar,
 } from '../styles/layout/layout.module.scss'
 import { Footer } from '../components/layout/footer'
+import { ScrollProgressBar } from '../components/layout/scroll-progress'
 
 
 // get page paths
@@ -88,10 +89,7 @@ export default function Home({ projects }) {
         <Contact />
       </main>
       <Footer isMobile={isMobile} />
-      <div
-        className={progressBar}
-        style={{ width: `${scrollProgress}vw` }}
-      />
+     {/* <ScrollProgressBar layoutRef={layoutRef} /> */}
     </div>
   )
 }

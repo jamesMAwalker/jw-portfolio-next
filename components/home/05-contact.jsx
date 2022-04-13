@@ -18,7 +18,7 @@ export const Contact = () => {
   // TODO - Fix email actions in mobile version.
 
   return (
-    <section className={contact}>
+    <section className={contact} id="contact">
       <h3 className={label}>Contact</h3>
       <div className={banners}>
         {['Get in Touch - ', 'Say Hello - '].map(

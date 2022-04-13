@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 import {
   topNav,
@@ -12,6 +13,7 @@ import {
 } from '../../styles/layout/top-nav.module.scss'
 
 export const TopNav = () => {
+const { push } = useRouter()
   return (
     <div className={topNav}>
       <span className={name}>
@@ -30,7 +32,7 @@ export const TopNav = () => {
       </div>
       <div className={contact}>
         <span className={contactBtn}>
-          <button className='pill-btn'>{`Let's talk`}</button>
+          <button className='pill-btn' onClick={() => push('/#contact')}>{`Let's talk`}</button>
         </span>
       </div>
     </div>

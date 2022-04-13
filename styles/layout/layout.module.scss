@@ -31,7 +31,7 @@
     flex-direction: column;
   }
   .social {
-    width: 50%;
+    min-width: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -49,6 +49,7 @@
   }
   .footerLink {
     min-width: 15% !important;
+    margin-right: var(--space-2xl);
   }
   .design {
     font-family: var(--font-title);
