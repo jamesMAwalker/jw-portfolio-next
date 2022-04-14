@@ -14,12 +14,16 @@ import {
 import { MbpMockup } from './macbook-mockup'
 
 export const DescriptionBlock = ({
-  title="title",
-  blurb=['test', 'blurb'],
-  mockup={url: '', device: 'pixel'},
+  title = 'title',
+  blurb = ['test', 'blurb'],
+  mockup = { url: '', device: 'pixel' },
 }) => {
+  const [isMobile, setIsMobile] = useState(false)
 
-
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
+  
 
   return (
     <div className={blockContainer}>
@@ -36,14 +40,14 @@ export const DescriptionBlock = ({
           <div className={mockupStyle}>
             <MbpMockup
               contentUrlFrag={mockup.url}
-              mockupHeight={60}
+              mockupHeight={isMobile ? 90 : 60}
             />
           </div>
         ) : (
           <div className={mockupStyle}>
             <IP13Mockup
               contentUrlFrag={mockup.url}
-              mockupHeight={35}
+              mockupHeight={isMobile ? 120 : 35}
             />
           </div>
         )}

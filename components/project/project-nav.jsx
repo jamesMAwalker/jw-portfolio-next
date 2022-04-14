@@ -4,11 +4,12 @@ import { gsap } from 'gsap'
 
 import {
   projectNav,
-  name as nameStyle,
-  date as dateStyle,
-  back,
+  nameContainer,
+  numberContainer,
+  dateContainer,
+  backContainer,
   backBtn,
-  projectsBtn,
+  allProjectsBtn,
   closeText,
   openText
 } from '../../styles/project/project-nav.module.scss'
@@ -36,13 +37,17 @@ export const ProjectNav = ({ name, date, num, toggleModal, modalOpen }) => {
 
   return (
     <div className={projectNav}>
-      <span className={nameStyle}>
-        Project <br /> <span>{num}</span>{' '}
+      <div className={nameContainer}>
+        <span>James</span>
+        <span>Walker</span>
+      </div>
+      <span className={numberContainer}>
+        Project <br /> <span>{num}</span>
       </span>
-      <span className={dateStyle}>
+      <span className={dateContainer}>
         {name} <br /> <span>{date}</span>
       </span>
-      <div className={back}>
+      <div className={backContainer}>
         <span className={backBtn}>
           <button
             className='pill-btn'
@@ -51,7 +56,7 @@ export const ProjectNav = ({ name, date, num, toggleModal, modalOpen }) => {
         </span>
       </div>
       <button
-        className={`${projectsBtn} pill-btn`}
+        className={`${allProjectsBtn} pill-btn`}
         onClick={toggleModal}
       >
         <div className='btn-inner'>

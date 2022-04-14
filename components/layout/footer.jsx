@@ -12,18 +12,18 @@ export const Footer = ({ isMobile }) => {
   return (
     <footer className={footer}>
       <div className={social}>
-        <span className={`${footerLink} pill-btn`}>
+        <a href="/" className={`${footerLink} pill-btn`}>
           Github
-        </span>
-        <span className={`${footerLink} pill-btn`}>
+        </a>
+        <a href="/" className={`${footerLink} pill-btn`}>
           Codepen
-        </span>
-        <span className={`${footerLink} pill-btn`}>
+        </a>
+        <a href="/" className={`${footerLink} pill-btn`}>
           LinkedIn
-        </span>
-        <span className={`${footerLink} pill-btn`}>
+        </a>
+        <a href="/" className={`${footerLink} pill-btn`}>
           Strava
-        </span>
+        </a>
       </div>
       <div className={design}>
         {isMobile && (

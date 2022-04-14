@@ -2,10 +2,15 @@
   position: relative;
   height: auto;
   width: clamp(93.6vw, 93.6vw, 2100px);
+  width: 77vw;
+  padding: 0 12.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
 }
 
 .content {
@@ -89,4 +94,7 @@
     rgba(0, 183, 255, 1) 100%
   );
   transition: var(--transition-1-smooth);
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

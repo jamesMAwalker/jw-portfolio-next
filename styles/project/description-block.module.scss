@@ -3,10 +3,19 @@
 .blockContainer {
   width: 40vw;
   margin-bottom: var(--vp-lg);
+  @media (max-width: 1024px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .textElements {
   width: 40vw;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
   .header {
     font-family: var(--font-title);
     font-size: var(--text-prose);
@@ -21,6 +30,9 @@
     justify-content: flex-start;
     span:not(:last-child) {
       margin-bottom: var(--vp-ms);
+    }
+    @media (max-width: 1024px) {
+      width: 100%;
     }
   }
 }
@@ -42,5 +54,9 @@
     object-position: top;
     max-height: 100% !important;
     max-width: 100% !important;
+  }
+  @media (max-width: 1024px) {
+    min-height: 10vh;
+    margin-bottom: 2.5vh;
   }
 }

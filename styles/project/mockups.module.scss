@@ -14,14 +14,20 @@
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 60px;
-    border-top-left-radius: 200px;
+    // border-radius: 60px;
+    // border-top-left-radius: 200px;
     transform: scaleX(0.95) scaleY(0.95);
-    // overflow: hidden;
+    overflow: hidden;
     box-shadow: 1.5vh 3vh 3vh 0.5vh var(--black-fade-40);
     img {
       object-fit: cover;
       object-position: center;
+    }
+    @media (max-width: 1024px) {
+      border-radius: 20px !important;
+      img {
+        border-radius: 20px !important;
+      }
     }
   }
 }
@@ -59,6 +65,9 @@
       height: 15px;
       width: 10%;
       background-color: black;
+      @media (max-width: 1024px) {
+        height: 5px;
+      }
     }
     img {
       width: 100%;

@@ -5,19 +5,30 @@
   display: grid;
   gap: 0 var(--grid-gap);
   grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: "name date . . . back";
+  grid-template-areas: "pNum date . . . back";
   @media (max-width: 1024px) {
-    padding-top: 2vh;
+    padding-top: 4vh;
     height: auto;
-    grid-template-columns: 1.25fr 1fr;
-    grid-template-rows: repeat(3, 6.5vh);
+    gap: 0 4vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 6.5vh);
     grid-template-areas:
-      "name  ."
-      ".     ."
-      "date  .";
+      "name  back"
+      "date  pNum";
   }
-  .name,
-  .date {
+  .nameContainer {
+    display: none;
+    @media (max-width: 1024px) {
+      grid-area: name;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-transform: uppercase;
+    }
+  }
+  .numberContainer,
+  .dateContainer {
     text-transform: uppercase;
     font-family: var(--font-body);
     font-size: var(--text-sm);
@@ -27,21 +38,24 @@
     justify-content: flex-start;
     text-transform: uppercase;
   }
-  .name {
-    grid-area: name;
+  .numberContainer {
+    grid-area: pNum;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    text-transform: uppercase;
     span {
       color: var(--grey-40);
     }
     @media (max-width: 1024px) {
       font-weight: var(--semibold);
       font-size: var(--text-md);
+      align-items: flex-end;
+      justify-content: flex-end;
     }
   }
-  .date {
+  .dateContainer {
     grid-area: date;
     display: flex;
     flex-direction: column;
@@ -50,21 +64,27 @@
     span {
       color: var(--grey-40);
     }
+    @media (max-width: 1024px) {
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
   }
-  .back {
+  .backContainer {
     grid-area: back;
     display: flex;
     justify-content: flex-end;
     transform-origin: right;
     @media (max-width: 1024px) {
-      justify-content: center;
-      flex-direction: column;
-      transform: scale(0.75);
+      justify-self: flex-end;
+      width: 80%;
+      transform: scale(.8);
+      white-space: nowrap;
       .backBtn {
         width: 100% !important;
         margin-left: 0 !important;
-        margin-top: 2vh;
         button {
+          padding: 0 3vh;
+          font-size: var(--text-xs);
           height: 5vh !important;
         }
       }
@@ -81,7 +101,7 @@
   }
 }
 
-.projectsBtn {
+.allProjectsBtn {
   z-index: var(--level-top);
   position: fixed;
   right: calc((100vw - 93.6vw) / 2);
@@ -98,6 +118,12 @@
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
+  @media (max-width: 1024px) {
+    width: 40vw;
+    span {
+      font-size: var(--text-md);
+    }
+  }
   &:hover {
     letter-spacing: var(--push-md);
     transform: unset;
@@ -113,6 +139,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 1024px) {
+      top: 18%;
+    }
   }
   span {
     height: 8vh;

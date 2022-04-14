@@ -6,6 +6,9 @@
   font-weight: var(--medium);
   font-size: clamp(var(--text-md), 2vmin, var(--text-3xl));
   letter-spacing: var(--push-md);
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 @mixin label {

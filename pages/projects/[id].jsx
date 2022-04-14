@@ -15,6 +15,7 @@ import {
 import {
   projectHero,
   lineOne,
+  mobileSubtitle,
   letter,
   projectImage,
   lineTwo,
@@ -29,6 +30,9 @@ import {
   label,
   nextProject,
   nextArrow,
+  mobileNextProject,
+  nextHeader,
+  nextProjectName,
 } from '../../styles/project/project-page.module.scss'
 import { ProjectHeader } from '../../components/project/header'
 import { DescriptionBlock } from '../../components/project/description-block'
@@ -121,7 +125,6 @@ const Project = (props) => {
       window.removeEventListener('keydown', close)
   }, [modalOpen, setModalOpen])
 
-
   // create blocks array from project data
   useEffect(() => {
     const blockNames = Object.keys(prj).filter((key) =>
@@ -136,7 +139,8 @@ const Project = (props) => {
   return (
     <div className={layout} ref={layoutRef}>
       <ProjectNav
-        name={prj.name[0].replace('-', '')}
+        // name={prj.name[0].replace('-', '')}
+        name={prj.abbr}
         date={prj.date}
         num={prj.number}
         toggleModal={handleModalToggle}
@@ -144,6 +148,11 @@ const Project = (props) => {
       />
       <div className={projectHero}>
         <div className={lineOne}>
+          <h4 className={mobileSubtitle}>
+            {prj.name.map((sbt) => {
+              return <span>{sbt}</span>
+            })}
+          </h4>
           <h1>
             {' '}
             {`${prj.abbr}`.split('').map((lett, idx) => (
@@ -221,12 +230,24 @@ const Project = (props) => {
           }
         )}
       </section>
-      <div className={nextProject}>
+      <a className={nextProject}>
         <h3 className={label}>
           <span>Next</span>
           <span>Project</span>
         </h3>
-
+        <Link href={prj.next.path}>
+          <div className={mobileNextProject}>
+            <div className={nextHeader}>
+              <span>Next →</span>
+              <span>Project</span>
+            </div>
+            <div className={nextProjectName}>
+              {prj.name.map((prjName) => {
+                return <span>{prjName}</span>
+              })}
+            </div>
+          </div>
+        </Link>
         <div className={lineTwo}>
           {['Next Project', prj.next.name.join(' ')].map(
             (phrase, idx) => {
@@ -255,7 +276,6 @@ const Project = (props) => {
             }
           )}
         </div>
-
         <div className={lineOne}>
           <h1>
             {' '}
@@ -279,8 +299,7 @@ const Project = (props) => {
             </Link>
           </div>
         </div>
-      </div>
-      {/* <ScrollProgressBar layoutRef={layoutRef} /> */}
+      </a>
       {modalOpen && (
         <ProjectModal
           projects={projects}

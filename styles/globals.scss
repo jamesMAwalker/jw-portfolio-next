@@ -159,8 +159,8 @@
   --shadow: 4px 4px 12px var(--black-fade-10);
 
   /* text size */
-  --text-hero: clamp(240px, 15vmax, 400px);
-  --text-hero: 16vmax;
+  // --text-hero: clamp(240px, 15vmax, 400px);
+  --text-hero: 14vmax;
   --text-header: var(--text-11xl);
   --text-header-sm: var(--text-3xl);
   --text-display: var(--text-7xl);
@@ -193,7 +193,7 @@
 @media (min-width: 2160px) {
   :root {
     --content-margin: 40vh;
-    // --text-hero: var(--text-9xl);
+    --text-hero: 13vmax;
     --text-hero-plus: var(--text-11xl);
     --text-section-header: 275px;
     --text-section-header-plus: 375px;
