@@ -71,7 +71,7 @@ const Project = ({
     window.addEventListener('keydown', close)
     return () =>
       window.removeEventListener('keydown', close)
-  }, [modalOpen, setModalOpen])
+  }, [modalOpen, setModalOpen, handleModalToggle])
 
   // create blocks array from project data
   useEffect(() => {
