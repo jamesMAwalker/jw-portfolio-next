@@ -83,11 +83,11 @@
       align-items: center;
       justify-content: center;
     }
-    .aboutImg { 
+    .aboutImg {
       position: relative;
       height: calc(0.7 * var(--text-hero));
       width: calc(100% - var(--space-2xl));
-      margin-left: var(--space-2xl);
+      margin-left: var(--vp-xl);
       border-radius: var(--radius-rounded);
       overflow: hidden;
       display: flex;
@@ -95,13 +95,14 @@
       justify-content: center;
       transition: var(--transition-1-smooth);
       @media (max-width: 1024px) {
-        height: 24vh;
-        width: 100%;
+        height: 30vh;
+        width: 100vw;
         margin: var(--vp-md) 0;
-
+        border-radius: unset;
       }
       &::after {
         @include pseudoShade;
+        opacity: 0.2;
       }
       &:hover {
         transform: scale(1.025, 0.975);

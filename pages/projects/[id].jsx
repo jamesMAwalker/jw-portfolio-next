@@ -1,93 +1,41 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Marquee from 'react-fast-marquee'
 
+// Internal Imports
 import { server } from '../../config/index'
-
 import { ProjectNav } from '../../components/project/project-nav'
 import { ProjectModal } from '../../components/project/project-modal'
-
-import { basePngUrl } from '../../utils/baseImgUrl'
-import {
-  layout,
-  progressBar,
-} from '../../styles/layout/layout.module.scss'
-import {
-  projectHero,
-  lineOne,
-  mobileSubtitle,
-  letter,
-  projectImage,
-  lineTwo,
-  bannerLine,
-  bannerOne,
-  bannerTwo,
-  phrase as phraseStyle,
-  lineThree,
-  roles,
-  tech,
-  projectContent,
-  label,
-  nextProject,
-  nextArrow,
-  mobileNextProject,
-  nextHeader,
-  nextProjectName,
-} from '../../styles/project/project-page.module.scss'
+import { ProjectHero } from '../../components/project/project-hero'
 import { ProjectHeader } from '../../components/project/header'
 import { DescriptionBlock } from '../../components/project/description-block'
-import { ScrollProgressBar } from '../../components/layout/scroll-progress'
+import { DoubleMarquee } from '../../components/project/double-marquee'
 
-export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/projects.json`)
+// Styling
+import {
+  projectPageLayout,
+  label,
+  projectContent,
+} from '../../styles/project/project-page.module.scss'
+import { nextProject } from '../../styles/project/project-components.module.scss'
+import { Footer } from '../../components/layout/footer'
 
-  if (res.status !== 200) {
-    console.log('res from GSPaths in [id]: ', res)
-    throw new Error(
-      `There was an error! Status code is ${res.status}`
-    )
-  }
 
-  const data = await res.json()
-
-  const projectPaths = data.map((prj) => {
-    return {
-      params: { id: prj.abbr },
-    }
-  })
-
-  return {
-    paths: projectPaths,
-    fallback: false,
-  }
-}
-export const getStaticProps = async (context) => {
-  const { id } = context.params
-
-  const res = await fetch(`${server}/projects.json`)
-
-  if (res.status !== 200) {
-    console.log('res from GSProps in [id]: ', res)
-    throw new Error(
-      `There was an error! Status code is ${res.status}`
-    )
-  }
-
-  const data = await res.json()
-  const pageData = data.filter((d) => d.abbr === id)[0]
-
-  return {
-    props: { project: pageData, allProjects: data },
-  }
-}
-
-const Project = (props) => {
-  const { project: prj } = props
-  const { allProjects: projects } = props
-
+const Project = ({
+  project: prj,
+  allProjects: projects,
+}) => {
+  const { push } = useRouter()
   const layoutRef = useRef(null)
   const [modalOpen, setModalOpen] = useState(false)
   const [descBlocks, setDescBlocks] = useState([])
+  const [isMobile, setIsMobile] = useState(false)
+
+  // set JS breakpoint
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
 
   // modal animations
   const handleModalToggle = () => {
@@ -135,78 +83,19 @@ const Project = (props) => {
     })
     setDescBlocks(blocksToSet)
   }, [prj])
+  
 
   return (
-    <div className={layout} ref={layoutRef}>
+    <div className={projectPageLayout}>
       <ProjectNav
-        // name={prj.name[0].replace('-', '')}
         name={prj.abbr}
         date={prj.date}
         num={prj.number}
         toggleModal={handleModalToggle}
         modalOpen={modalOpen}
+        isMobile={isMobile}
       />
-      <div className={projectHero}>
-        <div className={lineOne}>
-          <h4 className={mobileSubtitle}>
-            {prj.name.map((sbt) => {
-              return <span>{sbt}</span>
-            })}
-          </h4>
-          <h1>
-            {' '}
-            {`${prj.abbr}`.split('').map((lett, idx) => (
-              <span className={letter} key={idx}>
-                {lett}
-              </span>
-            ))}
-          </h1>
-          <div className={projectImage}>
-            <img
-              src={basePngUrl(prj.previewImg.long)}
-              alt={prj.abbr}
-            />
-          </div>
-        </div>
-        <div className={lineTwo}>
-          {prj.name.map((phrase, idx) => {
-            const lineNum =
-              idx === 0 ? bannerOne : bannerTwo
-
-            return (
-              <div
-                className={`${bannerLine} ${lineNum}`}
-                key={idx}
-              >
-                <a>
-                  {Array.from({ length: 24 }).map(
-                    (_, idx) => (
-                      <span
-                        className={phraseStyle}
-                        key={idx}
-                      >
-                        {prj.name[0]} {prj.name[1]} -{' '}
-                      </span>
-                    )
-                  )}{' '}
-                </a>
-              </div>
-            )
-          })}
-        </div>
-        <div className={lineThree}>
-          <div className={roles}>
-            {prj.roles.map((rl) => (
-              <span key={rl}>{rl}</span>
-            ))}
-          </div>
-          <div className={tech}>
-            {prj.tech.map((rl) => (
-              <span key={rl}>{rl}</span>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ProjectHero prj={prj} isMobile={isMobile} />
       <section className={projectContent}>
         <h3 className={label}>
           <span>Development/Design</span>
@@ -230,84 +119,70 @@ const Project = (props) => {
           }
         )}
       </section>
-      <a className={nextProject}>
-        <h3 className={label}>
-          <span>Next</span>
-          <span>Project</span>
-        </h3>
-        <Link href={prj.next.path}>
-          <div className={mobileNextProject}>
-            <div className={nextHeader}>
-              <span>Next →</span>
-              <span>Project</span>
-            </div>
-            <div className={nextProjectName}>
-              {prj.name.map((prjName) => {
-                return <span>{prjName}</span>
-              })}
-            </div>
-          </div>
-        </Link>
-        <div className={lineTwo}>
-          {['Next Project', prj.next.name.join(' ')].map(
-            (phrase, idx) => {
-              const lineNum =
-                idx === 0 ? bannerOne : bannerTwo
-
-              return (
-                <div
-                  className={`${bannerLine} ${lineNum}`}
-                  key={idx}
-                >
-                  <a href={prj.next.path}>
-                    {Array.from({ length: 24 }).map(
-                      (_, idx) => (
-                        <span
-                          className={phraseStyle}
-                          key={idx}
-                        >
-                          {phrase} -&nbsp;
-                        </span>
-                      )
-                    )}{' '}
-                  </a>
-                </div>
-              )
-            }
-          )}
-        </div>
-        <div className={lineOne}>
-          <h1>
-            {' '}
-            {`${prj.next.abbr}`
-              .split('')
-              .map((lett, idx) => (
-                <span className={letter} key={idx}>
-                  {lett}
-                </span>
-              ))}
-          </h1>
-          <div className={projectImage}>
-            <Link href={prj.next.path}>
-              <a>
-                <div className={nextArrow}>→</div>
-                <img
-                  src={basePngUrl(prj.next.imgUrlFrag)}
-                  alt={prj.next.name}
-                />
-              </a>
-            </Link>
-          </div>
-        </div>
-      </a>
+      <section
+        className={nextProject}
+        onClick={() => push(prj.next.path)}
+      >
+        <DoubleMarquee
+          words={['Next Project', prj.next.name.join(' ')]}
+          separateLines
+          pauseHover
+          speed={50}
+        />
+      </section>
       {modalOpen && (
         <ProjectModal
           projects={projects}
           closeModal={handleModalToggle}
         />
       )}
+      <Footer isMobile={isMobile} />
     </div>
   )
 }
 
 export default Project
+
+// API
+export const getStaticPaths = async () => {
+  const res = await fetch(`${server}/projects.json`)
+
+  if (res.status !== 200) {
+    console.log('res from GSPaths in [id]: ', res)
+    throw new Error(
+      `There was an error! Status code is ${res.status}`
+    )
+  }
+
+  const data = await res.json()
+
+  const projectPaths = data.map((prj) => {
+    return {
+      params: { id: prj.abbr },
+    }
+  })
+
+  return {
+    paths: projectPaths,
+    fallback: false,
+  }
+}
+export const getStaticProps = async (context) => {
+  const { id } = context.params
+
+  const res = await fetch(`${server}/projects.json`)
+
+  if (res.status !== 200) {
+    console.log('res from GSProps in [id]: ', res)
+    throw new Error(
+      `There was an error! Status code is ${res.status}`
+    )
+  }
+
+  const data = await res.json()
+  const pageData = data.filter((d) => d.abbr === id)[0]
+
+  return {
+    props: { project: pageData, allProjects: data },
+  }
+}

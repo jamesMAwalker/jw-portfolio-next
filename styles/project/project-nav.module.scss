@@ -77,7 +77,7 @@
     @media (max-width: 1024px) {
       justify-self: flex-end;
       width: 80%;
-      transform: scale(.8);
+      transform: scale(0.8);
       white-space: nowrap;
       .backBtn {
         width: 100% !important;
@@ -102,6 +102,7 @@
 }
 
 .allProjectsBtn {
+  cursor: grab;
   z-index: var(--level-top);
   position: fixed;
   right: calc((100vw - 93.6vw) / 2);
@@ -118,6 +119,10 @@
   align-items: center;
   justify-content: space-evenly;
   overflow: hidden;
+  box-shadow: 0px 0px 20px 10px transparent;
+  animation: pulse 1s;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
   @media (max-width: 1024px) {
     width: 40vw;
     span {
@@ -128,6 +133,9 @@
     letter-spacing: var(--push-md);
     transform: unset;
     background-color: var(--primary-light);
+  }
+  &:active {
+    cursor: grabbing;
   }
   div {
     position: absolute;
@@ -146,5 +154,21 @@
   span {
     height: 8vh;
     white-space: nowrap;
+  }
+}
+
+.btnInnerText {
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  from {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 0 var(--primary);
+  }
+  
+  to {
+    transform: translate(-5px, -0px);
+    box-shadow: 0 0 8px 2px var(--primary);
   }
 }

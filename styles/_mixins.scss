@@ -1,5 +1,36 @@
-// Components
+// <<<<<<<<<<<<<<<.>>>>>>>>>>>>>> //
+// <<<<<<<<    MIXINS     >>>>>>> //
+// <<<<<<<<<<<<<<<.>>>>>>>>>>>>>> //
 
+
+// - layout elements
+@mixin layout {
+  position: relative;
+  height: auto;
+  width: var(--layout-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+@mixin homeSection {
+  position: relative;
+  margin-top: 20vh;
+  padding-top: 15vh;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// - text elements
 @mixin blurb {
   width: 40vw;
   font-family: var(--font-body);
@@ -38,20 +69,9 @@
   list-style: none;
 }
 
-@mixin homeSection {
-  position: relative;
-  margin-top: 20vh;
-  padding-top: 15vh;
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-// Pseudoelements
 
+// - Pseudoelements
 @mixin pseudoSlide {
   position: absolute;
   z-index: var(--base-one);
@@ -82,6 +102,5 @@
 
 @mixin outlineText($bgColor, $outlineColor) {
   color: $bgColor;
-  text-shadow: -1px -1px 0 $outlineColor, 1px -1px 0 $outlineColor, -1px 1px 0 $outlineColor,
-    1px 1px 0 $outlineColor;
+  text-shadow: -1px -1px 0 $outlineColor, 1px -1px 0 $outlineColor, -1px 1px 0 $outlineColor, 1px 1px 0 $outlineColor;
 }

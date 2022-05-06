@@ -18,25 +18,12 @@ import {
 import { Footer } from '../components/layout/footer'
 import { ScrollProgressBar } from '../components/layout/scroll-progress'
 
+/*
+  TODO: 
+  - Add page transition animations
+  - 
 
-// get page paths
-export const getStaticProps = async () => {
-  const res = await fetch(`${server}/projects.json`)
-
-  if (res.status !== 200) {
-    throw new Error(
-      `There was an error! Status code is ${res.status}`
-    )
-  }
-
-  const data = await res.json()
-
-  return {
-    props: { projects: data, fallback: false },
-  }
-}
-
-
+*/
 
 export default function Home({ projects }) {
   // progress bar logic
@@ -89,7 +76,27 @@ export default function Home({ projects }) {
         <Contact />
       </main>
       <Footer isMobile={isMobile} />
-     {/* <ScrollProgressBar layoutRef={layoutRef} /> */}
     </div>
   )
+}
+
+
+
+
+
+// get page paths
+export const getStaticProps = async () => {
+  const res = await fetch(`${server}/projects.json`)
+
+  if (res.status !== 200) {
+    throw new Error(
+      `There was an error! Status code is ${res.status}`
+    )
+  }
+
+  const data = await res.json()
+
+  return {
+    props: { projects: data, fallback: false },
+  }
 }

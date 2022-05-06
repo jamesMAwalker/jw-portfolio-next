@@ -1,5 +1,9 @@
 @import "../mixins";
 
+.projectPageLayout {
+  @include layout;
+}
+
 .projectHero {
   height: 90vh;
   width: 100%;
@@ -229,7 +233,7 @@
     @media (max-width: 1024px) {
       scrollbar-width: none;
       transform: translateX(-12.5vw);
-      padding-left: 12.5vw;
+      // padding-left: 12.5vw;
       width: 100vw;
       white-space: nowrap;
       overflow: scroll;
@@ -322,12 +326,16 @@
     }
   }
   .mobileNextProject {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
     color: var(--primary-mute);
     letter-spacing: var(--push-ms);
+    padding-bottom: 5vh;
+    @media (max-width: 1024px) {
+      display: flex;
+    }
   }
   .nextHeader {
     @include outlineText(var(--primary-light), var(--primary-mute));

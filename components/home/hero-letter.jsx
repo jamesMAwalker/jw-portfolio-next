@@ -5,7 +5,6 @@ import { letter } from '../../styles/home/01-hero.module.scss'
 export const HeroLetter = ({ resetting, lett }) => {
   const [isBlack, setIsBlack] = useState(true)
 
-
   // Reset letters to black when user clicks reset bar
   useEffect(() => {
     if (resetting) {
@@ -23,7 +22,8 @@ export const HeroLetter = ({ resetting, lett }) => {
       `var(--ocean-blue)`,
       `var(--french-blue)`,
     ]
-    let rIdx = Math.floor(Math.random() * blues.length - 1)
+    
+    let rIdx = Math.floor(Math.random() * blues.length)
 
     return blues[rIdx]
   }

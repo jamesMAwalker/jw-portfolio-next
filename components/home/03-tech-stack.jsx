@@ -42,6 +42,20 @@ const techItems = [
 ]
 
 export const TechStack = () => {
+
+  /*
+    TODO:
+    
+    + Create fn to periodically animate the 3 animation library list items
+    - uses setInterval
+    - cycles through different animation functions based on idx
+    
+    + Create fn to animate list items on hover with their respective libraries
+    
+  */
+
+  
+
   return (
     <section className={tech}>
       <h3 className={label}>

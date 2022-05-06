@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { gsap } from 'gsap'
+import Draggable from 'react-draggable'
 
 import {
   projectNav,
@@ -10,6 +11,7 @@ import {
   backContainer,
   backBtn,
   allProjectsBtn,
+  btnInnerText,
   closeText,
   openText
 } from '../../styles/project/project-nav.module.scss'
@@ -55,15 +57,17 @@ export const ProjectNav = ({ name, date, num, toggleModal, modalOpen }) => {
           >{`← Back to Home`}</button>
         </span>
       </div>
-      <button
-        className={`${allProjectsBtn} pill-btn`}
-        onClick={toggleModal}
-      >
-        <div className='btn-inner'>
-          <span className={closeText}>↘ Close</span>
-          <span className={openText}>↖ All Projects</span>
-        </div>
-      </button>
+      <Draggable>
+        <button
+          className={`${allProjectsBtn} pill-btn`}
+          onClick={toggleModal}
+        >
+          <div className={`${btnInnerText} btn-inner`}>
+            <span className={closeText}>↘ Close</span>
+            <span className={openText}>↖ All Projects</span>
+          </div>
+        </button>
+      </Draggable>
     </div>
   )
 }

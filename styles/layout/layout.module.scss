@@ -1,16 +1,7 @@
+@import '../mixins';
+
 .layout {
-  position: relative;
-  height: auto;
-  width: clamp(93.6vw, 93.6vw, 2100px);
-  width: 77vw;
-  padding: 0 12.5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  ::-webkit-scrollbar {
-    display: none !important;
-  }
+  @include layout;
 }
 
 .content {
