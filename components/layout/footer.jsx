@@ -12,18 +12,22 @@ export const Footer = ({ isMobile }) => {
   return (
     <footer className={footer}>
       <div className={social}>
-        <a href="/" className={`${footerLink} pill-btn`}>
-          Github
-        </a>
-        <a href="/" className={`${footerLink} pill-btn`}>
-          Codepen
-        </a>
-        <a href="/" className={`${footerLink} pill-btn`}>
-          LinkedIn
-        </a>
-        <a href="/" className={`${footerLink} pill-btn`}>
-          Strava
-        </a>
+        <Link href='/'>
+          <a className={`${footerLink} pill-btn`}>Github</a>
+        </Link>
+        <Link href='/'>
+          <a className={`${footerLink} pill-btn`}>
+            Codepen
+          </a>
+        </Link>
+        <Link href='/'>
+          <a className={`${footerLink} pill-btn`}>
+            LinkedIn
+          </a>
+        </Link>
+        <Link href='/'>
+          <a className={`${footerLink} pill-btn`}>Strava</a>
+        </Link>
       </div>
       <div className={design}>
         {isMobile && (

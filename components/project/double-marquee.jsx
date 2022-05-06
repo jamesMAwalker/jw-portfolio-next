@@ -32,7 +32,7 @@ export const DoubleMarquee = ({ words, speed="100", separateLines, pauseHover=fa
                       <>
                         {index == 0 ? (
                           <span
-                            class={`${linkable} ${outlineText}`}
+                            className={`${linkable} ${outlineText}`}
                           >
                             &nbsp;{words[0]} <span>→</span>&nbsp;
                             {words[0]}
