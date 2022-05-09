@@ -128,7 +128,7 @@
 
   // * role-based tokens * //
 
-  /* colors */
+  /* colors */  
   --primary: var(--blue);
   --primary-tr: var(--french-blue-fade-60);
   --primary-light: var(--mist-blue);
@@ -142,6 +142,7 @@
   /* bezier curves */
   --smooth: cubic-bezier(0.115, 0.905, 0.32, 1);
   --punchitchewy: cubic-bezier(1, 0, 0.115, 0.995);
+  --smooth-framer: [0.115, 0.905, 0.32, 1];
 
   /* transitions */
   --transition-1: all 1s var(--punchitchewy);
@@ -221,7 +222,7 @@ body {
   scrollbar-width: none;
   scroll-margin: 0 !important;
   ::-webkit-scrollbar {
-    display: none !important;
+     display: none !important;
   }
   & > * {
     ::-moz-selection {

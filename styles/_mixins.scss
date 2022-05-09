@@ -5,7 +5,7 @@
 
 // - layout elements
 @mixin layout {
-  position: relative;
+  // position: relative;
   height: auto;
   width: var(--layout-width);
   display: flex;

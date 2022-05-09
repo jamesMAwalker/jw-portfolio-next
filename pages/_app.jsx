@@ -1,14 +1,20 @@
+import React from 'react'
+
+import { ScrollProgressBar } from '../components/layout/scroll-progress'
+import { Layout } from '../components/layout/layout'
+
+import { ProjectProvider } from '../context/project-context'
+
 import '../styles/globals.scss'
 import '../styles/_mixins.scss'
-import 'html5-device-mockups/dist/device-mockups.min.css'
-import { ScrollProgressBar } from '../components/layout/scroll-progress'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router: { route } }) {
   return (
-    <>
-      <Component {...pageProps} />
-      <ScrollProgressBar />
-    </>
+    <ProjectProvider>
+      <Layout route={route}>
+        <Component {...pageProps} />
+      </Layout>
+    </ProjectProvider>
   )
 }
 

@@ -1,7 +1,11 @@
 import React from 'react'
 import Marquee from 'react-fast-marquee'
+import { motion } from 'framer-motion'
 
 import { basePngUrl } from '../../utils/baseImgUrl'
+import { blurFadeIn } from '../../animation/fade'
+
+import { DoubleMarquee } from './double-marquee'
 
 import {
   projectHero,
@@ -15,20 +19,16 @@ import {
   tech,
   mobileSubtitle,
 } from '../../styles/project/project-components.module.scss'
-import { DoubleMarquee } from './double-marquee'
+import { smooth } from '../../animation/transition'
 
 export const ProjectHero = ({ prj, isMobile }) => {
-  /*
-    * Project Hero: Refactor Notes *
-    
-    # Streamline mobile version
-    # Improve classNamess
-    # Replace banner marquee animation with react-fast-marquee
-    # Replace nested elements with props
-  */
-
   return (
-    <div className={`${projectHero}`}>
+    <motion.div
+      className={projectHero}
+      key='heroContainer  '
+      {...blurFadeIn}
+      transition={smooth(1.5)}
+    >
       <div className={`${projectBanner}`}>
         <h4 className={mobileSubtitle}>
           {prj.name.map((subt, idx) => {
@@ -36,25 +36,41 @@ export const ProjectHero = ({ prj, isMobile }) => {
           })}
         </h4>
         <h1 className={heroTitle}>
-          {`${prj.abbr}`.split('').map((lett, idx) => (
-            <span className={heroLetter} key={idx}>
-              {lett}
-            </span>
-          ))}
+          {`${prj.abbr}`.split('').map((lett, idx) => {
+            const rDelay = Math.floor(Math.random() * 1)
+            return (
+              <motion.span
+                className={heroLetter}
+                key={idx}
+                {...blurFadeIn}
+                transition={{ delay: idx * 0.2 }}
+              >
+                {lett}
+              </motion.span>
+            )
+          })}
         </h1>
-        <div className={heroImage}>
+        <motion.div
+          className={heroImage}
+          {...blurFadeIn}
+          transition={smooth(1.5)}
+        >
           <img
             src={basePngUrl(prj.previewImg.long)}
             alt={prj.abbr}
           />
-        </div>
+        </motion.div>
       </div>
       <div className={projectMarqueeContainer}>
         <DoubleMarquee words={prj.name} />
       </div>
       <div className={`${projectSkills}`}>
         {isMobile ? (
-          <Marquee gradient={false} play={isMobile && true} speed={70}>
+          <Marquee
+            gradient={false}
+            play={isMobile && true}
+            speed={70}
+          >
             <div className={roles}>
               {prj.roles.map((rl) => (
                 <span key={rl}>{rl}</span>
@@ -81,6 +97,6 @@ export const ProjectHero = ({ prj, isMobile }) => {
           </>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }

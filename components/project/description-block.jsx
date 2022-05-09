@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from 'react'
-// import { Pixel, MacbookPro } from 'react-device-mockups'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { IP13Mockup } from './iphone13-mockup'
+import { MbpMockup } from './macbook-mockup'
+
+import {
+  blurFadeIn,
+  fadeSlideRight,
+  fadeSlideLeft,
+  fadeSlideUpShort,
+} from '../../animation/fade'
+import {
+  scrollPhases,
+  smooth,
+} from '../../animation/transition'
 
 import {
   blockContainer,
@@ -10,8 +22,6 @@ import {
   blurb as blurbStyle,
   mockup as mockupStyle,
 } from '../../styles/project/description-block.module.scss'
-
-import { MbpMockup } from './macbook-mockup'
 
 export const DescriptionBlock = ({
   title = 'title',
@@ -23,35 +33,53 @@ export const DescriptionBlock = ({
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024)
   }, [])
-  
 
   return (
-    <div className={blockContainer}>
-      <div className={textElements}>
+    <motion.div className={blockContainer}>
+      <motion.div
+        className={textElements}
+        key='textEl'
+        {...fadeSlideUpShort}
+        {...scrollPhases}
+        transition={smooth(1, .5)}
+        // viewport={{ margin: '-20%' }}
+      >
         <h5 className={header}>{title}</h5>
         <p className={blurbStyle}>
           {blurb.map((blrb, idx) => (
             <span key={idx}>{blrb}</span>
           ))}
         </p>
-      </div>
+      </motion.div>
       <div className={mockupStyle}>
         {mockup.device === 'MBP' ? (
-          <div className={mockupStyle}>
+          <motion.div
+            className={mockupStyle}
+            key='mockupMBP'
+            {...fadeSlideRight}
+            {...scrollPhases}
+            transition={smooth(1, .5)}
+          >
             <MbpMockup
               contentUrlFrag={mockup.url}
               mockupHeight={isMobile ? 90 : 60}
             />
-          </div>
+          </motion.div>
         ) : (
-          <div className={mockupStyle}>
+          <motion.div
+            className={mockupStyle}
+            key='mockupIP13'
+            {...fadeSlideLeft}
+            {...scrollPhases}
+            transition={smooth(1, .5)}
+          >
             <IP13Mockup
               contentUrlFrag={mockup.url}
               mockupHeight={isMobile ? 120 : 35}
             />
-          </div>
+          </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }

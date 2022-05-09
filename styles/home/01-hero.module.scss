@@ -22,7 +22,7 @@
   .lineOne,
   .lineTwo {
     font-family: var(--font-title);
-    font-size: var(--text-hero);
+    font-size: calc(1.12 * var(--text-hero));
     text-transform: uppercase;
     margin-bottom: -10vh;
     @media (max-width: 1024px) {

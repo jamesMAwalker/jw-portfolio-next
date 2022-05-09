@@ -1,6 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+
+import { ProjectContext } from '../../context/project-context'
 
 import {
   modal,
@@ -20,19 +27,20 @@ import {
   footerLink,
 } from '../../styles/project/project-modal.module.scss'
 
-export const ProjectModal = ({ projects, closeModal }) => {
+export const ProjectModal = ({ closeModal }) => {
   const { push } = useRouter()
+  const { projectData } = useContext(ProjectContext)
 
   const [projectList, setprojectList] = useState([])
   const [selectedProject, setSelectedProject] = useState(0)
 
+  // mobile links require selection first
   const handleLink = (e, href, idx) => {
     const isMobile = window.innerWidth < 1024
 
     if (isMobile) {
       if (idx === selectedProject) {
-        // push(`/projects/${href}`)
-        console.log('linked to page!')
+        push(`/projects/${href}`)
       } else {
         setSelectedProject(idx)
       }
@@ -43,8 +51,8 @@ export const ProjectModal = ({ projects, closeModal }) => {
   }
 
   useEffect(() => {
-    setprojectList(projects)
-  }, [projects])
+    setprojectList(projectData)
+  }, [projectData])
 
   const handleContactBtn = () => {
     closeModal()
@@ -52,7 +60,7 @@ export const ProjectModal = ({ projects, closeModal }) => {
   }
 
   return (
-    <div className={`${modal} modal-container`}>
+    <motion.div className={`${modal} modal-container`}>
       <nav className={modalHeader}>
         <span>
           James <br /> Walker{' '}
@@ -82,11 +90,20 @@ export const ProjectModal = ({ projects, closeModal }) => {
             }}
           />
           {projectList.map((prj, idx) => {
-            const isSelectedStyle = idx === selectedProject ? selectedStyle : ''
+            const isSelectedStyle =
+              idx === selectedProject ? selectedStyle : ''
 
             return (
-              <a onClick={(e) => handleLink(e, prj.abbr ,idx)} key={prj.abbr}>
-                <li className={`${projectRow} ${isSelectedStyle}`} key={prj.abbr}>
+              <a
+                onClick={(e) =>
+                  handleLink(e, prj.abbr, idx)
+                }
+                key={prj.abbr}
+              >
+                <li
+                  className={`${projectRow} ${isSelectedStyle}`}
+                  key={prj.abbr}
+                >
                   <span
                     className={`${projectName} ${projectNameL}`}
                   >
@@ -97,7 +114,10 @@ export const ProjectModal = ({ projects, closeModal }) => {
                   <p className={projectDetail}>
                     {prj.tech.slice(0, 2).map((tech) => {
                       return (
-                        <span className={detailItem} key={`${tech}-${prj.abbr}`}>
+                        <span
+                          className={detailItem}
+                          key={`${tech}-${prj.abbr}`}
+                        >
                           {tech}
                         </span>
                       )
@@ -133,6 +153,6 @@ export const ProjectModal = ({ projects, closeModal }) => {
           })}
         </div>
       </footer>
-    </div>
+    </motion.div>
   )
 }

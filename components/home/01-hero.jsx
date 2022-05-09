@@ -101,7 +101,7 @@ export const Hero = () => {
           <span className='emph'>Hi! </span>I’m James. I’m a
           frontend developer based out of Santa Monica, CA.
           <br />
-          <br />I specialize in using React and its
+          <br /> I specialize in using React and its
           associated frameworks to create seamless
           experiences for the web. Currently developing and
           designing work for Radiance Photography in Los

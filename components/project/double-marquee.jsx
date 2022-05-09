@@ -1,21 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Marquee from 'react-fast-marquee'
 
 import {
   projectMarquee,
   marqueeLine,
   outlineText,
-  linkable
+  linkable,
+  brightBG
 } from '../../styles/project/project-components.module.scss'
 
 export const DoubleMarquee = ({ words, speed="100", separateLines, pauseHover=false }) => {
 
-  /*
-    
-  */
-
   return (
-    <section className={projectMarquee}>
+    <section className={`${projectMarquee} ${separateLines ? brightBG : ''}`}>
       {Array.from({ length: 2 }).map((_, index) => {
         return (
           <div className={marqueeLine} key={index}>

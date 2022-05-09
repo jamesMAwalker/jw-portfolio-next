@@ -45,7 +45,7 @@ export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
   useEffect(() => {
     const onMouse = (e) => {
       const { clientX, clientY } = e
-      const mouseX = clientX - cursorRef.current.clientWidth
+      const mouseX = clientX - cursorRef?.current?.clientWidth
       const mouseY =
         clientY - cursorRef.current.clientHeight
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`

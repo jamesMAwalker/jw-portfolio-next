@@ -65,6 +65,7 @@
   border-radius: var(--radius-rounded);
   overflow: hidden;
   transition: var(--transition-1-smooth);
+  transform-origin: left;
   @media (min-width: 1024px) {
     margin: 0 10vw;
     height: 22.5vh;
@@ -149,6 +150,13 @@
   @media (max-width: 1024px) {
     display: none;
   }
+  &.brightBG {
+    &:hover { 
+      &::after {
+        background-color: var(--primary) !important;
+      }
+    }
+  }
   &:hover {
     transform: skewX(-5deg);
     &::after {
@@ -156,9 +164,12 @@
     }
     .linkable {
       color: var(--primary-soft);
+      color: var(--white);
     }
     .outlineText {
       @include outlineText(var(--primary-light), var(--primary-soft));
+      @include outlineText(var(--primary), var(--white));
+      transition: color 0 !important;
     }
   }
   &::after {
