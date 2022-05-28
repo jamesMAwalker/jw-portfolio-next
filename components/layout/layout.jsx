@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, {
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
+import { useInView } from 'react-intersection-observer'
 import { AnimatePresence, motion } from 'framer-motion'
 // TODO: Replace gsap animations with framer-motion keyframes
 import { gsap } from 'gsap'
 
+import { ProjectContext } from '../../context/project-context'
+
 import { ProjectModal } from './project-modal'
 import { ScrollProgressBar } from './scroll-progress'
+import { ProjectsButton } from './projects-button'
 
 import {
   blurFadeIn,
@@ -20,9 +28,18 @@ import {
 
 export const Layout = ({ route, children }) => {
   useEffect(() => {}, [route])
-
-  const [modalOpen, setModalOpen] = useState(false)
+  const {
+    modalOpen,
+    setModalOpen,
+    buttonPushed,
+    setButtonPushed,
+  } = useContext(ProjectContext)
+  // const [modalOpen, setModalOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const { ref: bottomRef, inView: bottomInView } =
+    useInView({
+      threshold: 1,
+    })
 
   // modal position animation
   useEffect(() => {
@@ -37,31 +54,28 @@ export const Layout = ({ route, children }) => {
     }
   }, [modalOpen])
 
+  useEffect(() => {
+    if (bottomInView) {
+      setButtonPushed(true)
+    } else {
+      setButtonPushed(false)
+    }
+  }, [bottomInView])
+
+  const handleToggleModal = () => {
+    setModalOpen(!modalOpen)
+  }
+
   // close modal with esc key
   useEffect(() => {
     const close = (e) => {
       if (e.keyCode === 27) {
-        setModalOpen(false)
+        handleToggleModal()
       }
     }
     window.addEventListener('keydown', close)
     return () =>
       window.removeEventListener('keydown', close)
-  }, [modalOpen])
-
-  // Change btn text with modal toggle
-  useEffect(() => {
-    if (modalOpen) {
-      gsap.to('.btn-inner', {
-        transform: 'translate(-50%, 3%)',
-        ease: 'power2.inOut',
-      })
-    } else {
-      gsap.to('.btn-inner', {
-        transform: 'translate(-50%, -46%)',
-        ease: 'power2.inOut',
-      })
-    }
   }, [modalOpen])
 
   return (
@@ -73,24 +87,12 @@ export const Layout = ({ route, children }) => {
         key={route}
       >
         {children}
+        <div className='vp-marker' ref={bottomRef} />
       </motion.div>
-      <ProjectModal
-        closeModal={() => setModalOpen(false)}
-      />
+      <ProjectModal />
       <AnimatePresence exitBeforeEnter>
-        {route !== '/' && (
-          <motion.button
-            className={`${allProjectsBtn} pill-btn modal-btn`}
-            key='projects-btn'
-            onClick={() => setModalOpen(!modalOpen)}
-            {...fadeSlideUp}
-            {...phases}
-          >
-            <div className={`${btnInnerText} btn-inner`}>
-              <span>↘ Close</span>
-              <span>↖ All Projects</span>
-            </div>
-          </motion.button>
+        {['/', '/resume'].includes(route) !== true && (
+          <ProjectsButton isMobile={isMobile} />
         )}
       </AnimatePresence>
       <ScrollProgressBar />

@@ -6,11 +6,11 @@ export const ScrollProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [realHeight, setRealHeight] = useState(0)
   
-  useEffect(() => {
-    setTimeout(() => {
-      setRealHeight(window.document.body.offsetHeight)
-    }, 500)
-  })
+    useEffect(() => {
+      setTimeout(() => {
+        setRealHeight(window.document.body.offsetHeight)
+      }, 500)
+    })
 
   // scroll progress functionality
   useEffect(() => {
@@ -35,8 +35,8 @@ export const ScrollProgressBar = () => {
   return (
     <div
       className={progressBar}
+      data-testid="scroll-progress-bar"
       style={{ width: `${scrollProgress}vw` }}
     />
   )
 }
-  

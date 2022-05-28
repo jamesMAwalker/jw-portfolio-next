@@ -1,8 +1,8 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .writing {
   @include homeSection;
-  // padding-bottom: var(--vp-lg);
+  // position: unset;
   overflow: hidden;
   cursor: crosshair;
   & > * {
@@ -27,10 +27,19 @@
     }
   }
   .writingTitle {
+    z-index: var(--level-four);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    color: var(--text-color);
+    opacity: 1;
+    transition: var(--transition-primary);
+    &:hover {
+      // color: var(--grey-20);
+      color: var(--primary-light);
+      opacity: 0.9;
+    }
   }
   .writingRow {
     &:not(:last-child) {
@@ -73,66 +82,65 @@
       }
     }
   }
-  .cursorImg {
-    z-index: var(--ground);
-    position: fixed;
-    top: 100px;
-    left: 12.5vw;
-    top: 0;
-    left: 0;
-    width: 25vw;
-    height: 200px;
-    background-color: var(--grey-10);
-    border-radius: var(--radius-rounded);
-    opacity: 0;
-    display: none;
-    overflow: hidden;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: var(--black-fade-20);
-    }
-    .cursorGif {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0;
-      transition: var(--transition-4-smooth);
-      &.visible {
-        opacity: 1;
-      }
-    }
+}
+
+.cursorContainer {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 25vw;
+  height: 200px;
+  transition: var(--transition-primary);
+  transition: var(--transition-1-smooth);
+  contain: layout size;
+}
+
+.cursorImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25vw;
+  height: 200px;
+  border-radius: var(--radius-rounded);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  &::after {
+    @include pseudoShade;
+    z-index: 10;
+    background-color: var(--primary-mute);
+    opacity: 0.5;
   }
-  .cursorPointer {
-    z-index: var(--level-two);
-    position: fixed;
-    top: 100px;
-    left: 12.5vw;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-4-smooth);
+  img {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
     opacity: 0;
-    .dot {
-      height: var(--space-xl);
-      width: var(--space-xl);
-      background-color: var(--primary);
-      border-radius: var(--radius-rounded);
-    }
-    .text {
-      text-transform: uppercase;
-      font-size: var(--text-md);
-      color: var(--primary);
-      margin-left: var(--space-lg);
-      letter-spacing: var(--open);
-      font-weight: var(--semibold);
-    }
+    transition: var(--transition-primary);
   }
+}
+
+.cursorText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-80%, -80%);
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: var(--bold);
+  letter-spacing: var(--push-md);
+  font-size: var(--text-2xl);
+  white-space: nowrap;
+  border: 1px solid var(--primary);
+  padding: 1vh 2vh;
+  border-radius: var(--radius-rounded);
 }

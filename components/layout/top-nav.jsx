@@ -1,6 +1,7 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { fadeSlideDown } from '../../animation/fade'
 import { smooth } from '../../animation/transition'
@@ -14,6 +15,7 @@ import {
   availLabel,
   contact,
   contactBtn,
+  resumeLink,
 } from '../../styles/layout/top-nav.module.scss'
 
 export const TopNav = () => {
@@ -35,7 +37,13 @@ export const TopNav = () => {
         Developer Portfolio <br /> 2020 - 2021
       </span>
       <span className={rsme}>
-        <button className='pill-btn'>View Resume </button>
+        <button className='pill-btn'>
+          <Link href={'/resume'} passHref>
+            <a  className={resumeLink}  target='_blank' rel='noopener'>
+              View Resume
+            </a>
+          </Link>
+        </button>
       </span>
       <div className={avail}>
         <span className={availLabel}>

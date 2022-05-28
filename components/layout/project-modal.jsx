@@ -27,12 +27,16 @@ import {
   footerLink,
 } from '../../styles/project/project-modal.module.scss'
 
-export const ProjectModal = ({ closeModal }) => {
+export const ProjectModal = ({  }) => {
   const { push } = useRouter()
-  const { projectData } = useContext(ProjectContext)
+  const { projectData, setModalOpen } = useContext(ProjectContext)
 
   const [projectList, setprojectList] = useState([])
   const [selectedProject, setSelectedProject] = useState(0)
+
+  const handleCloseModal = () => {
+    setModalOpen(false)
+  }
 
   // mobile links require selection first
   const handleLink = (e, href, idx) => {
@@ -46,7 +50,7 @@ export const ProjectModal = ({ closeModal }) => {
       }
     } else {
       push(`/projects/${href}`)
-      closeModal()
+      handleCloseModal()
     }
   }
 
@@ -55,18 +59,24 @@ export const ProjectModal = ({ closeModal }) => {
   }, [projectData])
 
   const handleContactBtn = () => {
-    closeModal()
+    handleCloseModal()
     push('/#contact')
   }
 
   return (
-    <motion.div className={`${modal} modal-container`}>
+    <motion.div
+      className={`${modal} modal-container`}
+      data-testid='modal-container'
+    >
       <nav className={modalHeader}>
         <span>
           James <br /> Walker{' '}
         </span>
         <span>
-          <button className='pill-btn' onClick={closeModal}>
+          <button
+            className='pill-btn'
+            onClick={handleCloseModal}
+          >
             View <br /> Resume{' '}
           </button>
         </span>

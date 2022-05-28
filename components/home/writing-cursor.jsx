@@ -8,20 +8,29 @@ import {
   cursorGif,
   text,
   dot,
-  visible
+  visible,
 } from '../../styles/home/04-writing.module.scss'
 
-export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
+export const WritingCursor = ({
+  cursorVisible,
+  imgList,
+  currImg,
+}) => {
+  console.log('cursorVisible: ', cursorVisible)
   const cursorRef = useRef(null)
   const cursorTextRef = useRef(null)
 
   // cursor exit/enter animation
   useEffect(() => {
-    const cursorTL = gsap.timeline({ defaults: {
-      duration: ".2",
-      ease: "Power2.inOut" }
+    if (!cursorVisible) return
+
+    const cursorTL = gsap.timeline({
+      defaults: {
+        duration: '.2',
+        ease: 'Power2.inOut',
+      },
     })
-     
+
     if (cursorVisible) {
       cursorTL
         .to('.cursorImg, .cursorPointer', {
@@ -41,11 +50,13 @@ export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
     }
   }, [cursorVisible])
 
-  // Set custom cursor location 
+  // Set custom cursor location
   useEffect(() => {
     const onMouse = (e) => {
+      if (!cursorVisible) return
       const { clientX, clientY } = e
-      const mouseX = clientX - cursorRef?.current?.clientWidth
+      const mouseX =
+        clientX - cursorRef.current.clientWidth
       const mouseY =
         clientY - cursorRef.current.clientHeight
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`
@@ -56,7 +67,7 @@ export const WritingCursor = ({ cursorVisible, imgList, currImg }) => {
     return () => {
       document.removeEventListener('mousemove', onMouse)
     }
-  }, [cursorRef])
+  }, [cursorRef, cursorVisible])
 
   return (
     <>

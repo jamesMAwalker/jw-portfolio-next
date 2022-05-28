@@ -17,15 +17,7 @@ import {
   backBtn,
 } from '../../styles/project/project-nav.module.scss'
 
-export const ProjectNav = ({
-  name,
-  date,
-  num,
-  toggleModal,
-  modalOpen,
-}) => {
-  const { push } = useRouter()
-
+export const ProjectNav = ({ name, date, num }) => {
   return (
     <motion.div className={projectNav} {...fadeSlideDown}>
       <div className={nameContainer}>
@@ -40,16 +32,11 @@ export const ProjectNav = ({
       </span>
       <div className={backContainer}>
         <AnimatePresence exitBeforeEnter>
-          {!modalOpen && (
-            <Link href="/">
-              <motion.a className={backBtn} {...blurFadeIn}>
-                <button
-                  className='pill-btn'
-                  onClick={toggleModal}
-                >{`← Back to Home`}</button>
-              </motion.a>
-            </Link>
-          )}
+          <Link href='/' passHref>
+            <motion.a className={backBtn} {...blurFadeIn}>
+              <button className='pill-btn'>{`← Back to Home`}</button>
+            </motion.a>
+          </Link>
         </AnimatePresence>
       </div>
     </motion.div>

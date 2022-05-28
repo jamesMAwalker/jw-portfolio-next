@@ -79,7 +79,7 @@ export default function Home({ projects }) {
           isMobile={isMobile}
         />
         <TechStack />
-        <Writing isMobile={isMobile} />
+        {/* <Writing isMobile={isMobile} /> */}
         <Contact />
       </main>
       <Footer isMobile={isMobile} />

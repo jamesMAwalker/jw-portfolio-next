@@ -40,9 +40,9 @@ export const Footer = ({ isMobile }) => {
           </div>
         )}
         <div>
-          <span>Design adapted from</span>
+          <span>Design and build |  </span>
           <span className={linkout}>
-            &nbsp; Isaac Fayemi
+            &nbsp; James Walker
           </span>
         </div>
       </div>

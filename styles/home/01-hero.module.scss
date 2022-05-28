@@ -123,10 +123,11 @@
     }
   }
   .lineThree {
-    margin-top: 5vh;
+    margin-top: 7vh;
     height: 25vh;
     display: flex;
     align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     @media (max-width: 1024px) {
       margin: 0;

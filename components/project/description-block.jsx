@@ -24,7 +24,7 @@ import {
 } from '../../styles/project/description-block.module.scss'
 
 export const DescriptionBlock = ({
-  title = 'title',
+  title = 'b',
   blurb = ['test', 'blurb'],
   mockup = { url: '', device: 'pixel' },
 }) => {

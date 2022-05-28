@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import { useState, Fragment } from 'react';
 import { v4 as uuid } from 'uuid'
 import Link from 'next/link'
+
+import { DownArrow } from '../svg/down-arr'
+import { HeroLetter } from './hero-letter'
 
 import {
   hero,
@@ -21,9 +24,6 @@ import {
   arrowTwo,
 } from '../../styles/home/01-hero.module.scss'
 
-import { DownArrow } from '../svg/down-arr'
-import { HeroLetter } from './hero-letter'
-import { Fragment } from 'react/cjs/react.production.min'
 
 export const Hero = () => {
   const [letterResetActive, setLetterResetActive] =

@@ -1,10 +1,15 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { gsap } from 'gsap'
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { server } from '../../config/index'
-import { ProjectContext } from '../../context/project-context';
+import { ProjectContext } from '../../context/project-context'
 
 import { ProjectNav } from '../../components/project/project-nav'
 import { ProjectModal } from '../../components/layout/project-modal'
@@ -42,12 +47,10 @@ const Project = ({
   allProjects: projects,
 }) => {
   const { push, route } = useRouter()
-  const { setProjectData } = useContext(ProjectContext)
-  const [modalOpen, setModalOpen] = useState(false)
   const [descBlocks, setDescBlocks] = useState([])
   const [isMobile, setIsMobile] = useState(false)
-  const [buttonPushed, setButtonPushed] = useState(false)
-
+  const { setProjectData, setButtonPushed, buttonPushed } =
+    useContext(ProjectContext)
 
   // set projectData in context
   useEffect(() => {
@@ -59,22 +62,6 @@ const Project = ({
     setIsMobile(window.innerWidth < 1024)
   }, [])
 
-
-  // reposition projects button at bottom of page
-  useEffect(() => {
-    if (isMobile) return
-
-    if (buttonPushed) {
-      gsap.to('.modal-btn', {
-        top: '41vh',
-      })
-    } else {
-      gsap.to('.modal-btn', {
-        top: '88vh',
-      })
-    }
-  }, [buttonPushed])
-
   // create blocks array from project data
   useEffect(() => {
     const blockNames = Object.keys(prj).filter((key) =>
@@ -85,6 +72,7 @@ const Project = ({
     })
     setDescBlocks(blocksToSet)
   }, [prj])
+  
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -98,8 +86,6 @@ const Project = ({
           name={prj.abbr}
           date={prj.date}
           num={prj.number}
-          toggleModal={() => setModalOpen(!modalOpen)}
-          modalOpen={modalOpen}
           isMobile={isMobile}
         />
         <ProjectHero prj={prj} isMobile={isMobile} />
@@ -115,18 +101,26 @@ const Project = ({
           </motion.h3>
           <ProjectHeader text={prj.lead} />
           {descBlocks.map(
-            ({ header, blocks, mockupUrl }, idx) => {
+            ({ header, blocks, mockup }, idx) => {
+              // ({ header, blocks, mockupUrl, }, idx) => {
               const device =
                 idx % 2 === 0 ? 'MBP' : 'iPhone'
               return (
                 <DescriptionBlock
                   key={header}
-                  title={header}
                   blurb={blocks}
-                  mockup={{
-                    url: mockupUrl,
-                    device,
-                  }}
+                  title={header}
+                  mockup={
+                    mockup
+                      ? {
+                          url: mockup.url,
+                          device: mockup.device,
+                        }
+                      : {
+                          url: 'roots-1--opt_zbslzr',
+                          device,
+                        }
+                  }
                 />
               )
             }
@@ -135,8 +129,6 @@ const Project = ({
         <motion.section
           className={nextProject}
           onClick={() => push(prj.next.path)}
-          onViewportEnter={() => setButtonPushed(true)}
-          onViewportLeave={() => setButtonPushed(false)}
           {...fadeSlideUpShort}
           {...scrollPhases}
           viewport={{ margin: '-8%' }}

@@ -1,31 +1,22 @@
 [
   {
-    "name": [
-      "Roots -",
-      "Plantbased Café"
-    ],
+    "name": ["Roots -", "Plantbased Café"],
     "date": "2020 - 2021",
     "number": "1 / 4",
     "abbr": "rpbc",
     "next": {
       "abbr": "shdz",
       "path": "/projects/shdz",
-      "name": [
-        "Shades - ",
-        "Eyewear Boutique"
-      ],
+      "name": ["Shades - ", "Eyewear Boutique"],
       "imgUrlFrag": "shdz--long--2_h6l2hb"
     },
     "desc": "is a vegan kitchen and grocery targeting the expat community in Da Nang, Vietnam.",
-    "roles": [
-      "UI/UX Design",
-      "Web Development"
-    ],
+    "roles": ["UI/UX Design", "Web Development"],
     "tech": [
       "React",
       "Vite",
       "GloriaFood",
-      "Framer Motion",  
+      "Framer Motion",
       "Instagram API"
     ],
     "previewImg": {
@@ -44,7 +35,10 @@
         "Their online presence suffered from two central issues. First, the website was an older WordPress site whose design was dated and unappealing, as well as quite slow, due to a lack of maintenance. The second was the increasing reliance on third party delivery services for both delivery as well as visibility.",
         "The first issue was mostly a matter of modernizing the design of the site. The client wanted something clean that put the mission and the food first, but that would also communicate their modern practices. My approach was to keep the design stark and simple, and to use some more modern animation and interaction to emphasize the contemporary feel they were after."
       ],
-      "mockupUrl": "roots-2_nylmam"
+      "mockup": {
+        "url": "roots-1--opt_esscec",
+        "device": "MBP"
+      }
     },
     "block2": {
       "header": "Mobile Design",
@@ -52,7 +46,10 @@
         "A key element to any site is the call to action. In this case, the desired action is to place an order - to that end the menu is essential. My approach to this reality is two-fold. First, the menu button is fixed and accessible from anywhere on the website. Second, the menu itself eschews the typical screenshot or PDF of an existing menu - instead it’s the most interactive aspect of the application.",
         "The menu is organized into categories, with accompanying visuals that both give more context and entice. Once an item is selected, the current order also becomes easily accessible from anywhere on the page. This allows quick and intuitive editing, and a frictionless experience that nets more conversions into actual orders."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "roots-2_nylmam",
+        "device": "MBP"
+      }
     },
     "block3": {
       "header": "Tech Solutions",
@@ -61,31 +58,25 @@
         "The first element of this to tackle was the ease of use. The very accessible and intuitive menu design was step one of this process, but the other half comes when we consider the actual ordering process. Handling payments, validating addresses, offering shipping and order tracking information - these are all elements offered by the third-party delivery services we’re trying to supersede. ",
         "To this end I employed the use of another third-party service. However, this third party simply provides an API whose code can be used to manage all the stated concerns, and at a fraction of the extended cost incurred by their current delivery system."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "roots-gif-3_puhx46",
+        "device": "iPhone"
+      }
     }
   },
   {
-    "name": [
-      "Shades - ",
-      "Eyewear Boutique"
-    ],
+    "name": ["Shades - ", "Eyewear Boutique"],
     "date": "2020 - 2021",
     "number": "2 / 4",
     "abbr": "shdz",
     "next": {
       "abbr": "ppr",
       "path": "/projects/ppr",
-      "name": [
-        "Plant",
-        "Power Racing"
-      ],
+      "name": ["Plant", "Power Racing"],
       "imgUrlFrag": "ppr--long_inxyir"
     },
     "desc": "is a fashion forward sunglasses boutique based in Santa Monica, CA.",
-    "roles": [
-      "UI/UX Design",
-      "Web Development"
-    ],
+    "roles": ["UI/UX Design", "Web Development"],
     "tech": [
       "React",
       "Gatsby",
@@ -108,7 +99,10 @@
         "The design task for this project was to mature the brand’s identity into something more elegant. Initially, the design was modeled after social media platforms, taking advantage of their ready-made user flow to drive sales. Though the seemed sound in theory, in execution it didn’t encourage the kind of interaction that resulted in good conversion rates.",
         "My solution was to preserve the image based sales approach, but instead of the endless flow of unrelated content, I opted to organize the products into photography collections. Each collection of products would be rely on a strong artistic direction to give them a sense of context and cohesion. These collections would then be featured on the landing page, giving users an immediate sense of brand's aesthetic."
       ],
-      "mockupUrl": "shdz-gif--2_sshm5e"
+      "mockup": {
+        "url": "shdz-gif--2_sshm5e",
+        "device": "MBP"
+      }
     },
     "block2": {
       "header": "UI Design",
@@ -117,7 +111,10 @@
         "To this end, I fixed navigation to the edges of the page, and centered the image content in scrollable containers, and had each of them link to a product, rather than just a larger image. ",
         "Invididual product pages function similarly, with product details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "shdz-gif--3_tav2lp",
+        "device": "MBP"
+      }
     },
     "block3": {
       "header": "Mobile Design",
@@ -125,31 +122,25 @@
         "Nearly 3 of every 4 dollars spent in eCommerce comes from mobile devices users. It goes without saying that mobile is king in this space, and that means intuitive and uncluttered design become even more important.",
         "For this project, we wanted to keep the fashion photography front and center, rather than default to a list of products. Animation then became the primary means of communicating direction to the user. All elements are reactive to touch and establish visual ties from one page to another. Users are never uncertain about where they are, and they’re never more than two interactions away from making a purchase. "
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "shdz-gif--4_mxofu6",
+        "device": "iPhone"
+      }
     }
   },
   {
-    "name": [
-      "Plant ",
-      "Power Racing"
-    ],
+    "name": ["Plant ", "Power Racing"],
     "date": "2020 - 2021",
     "number": "3 / 4",
     "abbr": "ppr",
     "next": {
       "abbr": "NMP",
       "path": "/projects/NMP",
-      "name": [
-        "Nishelle Marie -",
-        "Photographer"
-      ],
+      "name": ["Nishelle Marie -", "Photographer"],
       "imgUrlFrag": "nwp--long_rmgfwz"
     },
     "desc": "is an all vegan road cycling team based in Santa Monica, CA, with chapters around the world.",
-    "roles": [
-      "UI/UX Design",
-      "Web Development"
-    ],
+    "roles": ["UI/UX Design", "Web Development"],
     "tech": [
       "React",
       "Gatsby",
@@ -173,7 +164,10 @@
         "My solution to this problem of a multifarious audience was to use the team’s stated mission as a sort of seed to which all aspects of the team’s doings could be traced. To this end, I chose to begin with photography that would set the tone for the rest of the ‘narrative’;  communicating a feeling that would color the words in the mission statement set below it.",
         "From this point, the various groups visiting the website are immediately presented with the information most relevant to them."
       ],
-      "mockupUrl": "ppr-2_xmhik8"
+      "mockup": {
+        "url": "ppr-gif--phone_pvb4rk",
+        "device": "iPhone"
+      }
     },
     "block2": {
       "header": "Mobile Design",
@@ -182,7 +176,10 @@
         "The pages that follow this exist as a series of expanding windows that at first present high level information, but when expanded offer more granular detail as well as paths to further information.",
         "Invididual pages function similarly, with section details remaining fixed, and images displayed at full size in a scrollable container, rather than in thumbnails."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "ppr-2_xmhik8",
+        "device": "MBP"
+      }
     },
     "block3": {
       "header": "Tech Solutions",
@@ -190,69 +187,62 @@
         "A major part of PPR’s work is the excellent writing they do on a variety of subjects in the cycling world. Building an interface in which they could write, edit, and preview their content was one of the top priorities for the project. ",
         "To ensure this would always be a frictionless process for the team, I opted to use the Sanity’s tried and true headless CMS. Their very lightweight and incredibly configurable system made them ideal for the variable and manifold content the team would be producing.",
         "Using Sanity, I built a custom React interface in which the team would find any and all editing tools they’d need, a device adjustable preview, and an easy to navigate authorship system. The result is a well oiled system that is always being optimized, and is easily altered to accommodate any additional features the team might request."
-      ]
+      ],
+      "mockup": {
+        "url": "content_editor_bgkl6e",
+        "device": "MBP"
+      }
     }
   },
   {
-    "name": [
-      "Nishelle Marie -",
-      "Photographer"
-    ],
+    "name": ["Radiance -", "Photography Studio"],
     "date": "2020 - 2021",
     "number": "4 / 4",
-    "abbr": "NMP",
+    "abbr": "RPS",
     "next": {
       "abbr": "rpbc",
       "path": "/projects/rpbc",
-      "name": [
-        "Roots -",
-        "Plantbased Café"
-      ],
+      "name": ["Roots -", "Plantbased Café"],
       "imgUrlFrag": "roots--long_drenqp"
     },
-    "desc": "is a photographer who needed something more than a SquareSpace site.",
-    "roles": [
-      "UI/UX Design",
-      "Web Development"
-    ],
+    "desc": "is a photography studio that wanted a website that reflects the elegance and magic of their photography.",
+    "roles": ["UI/UX Design", "Web Development"],
     "tech": [
       "React",
-      "Gatsby",
-      "GSAP",
-      "Shopify API",
-      "Instagram API"
+      "Next JS",
+      "Framer Motion",
+      "Cloudinary API"
     ],
     "previewImg": {
       "long": "nwp--long_rmgfwz",
       "short": "nwp--short_yv9nfv"
     },
     "lead": [
-      "Nishelle",
-      "is a photographer who needed something more than a",
+      "Radiance",
+      "is a photography studio that needed something more than a",
       "SquareSpace site."
     ],
     "block1": {
       "header": "Mobile Design",
       "blocks": [
         "Photographers and other freelance artists often start by using one of the many drag and drop site builder tools available. While these can be a great way to get started, they’re limited in scope and presentation, and their neccessarily cookie cutter design can leave visitors to the site with a feeling of the ordinary.",
-        "Nishelle wanted to level up into something that would present her work in a uniquely interactive and exciting fashion, only really possible through custom design and and build. We worked closely to develop something in line with her artistic sensibilities, and ultimately created one of my favorite designs."
+        "Radiance wanted to showcase their work in a more elegant fashion, and wanted things to have a snappy, app-like feel when visitors arrived on their homepage. While this is possible with WordPress, such an image heavy site was a prime candidate for CDN use. We worked together closely to create a design that captured the feel they wanted, and I elected to build the site using Cloudinary alongside Next JS to make sure that the photography would be served with the best combination of speed and image quality."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
-    },
-    "block2": {
-      "header": "UI/UX Design",
-      "blocks": [
-        "The primary goal with any photography site is to present the work in a fashion that reflects the artist’s ethos, while maintaining the visitor’s focus on the photography itself. Working in concert, we chose fonts, colors, and other design cues that would communicate both her passion for the art form, as well as her experience and competence, with a dash of the playful for good measure.",
-        "In practice, I took the approach of using full screen renderings of the most arresting photography, and then positioning and coloring the page elements in harmony with the image. This communicates the necessary information while also keeping it at a lower volume than the work. I also make extensive use of the cursor for displaying actions, rather than having persistent buttons."
-      ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+       "mockup": {
+        "url": "radiance-1--opt_rs8mqc",
+        "device": "MBP"
+      }
     },
     "block3": {
       "header": "Tech Solutions",
       "blocks": [
-        "Photography sites necessarily use a large number of high resolution images. Because photo quality cannot be sacrificed for speed, we needed a solution that would give us the the best of both worlds. Enter WebGL, an API that is normally used to render 3D interactive graphics. This powerful piece of technology renders images in a way that makes them much faster to load, and even uses the device’s GPU to distribute calculations, further increasing load times and overall smoothness. "
+        "Photography sites necessarily use a large number of high resolution images. Because photo quality cannot be sacrificed for speed, we needed a solution that would give us the the best of both worlds; enter the Cloudinary/Next Image combo. To get the images to users fast, I employed Cloudinary's 'edge' network - essentially, images are cached on servers close to where the site is accessed most frequently. This means that businesses with a lot of single location visitors will have their images served faster every time someone accesses their site from that single location. ",
+        "Combined with Next JS's m  any and varied image optimizations, we were able to get our LCP (speed of largest image paint) to 300ms, despite loading a nearly full screen, full resolution, hero image. These optimizations lead to a frictionless experience for users, which ultimately resulted in more conversions for the business."
       ],
-      "mockupUrl": "shdz-gif--4_mxofu6"
+      "mockup": {
+        "url": "rps--phone_xnpxbr",
+        "device": "iPhone"
+      }
     }
   }
 ]

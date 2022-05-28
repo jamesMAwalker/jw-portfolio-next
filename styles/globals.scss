@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'M Plus Code Latin B';
   src: url('/fonts/MPLUSCodeLatin-Bold.ttf');
+  font-display: swap;
 }
 
 
@@ -23,6 +24,8 @@
   --grey-90: rgb(54, 54, 54);
   --grey-50: hsl(276, 2%, 47%);
   --grey-40: hsl(270, 2%, 60%);
+  --grey-30: hsl(270, 2%, 70%);
+  --grey-20: hsl(270, 2%, 80%);
   --grey-10: hsl(270, 2%, 90%);
   --grey-fade-20: hsla(276, 2%, 47%, 0.2);
   --off-white: hsl(0, 0%, 98%);
@@ -271,13 +274,15 @@ p {
   }
 }
 
-.emph {
-  color: var(--primary);
+.vp-marker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50vh;
+  width: 1px;
+  background-color: transparent;
 }
 
-
-// + Device Mockups | Custom Styling
-
-.device[data-device=MacbookPro][data-orientation=portrait][data-color=black] .screen {
-
+.emph {
+  color: var(--primary);
 }

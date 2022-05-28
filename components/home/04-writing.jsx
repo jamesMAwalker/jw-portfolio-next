@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { v4 as uuid } from 'uuid'
+import { motion } from 'framer-motion';
 
 import { WritingCursor } from './writing-cursor'
 
@@ -11,11 +12,17 @@ import {
   writingList,
   writingRow,
   writingTitle,
+  hovered,
+  active,
+  inactive,
   writingImg,
   writingBtn,
   button,
   dot,
 } from '../../styles/home/04-writing.module.scss'
+import { CustomCursor } from './custom-cursor'
+import { phases } from '../../animation/transition'
+import { blurFadeIn } from '../../animation/fade'
 
 const BASE_IMG_URL = `https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1627636122`
 
@@ -64,45 +71,25 @@ export const Writing = ({ isMobile }) => {
   const [cursorVisible, setCursorVisible] = useState(false)
 
   // track which writing title is hovered
-  const [cursorImg, setCursorImg] = useState(0)
+  const [cursorImg, setCursorImg] = useState(-1)
 
-  // cursorImg off logic
-  const hideCursor = (wheeledClass) => {
-    const showCursorElements = [
-      writingList,
-      writingRow,
-      dot,
-    ]
-
-    if (!showCursorElements.includes(wheeledClass)) {
-      setCursorVisible(false)
-    }
-  }
-
-  useEffect(() => {
-    if (writingInView) {
-      window.addEventListener('wheel', (e) => {
-        hideCursor(e.target.className)
-      })
-    } else {
-      window.removeEventListener('wheel', (e) => {})
-    }
-  })
 
   return (
     <section
       className={writing}
-      onMouseLeave={() => setCursorVisible(false)}
-      onWheel={(e) => {
-        hideCursor(e.target.className)
-      }}
       ref={writingRef}
-    >
-      {!isMobile && (
-        <WritingCursor
-          cursorVisible={cursorVisible}
-          imgList={writings}
-          currImg={cursorImg}
+      onMouseEnter={() => {
+        setCursorVisible(true)
+      }}
+      onMouseLeave={() => {
+        setCursorImg(-1)
+        setCursorVisible(false)
+      }}
+      >
+      {cursorVisible && (
+        <CustomCursor
+          images={writings}
+          currentImage={cursorImg}
         />
       )}
       <h3 className={label}>WRITING</h3>
@@ -117,9 +104,8 @@ export const Writing = ({ isMobile }) => {
         {writings.map((wrtg, idx) => (
           <li
             className={writingRow}
-            key={uuid()}
+            key={wrtg.slug}
             onMouseEnter={() => {
-              setCursorVisible(true)
               setCursorImg(idx)
             }}
           >
@@ -131,7 +117,11 @@ export const Writing = ({ isMobile }) => {
                 />
               </div>
             )}
-            <div className={writingTitle}>{wrtg.title}</div>
+            <motion.div
+              className={writingTitle}
+            >
+              {wrtg.title}
+            </motion.div>
             {isMobile && (
               <button className={`pill-btn ${writingBtn}`}>
                 ...Read More
