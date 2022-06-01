@@ -3,10 +3,8 @@ import React, { useEffect, useRef } from 'react'
 import {
   cursorContainer,
   cursorImageContainer,
-  cursorText
+  cursorText,
 } from '../../styles/home/04-writing.module.scss'
-
-
 
 export const CustomCursor = ({ images, currentImage }) => {
   const cursorRef = useRef(null)
@@ -16,12 +14,11 @@ export const CustomCursor = ({ images, currentImage }) => {
   useEffect(() => {
     const onMouse = (e) => {
       const { pageX, pageY } = e
-      const mouseX =
-        pageX - cursorRef?.current?.clientWidth
+      const mouseX = pageX - cursorRef?.current?.clientWidth
       const mouseY =
         pageY - cursorRef?.current?.clientHeight
 
-        if (cursorRef.current) {
+      if (cursorRef.current) {
         cursorRef.current.style.transform =
           `translate3d(${mouseX}px, ${mouseY}px, 0)` || null
       }
@@ -39,6 +36,7 @@ export const CustomCursor = ({ images, currentImage }) => {
         {images.map((im, idx) => {
           return (
             <img
+              key={im.slug}
               src={`https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:eco/v1627636122/${im.slug}.gif`}
               alt='image indicative of title'
               style={{
