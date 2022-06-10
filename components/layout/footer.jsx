@@ -31,14 +31,14 @@ export const Footer = ({ isMobile }) => {
         </Link>
       </div>
       <div className={design}>
-        {isMobile && (
+        {/* {isMobile && (
           <div>
             <span>Built by</span>
             <span className={linkout}>
               &nbsp; James Walker
             </span>
           </div>
-        )}
+        )} */}
         <div>
           <span>Design and build | </span>
           <span className={linkout}>
