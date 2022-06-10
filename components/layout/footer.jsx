@@ -13,20 +13,20 @@ export const Footer = ({ isMobile }) => {
   return (
     <footer className={footer}>
       <div className={social}>
-        <Link href='/'>
+        <Link href='https://github.com/JamesMAWalker'>
           <a className={`${footerLink} pill-btn`}>Github</a>
         </Link>
-        <Link href='/'>
+        {/* <Link href='/'>
           <a className={`${footerLink} pill-btn`}>
             Codepen
           </a>
-        </Link>
-        <Link href='/'>
+        </Link> */}
+        <Link href='https://www.linkedin.com/in/james-walker-724136216/'>
           <a className={`${footerLink} pill-btn`}>
             LinkedIn
           </a>
         </Link>
-        <Link href='/'>
+        <Link href='https://www.strava.com/athletes/379856'>
           <a className={`${footerLink} pill-btn`}>Strava</a>
         </Link>
       </div>
@@ -40,7 +40,7 @@ export const Footer = ({ isMobile }) => {
           </div>
         )}
         <div>
-          <span>Design and build |  </span>
+          <span>Design and build | </span>
           <span className={linkout}>
             &nbsp; James Walker
           </span>

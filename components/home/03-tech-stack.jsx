@@ -42,7 +42,6 @@ const techItems = [
 ]
 
 export const TechStack = () => {
-
   /*
     TODO:
     
@@ -53,8 +52,6 @@ export const TechStack = () => {
     + Create fn to animate list items on hover with their respective libraries
     
   */
-
-  
 
   return (
     <section className={tech}>
@@ -68,18 +65,20 @@ export const TechStack = () => {
         and most frequently used.
       </p>
       <ul className={techList}>
-        {techItems.map(tch => {
+        {techItems.map((tch) => {
           return (
             <li className={techRow} key={tch.id}>
               <span className={`${main}`}>{tch.main}</span>
-              <div className={secondary}>{tch.secondary.map((st) => {
-                return (
-                  <Fragment key={st}>
-                    <span className={bullet}>•</span>
-                    <span>{st}</span>
-                  </Fragment>
-                )
-              })}</div>
+              <div className={secondary}>
+                {tch.secondary.map((st) => {
+                  return (
+                    <Fragment key={st}>
+                      <span className={bullet}>•</span>
+                      <span>{st}</span>
+                    </Fragment>
+                  )
+                })}
+              </div>
             </li>
           )
         })}
@@ -96,8 +95,16 @@ export const TechStack = () => {
         <li className={techRow}>PHP • WordPress</li> */}
       </ul>
       <div className={buttons}>
-        <button className='pill-btn emph'>GITHUB</button>
-        <button className='pill-btn emph'>CODEPEN</button>
+        <button className='pill-btn emph'>
+          <a href='https://github.com/JamesMAWalker'>
+            GITHUB
+          </a>
+        </button>
+        <button className='pill-btn emph'>
+          <a href='https://codepen.io/your-work/'>
+            CODEPEN
+          </a>
+        </button>
       </div>
     </section>
   )
