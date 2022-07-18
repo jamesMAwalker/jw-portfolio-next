@@ -1,6 +1,4 @@
-<a href='https://www.jmswlkr.dev/'>
-  <img src='https://res.cloudinary.com/jameswalker- work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jmswlkr.dev logo'>
-</a>
+[<img src='https://res.cloudinary.com/jameswalker- work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jmswlkr.dev logo'>](https://www.jmswlkr.dev/)
 
 ## A Project Showcase
 
