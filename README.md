@@ -1,8 +1,8 @@
 <img src='https://res.cloudinary.com/jameswalker-work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jmswlkr.dev logo'>
 
-## Project Showcase
+## A Project Showcase
 
-This is my portfolio site! Built with NextJS 12. The project is quite straightforward in terms of code. There are some fun things going with the animations, but this is essentially a showcase for other, more interesting projects.
+This is my portfolio site! Built with NextJS 12. The project is pretty straightforward in terms of code. There are some fun things going with the animations, but this is essentially a showcase for other, more robust projects.
 
 
 This project uses the following technologies:
