@@ -1,4 +1,4 @@
-[// JMSWLKR.DEV](https://res.cloudinary.com/jameswalker-work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png)
+<img src='https://res.cloudinary.com/jameswalker-work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jmswlkr.dev logo'>
 
 ## Project Showcase
 
