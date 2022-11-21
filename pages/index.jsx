@@ -18,6 +18,7 @@ import { Contact } from '../components/home/05-contact'
 import { TopNav } from '../components/layout/top-nav'
 import { content } from '../styles/layout/layout.module.scss'
 import { Footer } from '../components/layout/footer'
+import { HeroAlt } from '../components/home/00-hero'
 
 
 
@@ -73,7 +74,8 @@ export default function Home({ projects }) {
       </Head>
       <main className={content} ref={layoutRef}>
         <TopNav />
-        <Hero />
+        {/* <Hero /> */}
+        <HeroAlt />
         <ProjectList
           projects={projects}
           isMobile={isMobile}

@@ -165,6 +165,7 @@
   /* text size */
   // --text-hero: clamp(240px, 15vmax, 400px);
   --text-hero: 14vmax;
+  --text-hero: 15.5vmax;
   --text-header: var(--text-11xl);
   --text-header-sm: var(--text-3xl);
   --text-display: var(--text-7xl);
@@ -176,6 +177,7 @@
   --grid-col: 14.4vw;
 
   /* sizing */
+  --layout-width: min(95vw, 1550px);
   --layout-width: clamp(93.6vw, 93.6vw, 2100px);
   --mobile-content-width: 80vw;
   --mobile-blurb-width: 63vw;
@@ -189,9 +191,8 @@
 @media (max-width: 1024px) {
   :root {
     --layout-width: 77vw;
-
     --text-hero: clamp(240px, 15vmax, 400px);
-    --text-hero: 16vmax;
+    --text-hero: 13.5vmax;
     --text-header: var(--text-7xl);
     --text-display: var(--text-3xl);
     --text-prose: var(--text-xl);
@@ -251,6 +252,13 @@ p {
   text-decoration: none;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .pill-btn {
   cursor: pointer;
   position: relative;
@@ -271,6 +279,10 @@ p {
   &:hover {
     letter-spacing: var(--push-md);
     transform: skewX(-5deg);
+  }
+  &.filled {
+    color: var(--white);
+    background-color: var(--primary);
   }
 }
 

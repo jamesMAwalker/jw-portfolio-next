@@ -35,7 +35,9 @@ span {
   &:hover {
     transform: translate(120%, -50%) skewX(-5deg);
   }
-   @media (max-width: 1024px) {
+  @media (max-width: 1024px) {
+    right: unset; 
+    left: 0;
     top: unset;
     bottom: -5vh;
     transform: unset;

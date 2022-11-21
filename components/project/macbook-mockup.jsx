@@ -52,7 +52,11 @@ export const MbpMockup = ({
         <img
           style={contentSize(mockupHeight)}
           src={baseGifUrl(contentUrlFrag)}
-          alt='phone mockup'
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null // prevents looping
+            currentTarget.src = baseGifUrl(contentUrlFrag)
+          }}
+          alt='laptop mockup'
         />
       </div>
     </div>

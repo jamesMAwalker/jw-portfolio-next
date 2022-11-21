@@ -41,7 +41,6 @@ export const Hero = () => {
     <section className={hero}>
       <div className={lineOne}>
         <span className={segOne}>
-          {' '}
           {'Front'.split('').map((lett, idx) => (
             <Fragment key={`${lett}-${idx}`}>
               <HeroLetter

@@ -8,9 +8,10 @@
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "pNum date . . . back";
   @media (max-width: 1024px) {
+    display: none;
     padding-top: 4vh;
     height: auto;
-    gap: 0 4vh;
+    gap: 0 0vh;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6.5vh);
     grid-template-areas:
@@ -66,6 +67,8 @@
       color: var(--grey-40);
     }
     @media (max-width: 1024px) {
+      font-weight: var(--semibold);
+      font-size: var(--text-md);
       align-items: flex-start;
       justify-content: flex-end;
     }
@@ -78,14 +81,14 @@
     @media (max-width: 1024px) {
       justify-self: flex-end;
       width: 80%;
-      transform: scale(0.8);
+      margin-right: -5px;
       white-space: nowrap;
       .backBtn {
         width: 100% !important;
         margin-left: 0 !important;
         button {
-          padding: 0 3vh;
-          font-size: var(--text-xs);
+          padding: 0 5vh;
+          font-size: var(--text-sm);
           height: 5vh !important;
         }
       }
@@ -108,8 +111,8 @@ button.allProjectsBtn {
   position: fixed !important;
   right: calc((100vw - 93.6vw) / 2);
   // top: calc(100vw - ((100vw - 93.6vw) / 2));
-  // bottom: 0;
-  top: 88vh;
+  bottom: 2vh !important;
+  // top: 84vh !important;
   width: 10vw;
   height: 5vh;
   font-family: var(--font-title);
@@ -128,6 +131,9 @@ button.allProjectsBtn {
   animation-iteration-count: 4;
   animation-direction: alternate;
   @media (max-width: 1024px) {
+    width: 20vw;
+  }
+  @media (max-width: 768px) {
     width: 40vw;
     span {
       font-size: var(--text-md);

@@ -27,7 +27,7 @@ import {
   footerLink,
 } from '../../styles/project/project-modal.module.scss'
 
-export const ProjectModal = ({  }) => {
+export const ProjectModal = ({ isMobile }) => {
   const { push } = useRouter()
   const { projectData, setModalOpen } = useContext(ProjectContext)
 
@@ -77,13 +77,13 @@ export const ProjectModal = ({  }) => {
             className='pill-btn'
             onClick={handleCloseModal}
           >
-            View <br /> Resume{' '}
+            View Resume{' '}
           </button>
         </span>
         <div>
           <span>
             <button
-              className='pill-btn'
+              className='pill-btn filled'
               onClick={handleContactBtn}
             >{`Let's talk`}</button>
           </span>
@@ -95,7 +95,7 @@ export const ProjectModal = ({  }) => {
             className={detailShade}
             style={{
               transform: `translateY(${
-                selectedProject * 11.75
+                selectedProject * 11.85
               }vh)`,
             }}
           />
@@ -152,10 +152,13 @@ export const ProjectModal = ({  }) => {
             { display: 'Codepen', link: '' },
             { display: 'LinkedIn', link: '' },
             { display: 'Strava', link: '' },
-          ].map(({ display, link }) => {
+          ].map(({ display, link }, idx) => {
+            // show only 3 in mobile
+            if (isMobile && idx > 2) return;
+
             return (
               <Link href={link} key={display}>
-                <a className={`${footerLink} pill-btn`}>
+                <a className={`${footerLink} ${!isMobile && 'pill-btn'}`}>
                   {display}
                 </a>
               </Link>

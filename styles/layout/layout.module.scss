@@ -2,6 +2,7 @@
 
 .layout {
   @include layout;
+  min-width: 350px;
 }
 
 .content {

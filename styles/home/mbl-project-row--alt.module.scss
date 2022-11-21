@@ -1,0 +1,86 @@
+@import "../mixins";
+
+.projectBlock {
+  width: 100%;
+  margin-bottom: 5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 0.65fr 0.35fr;
+  grid-template-areas: "text image";
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-within {
+    .image img {
+      filter: saturate(1);
+      transform: scale(1);
+    }
+    .image::after {
+      opacity: 0;
+    }
+    .text::after {
+      opacity: 0.2;
+    }
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    grid-template-areas:
+      "image"
+      "text";
+  }
+}
+
+.text {
+  grid-area: text;
+  position: relative;
+  margin: 0;
+  padding: 2rem 0;
+  padding-left: 2rem;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  &::after {
+    @include pseudoShade(var(--primary-mute));
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    border-radius: var(--radius-md);
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+.fullName {
+  font-size: var(--text-display);
+}
+.abbreviation {
+  font-size: var(--text-header);
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    a {
+      translate: 0 -1.25rem;
+    }
+  }
+}
+.image {
+  grid-area: image;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: var(--radius-md);
+  & > * {
+    transition: var(--transition-primary);
+  }
+  img {
+    z-index: 1;
+    filter: saturate(0.1);
+    transform: scale(1.1);
+  }
+  &::after {
+    @include pseudoShade;
+    z-index: 2;
+    opacity: 0.15;
+  }
+}

@@ -22,15 +22,14 @@ export const ProjectsButton = ({ isMobile }) => {
 
   // shift btn position with pagescroll and modal
   useEffect(() => {
-    if (isMobile) return
 
     if (buttonPushed) {
       gsap.to('.modal-btn', {
-        top: '41vh',
+        opacity: 0,
       })
     } else {
       gsap.to('.modal-btn', {
-        top: '88vh',
+        opacity: 1
       })
     }
   }, [buttonPushed, isMobile])

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { letter } from '../../styles/home/01-hero.module.scss'
+// import { letter } from '../../styles/home/01-hero.module.scss'
+import { letter } from '../../styles/home/00-hero.module.scss'
 
 export const HeroLetter = ({ resetting, lett }) => {
   const [isBlack, setIsBlack] = useState(true)

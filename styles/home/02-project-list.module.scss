@@ -4,6 +4,9 @@
   @include homeSection;
   overflow: visible;
   isolation: isolate;
+  @media (max-width: 1024px) {
+    margin-top: 10vh;
+  }
   .label {
     @include label;
     // height: 10vh;
@@ -26,4 +29,5 @@
   width: 140vw;
   top: calc(10vh + (var(--space-2xl) * 2));
   left: -12vw;
+  display: none;
 }

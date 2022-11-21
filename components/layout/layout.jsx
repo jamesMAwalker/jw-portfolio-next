@@ -41,8 +41,14 @@ export const Layout = ({ route, children }) => {
       threshold: 1,
     })
 
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024)
+  }, [])
+  
+
   // modal position animation
   useEffect(() => {
+
     if (modalOpen) {
       gsap.to('.modal-container', {
         y: 0,
@@ -52,7 +58,7 @@ export const Layout = ({ route, children }) => {
         y: '105vh',
       })
     }
-  }, [modalOpen])
+  }, [modalOpen, isMobile])
 
   useEffect(() => {
     if (bottomInView) {
@@ -89,7 +95,7 @@ export const Layout = ({ route, children }) => {
         {children}
         <div className='vp-marker' ref={bottomRef} />
       </motion.div>
-      <ProjectModal />
+      <ProjectModal isMobile={isMobile} />
       <AnimatePresence exitBeforeEnter>
         {['/', '/resume'].includes(route) !== true && (
           <ProjectsButton isMobile={isMobile} />

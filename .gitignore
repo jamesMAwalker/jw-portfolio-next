@@ -29,8 +29,16 @@ yarn-error.log*
 .env.development.local
 .env.development
 .env.test.local
-.env.production.local
+.env.production.localx
 .env.production
 
 # vercel
 .vercel
+
+#PWA
+**/public/sw.js
+**/public/sw.js.map
+**/public/worker-*.js
+**/public/workbox-*.js
+**/public/workber-*.js.map
+**/public/workbox-*.js.map

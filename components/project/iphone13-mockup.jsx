@@ -8,8 +8,10 @@ import {
 
 import { baseGifUrl } from '../../utils/baseImgUrl'
 
-export const IP13Mockup = ({ contentUrlFrag, mockupHeight=40 }) => {
-
+export const IP13Mockup = ({
+  contentUrlFrag,
+  mockupHeight = 40,
+}) => {
   const mockupSize = (height) => {
     return {
       height: `${height}vw`,
@@ -43,6 +45,10 @@ export const IP13Mockup = ({ contentUrlFrag, mockupHeight=40 }) => {
         <img
           style={contentSize(mockupHeight)}
           src={baseGifUrl(contentUrlFrag)}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null // prevents looping
+            currentTarget.src = baseGifUrl(contentUrlFrag)
+          }}
           alt='phone mockup'
         />
       </div>

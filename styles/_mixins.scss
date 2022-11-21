@@ -5,7 +5,6 @@
 
 // - layout elements
 @mixin layout {
-  // position: relative;
   height: auto;
   width: var(--layout-width);
   display: flex;
@@ -86,14 +85,14 @@
   transition: var(--transition-1-smooth);
 }
 
-@mixin pseudoShade {
+@mixin pseudoShade($color: var(--primary)) {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--primary);
+  background-color: $color;
   opacity: 0;
   transition: var(--transition-1-smooth);
 }

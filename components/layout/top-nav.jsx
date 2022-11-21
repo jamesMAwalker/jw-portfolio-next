@@ -34,7 +34,7 @@ export const TopNav = () => {
         James <br /> Walker{' '}
       </span>
       <span className={label}>
-        Developer Portfolio <br /> 2020 - 2021
+        Developer Portfolio <br /> 2021 - 2022
       </span>
       <span className={rsme}>
         <button className='pill-btn'>
@@ -47,13 +47,13 @@ export const TopNav = () => {
       </span>
       <div className={avail}>
         <span className={availLabel}>
-          Available From <br /> <b>November 2021</b>
+          Available From <br /> <b>{new Date().getMonth()}</b>
         </span>
       </div>
       <div className={contact}>
         <span className={contactBtn}>
           <button
-            className='pill-btn'
+            className='pill-btn filled'
             onClick={() => push('/#contact')}
           >{`Let's talk`}</button>
         </span>

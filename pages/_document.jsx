@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <link rel='manifest' href='/manifest.json'/>
+        <link rel='apple-touch-icon' href='/logo.png'/>
         <link
           rel='preload'
           href='/fonts/MPLUSCodeLatin-Bold.ttf'

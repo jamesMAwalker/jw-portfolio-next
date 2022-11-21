@@ -1,4 +1,4 @@
-@import '../mixins.scss';
+@import "../mixins.scss";
 
 .tech {
   @include homeSection;
@@ -10,6 +10,8 @@
     @include blurb;
     @media (max-width: 1024px) {
       width: var(--mobile-blurb-width);
+      margin-bottom: var(--vp-ml);
+      font-size: var(--text-prose);
     }
   }
   .techList {
@@ -54,17 +56,29 @@
   .buttons {
     width: 40vw;
     display: grid;
-    gap: var(--grid-gap);
+    // gap: var(--grid-gap);
     grid-template-columns: 10vw 10vw;
     button {
       width: 100%;
       padding: 0 2vh;
       margin-right: var(--space-3xl);
+      a {
+        color: var(--primary);
+      }
     }
     @media (max-width: 1024px) {
+      margin-top: var(--vp-ml);
       width: var(--mobile-blurb-width);
-      gap: 0 5vw;
-      grid-template-columns:  repeat(2, 1fr);
+      height: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 6vh);
+      button {
+        justify-self: center;
+        margin: var(--vp-xs);
+        width: 32.5vw !important;
+        height: 3.5vh;
+        transform: scale(1.1);
+      }
     }
   }
 }

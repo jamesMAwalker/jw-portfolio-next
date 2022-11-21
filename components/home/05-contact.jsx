@@ -15,7 +15,6 @@ import { EmailBtn } from './email-btn'
 
 export const Contact = () => {
   // TODO - Fix email actions in mobile version.
-  
 
   return (
     <section className={contact} id='contact'>
@@ -27,7 +26,7 @@ export const Contact = () => {
       </a>
       <p className={blurb}>
         <span>Currently available</span> for project work,
-        but also seeking fulltime employment. Either way,
+        but also seeking fulltime employment. <br /> Either way,
         let’s have a conversation.
       </p>
       <EmailBtn />
