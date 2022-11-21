@@ -119,7 +119,7 @@
     display: none;
   }
   .scrollLabel {
-    color: var(--text-color) !important;
+    color: var(--text-color);
     text-transform: lowercase;
     font-family: var(--font-title);
     font-size: clamp(
@@ -127,6 +127,12 @@
       2vmin,
       var(--text-3xl)
     );
+    transition: var(--transition-primary);
+  }
+  &:hover {
+    .scrollLabel {
+      color: var(--primary);
+    }
   }
 }
 .scrollWindow {

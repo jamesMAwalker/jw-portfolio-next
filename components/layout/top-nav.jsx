@@ -21,6 +21,14 @@ import {
 export const TopNav = () => {
   const { push } = useRouter()
 
+  const curDate = () => {
+    let date = new Date()
+    let year = new Date().getFullYear()
+    let month = date.toLocaleString('default', { month: 'short' })
+    
+    return `${month} ${year}`
+  }
+
   return (
     <motion.div
       className={topNav}
@@ -47,7 +55,7 @@ export const TopNav = () => {
       </span>
       <div className={avail}>
         <span className={availLabel}>
-          Available From <br /> <b>{new Date().getMonth()}</b>
+          Available From <br /> <b>{curDate()}</b>
         </span>
       </div>
       <div className={contact}>
