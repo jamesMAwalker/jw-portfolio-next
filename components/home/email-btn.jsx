@@ -13,22 +13,19 @@ import {
 export const EmailBtn = () => {
   // boolean for controlling tt slider position and therefore its content
   const [sliderOff, setSliderOff] = useState(
-      // true
-      false
-    )
+    // true
+    false
+  )
   const [isMobile, setIsMobile] = useState(false)
-  const { actionState, handlers  } = useLongPress({ lpAction: copyEmail })
 
   function copyEmail() {
-    alert('copy the email ya goof');
+    // alert('The email is copied, my friend.')
   }
-
 
   // Breakpoint for JS
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024)
   }, [])
-
 
   const handleEmailClick = () => {
     if (isMobile) return
@@ -38,21 +35,15 @@ export const EmailBtn = () => {
       # switch text to copied simultaneously with the click.
       # if user cursor leaves the element, set the text position back to start.
     */
+   navigator.clipboard.writeText('me@jmswlkr.dev')
     copyEmail()
     setSliderOff(false)
   }
 
-
-  /*
-    TODO:
-    # Currently, the code functions as expected in a browser simulation of a mobile device, but it's not functioning on an actual mobile device.
-   
-  */
-
   return (
     <div
       className={email}
-      {...handlers}
+      onClick={handleEmailClick}
       onMouseLeave={() => {
         setTimeout(() => {
           setSliderOff(true)
@@ -61,14 +52,8 @@ export const EmailBtn = () => {
     >
       <div className={emailText}>me@jmswlkr.dev</div>
       <div className={emailToolTip}>
-        <div
-          className={`${toolTipSlider} ${
-            sliderOff ? off : null
-          }`}
-        >
-          <span>
-            {isMobile ? 'touch & hold' : 'click'} to copy
-          </span>
+        <div className={`${toolTipSlider} ${sliderOff ? off : null}`}>
+          <span>{isMobile ? 'touch & hold' : 'click'} to copy</span>
           <span>copied!</span>
         </div>
       </div>

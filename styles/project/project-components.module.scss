@@ -145,9 +145,9 @@
   justify-content: center;
   font-family: var(--font-title);
   font-size: 3.5vmax;
+  color: var(--primary-mute);
   text-transform: uppercase;
   letter-spacing: var(--push-lg);
-  color: var(--primary-mute);
   transition: var(--transition-1-smooth);
   @media (max-width: 1024px) {
     display: none;
