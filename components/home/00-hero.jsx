@@ -7,6 +7,9 @@ import { DownArrow } from '../svg/down-arr'
 import {
   heroContainer,
   title,
+  front,
+  end,
+  developer,
   separator,
   heroPic,
   subHero,
@@ -39,10 +42,10 @@ export const HeroAlt = () => {
   return (
     <div className={heroContainer}>
       <h1 className={title}>
-        <div>{genLetters('Front')}</div>
+        <div className={front}>{genLetters('Front')}</div>
         <div className={separator} onClick={resetLetterColor} />
-        <div>{genLetters('End')}</div>
-        <div>{genLetters('Developer')}</div>
+        <div className={end}>{genLetters('End')}</div>
+        <div className={developer}>{genLetters('Developer')}</div>
         <div className={heroPic}>
           <img
             src='https://res.cloudinary.com/jameswalker-work/image/upload/f_auto,q_auto:good/v1638765972/Portfolio/is-ME_3_nznliw.jpg'
