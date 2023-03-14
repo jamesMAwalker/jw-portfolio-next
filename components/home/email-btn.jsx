@@ -1,6 +1,10 @@
 import React, { useRef, useState } from 'react'
 import { useEffect } from 'react'
-import { useLongPress } from '../../hooks/useLongPress'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useLongPress, useClickAway } from 'react-use'
+
+import { blurFadeIn } from '../../animation/fade'
+import { phases } from '../../animation/transition'
 
 import {
   email,
@@ -8,55 +12,86 @@ import {
   emailToolTip,
   toolTipSlider,
   off,
+  lpBtn,
+  lpEmail,
+  lpBase,
+  lpSlider,
+  shift,
 } from '../../styles/home/05-contact.module.scss'
 
+function copyEmail() {
+  navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
+    if (result.state === 'granted' || result.state === 'prompt') {
+      navigator.clipboard.writeText('me@jmswlkr.dev')
+    }
+  })
+}
+
 export const EmailBtn = () => {
-  // boolean for controlling tt slider position and therefore its content
-  const [sliderOff, setSliderOff] = useState(
-    // true
-    false
-  )
+  const [sliderVisible, setSliderVisible] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
 
-  function copyEmail() {
-    // alert('The email is copied, my friend.')
-  }
-
-  // Breakpoint for JS
   useEffect(() => {
     setIsMobile(window.innerWidth < 1024)
   }, [])
 
   const handleEmailClick = () => {
-    if (isMobile) return
-    /*
-      if not mobile:
-      # copy email on initial click (style changes with hover in css)
-      # switch text to copied simultaneously with the click.
-      # if user cursor leaves the element, set the text position back to start.
-    */
-   navigator.clipboard.writeText('me@jmswlkr.dev')
     copyEmail()
-    setSliderOff(false)
+    setSliderVisible(false)
+    setTimeout(() => {
+      setSliderVisible(true)
+    }, 1000)
   }
 
   return (
-    <div
-      className={email}
-      onClick={handleEmailClick}
-      onMouseLeave={() => {
-        setTimeout(() => {
-          setSliderOff(true)
-        }, 200)
-      }}
-    >
+    <div className={email} onClick={handleEmailClick}>
       <div className={emailText}>me@jmswlkr.dev</div>
       <div className={emailToolTip}>
-        <div className={`${toolTipSlider} ${sliderOff ? off : null}`}>
-          <span>{isMobile ? 'touch & hold' : 'click'} to copy</span>
+        <div className={`${toolTipSlider} ${sliderVisible ? off : null}`}>
+          <span>{isMobile ? 'touch' : 'click'} to copy</span>
           <span>copied!</span>
         </div>
       </div>
+    </div>
+  )
+}
+
+export const LPEmailBtn = () => {
+  const [sliderVisible, setSliderVisible] = useState(false)
+  const [shifted, setShifted] = useState(false)
+  const btnRef = useRef(null)
+
+  useClickAway(btnRef, () => setSliderVisible(false))
+
+  const lpAction = () => {
+    copyEmail()
+
+    setShifted(true)
+    setTimeout(() => {
+      setSliderVisible(false)
+      setShifted(false)
+    }, 1000)
+  }
+
+  const lpEvent = useLongPress(lpAction, { delay: 300 })
+
+  return (
+    <div
+      className={lpBtn}
+      onTouchStart={() => setSliderVisible(true)}
+      ref={btnRef}
+    >
+      <div className={lpEmail}>me@jmswlkr.dev</div>
+      <AnimatePresence exitBeforeEnter>
+        {sliderVisible && (
+          <motion.div {...blurFadeIn} {...phases} className={lpBase}>
+            <div className={`${lpSlider} ${shifted ? shift : ''}`}>
+              <span {...lpEvent}>touch & hold to copy</span>
+              <span>copied!</span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
