@@ -28,6 +28,9 @@ export const TopNav = () => {
     
     return `${month} ${year}`
   }
+  const curYear = () => {
+    return new Date().getFullYear()
+  }
 
   return (
     <motion.div
@@ -42,7 +45,7 @@ export const TopNav = () => {
         James <br /> Walker{' '}
       </span>
       <span className={label}>
-        Developer Portfolio <br /> 2021 - 2022
+        Developer Portfolio <br /> {curYear() - 1} - {curYear()}
       </span>
       <span className={rsme}>
         <button className='pill-btn'>
