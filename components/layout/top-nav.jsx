@@ -50,7 +50,7 @@ export const TopNav = () => {
       <span className={rsme}>
         <button className='pill-btn'>
           <Link href={'/resume'} passHref>
-            <a  className={resumeLink}  target='_blank' rel='noopener'>
+            <a className={resumeLink} target='_blank' rel='noopener'>
               View Resume
             </a>
           </Link>
@@ -63,10 +63,11 @@ export const TopNav = () => {
       </div>
       <div className={contact}>
         <span className={contactBtn}>
-          <button
-            className='pill-btn filled'
-            onClick={() => push('/#contact')}
-          >{`Let's talk`}</button>
+          <button className='pill-btn filled' onClick={() => push('/#contact')}>
+            <Link href='/#contact'>
+              Let's Talk
+            </Link>
+          </button>
         </span>
       </div>
     </motion.div>

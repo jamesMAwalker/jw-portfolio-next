@@ -6,44 +6,33 @@ import {
   social,
   design,
   footerLink,
-  linkout,
+  linkout
 } from '../../styles/layout/layout.module.scss'
 
 export const Footer = ({ isMobile }) => {
   return (
     <footer className={footer}>
       <div className={social}>
-        <Link href='https://github.com/JamesMAWalker'>
-          <a className={`${footerLink} pill-btn`}>Github</a>
-        </Link>
-        {/* <Link href='/'>
-          <a className={`${footerLink} pill-btn`}>
-            Codepen
-          </a>
-        </Link> */}
-        <Link href='https://www.linkedin.com/in/james-walker-724136216/'>
-          <a className={`${footerLink} pill-btn`}>
+        <button className='pill-btn'>
+          <Link href='https://github.com/JamesMAWalker'>
+            Github
+          </Link>
+        </button>
+        <button className='pill-btn'>
+          <Link href='https://www.linkedin.com/in/james-walker-724136216/'>
             LinkedIn
-          </a>
-        </Link>
-        <Link href='https://www.strava.com/athletes/379856'>
-          <a className={`${footerLink} pill-btn`}>Strava</a>
-        </Link>
+          </Link>
+        </button>
+        <button className='pill-btn'>
+          <Link href='https://www.strava.com/athletes/379856'>
+            Strava
+          </Link>
+        </button>
       </div>
       <div className={design}>
-        {/* {isMobile && (
-          <div>
-            <span>Built by</span>
-            <span className={linkout}>
-              &nbsp; James Walker
-            </span>
-          </div>
-        )} */}
         <div>
           <span>Design and build | </span>
-          <span className={linkout}>
-            &nbsp; James Walker
-          </span>
+          <span className={linkout}>&nbsp; James Walker</span>
         </div>
       </div>
     </footer>

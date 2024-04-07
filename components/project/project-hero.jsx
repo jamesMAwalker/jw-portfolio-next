@@ -64,7 +64,7 @@ export const ProjectHero = ({ prj, isMobile }) => {
             <img src={basePngUrl(prj.previewImg.long)} alt={prj.abbr} />
           </div>
           <div className={right}>
-            <img src={basePngUrl(prj.previewImg.long)} alt={prj.abbr} />
+            <img src={basePngUrl(prj.previewImg.short)} alt={prj.abbr} />
           </div>
         </motion.div>
       </div>
