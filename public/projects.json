@@ -88,7 +88,7 @@
     ],
     "previewImg": {
       "long": "shdz--long--2_h6l2hb",
-      "short": "shdz--short_xmdp4w"
+      "short": "shdz__right_fg01kh"
     },
     "lead": [
       "The Shadz",
@@ -137,9 +137,9 @@
     "number": "3 / 4",
     "abbr": "ppr",
     "next": {
-      "abbr": "NMP",
-      "path": "/projects/NMP",
-      "name": ["Nishelle Marie -", "Photographer"],
+      "abbr": "rps",
+      "path": "/projects/rps",
+      "name": ["Radiance -", "Photography Studio"],
       "imgUrlFrag": "nwp--long_rmgfwz"
     },
     "desc": "is an all vegan road cycling team based in Santa Monica, CA, with chapters around the world.",
@@ -202,7 +202,7 @@
     "url": "https://www.radiancephotographystudio.com/",
     "date": "2020 - 2021",
     "number": "4 / 4",
-    "abbr": "RPS",
+    "abbr": "rps",
     "next": {
       "abbr": "rpbc",
       "path": "/projects/rpbc",
