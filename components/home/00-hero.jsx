@@ -56,7 +56,7 @@ export const Hero = () => {
       <div className={subHero}>
         <p className={about}>
           <span className='emph'>Hi! </span>I’m James. I’m a frontend developer
-          based in Santa Monica, CA.
+          based in Santa Monica, CA. &nbsp;
           <br />
           <br />I specialize in using React and its associated frameworks to
           create seamless experiences for the web. Currently leading the web
