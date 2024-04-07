@@ -1,15 +1,14 @@
 @font-face {
-  font-family: 'M Plus Code Latin B';
-  src: url('/fonts/MPLUSCodeLatin-Bold.ttf');
+  font-family: "M Plus Code Latin B";
+  src: url("/fonts/MPLUSCodeLatin-Bold.ttf");
   font-display: swap;
 }
-
 
 :root {
   /* tokens */
   /* font-family */
-  --font-title: 'M Plus Code Latin B', sans-serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-title: "M Plus Code Latin B", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
 
   /* palette */
   --full-black: rgb(0, 0, 0);
@@ -32,12 +31,12 @@
   --white: hsl(0, 0%, 100%);
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
   --blue: #00b7ff;
-  --mist-blue: #C8D9DF;
+  --mist-blue: #c8d9df;
   --soft-blue: #2191bd;
   --french-blue: #266680;
   --ocean-blue: hsl(198, 27%, 29%);
   --ocean-blue: #005b80;
-  --french-blue-fade-60: hsla(197, 54%, 33%, .4);
+  --french-blue-fade-60: hsla(197, 54%, 33%, 0.4);
 
   /* z-indeces */
   --base-two: -200;
@@ -118,7 +117,7 @@
   --text-xl: 20px;
   --text-2xl: 24px;
   --text-2xl-plus: 28px;
-  --text-3xl: 32px;;
+  --text-3xl: 32px;
   --text-3xl-plus: 40px;
   --text-4xl: 48px;
   --text-5xl: 56px;
@@ -131,7 +130,7 @@
 
   // * role-based tokens * //
 
-  /* colors */  
+  /* colors */
   --primary: var(--blue);
   --primary-tr: var(--french-blue-fade-60);
   --primary-light: var(--mist-blue);
@@ -140,6 +139,7 @@
   --primary-muter: var(--ocean-blue);
   --background: var(--white);
   --text-color: var(--black);
+  --text-color-muted: var(--grey-30);
   --text-color-inv: #b9b9b9;
 
   /* bezier curves */
@@ -198,6 +198,16 @@
     --text-prose: var(--text-xl);
   }
 }
+@media (max-width: 592px) {
+  :root {
+    --layout-width: 77vw;
+    --text-hero: clamp(240px, 15vmax, 400px);
+    --text-hero: 14vmax;
+    --text-header: var(--text-7xl);
+    --text-display: var(--text-3xl);
+    --text-prose: var(--text-xl);
+  }
+}
 @media (min-width: 2160px) {
   :root {
     --content-margin: 40vh;
@@ -226,7 +236,7 @@ body {
   scrollbar-width: none;
   scroll-margin: 0 !important;
   ::-webkit-scrollbar {
-     display: none !important;
+    display: none !important;
   }
   & > * {
     ::-moz-selection {
@@ -264,7 +274,7 @@ img {
   position: relative;
   min-height: 3.5vh;
   border: 1px solid var(--primary);
-  border-radius: var(--radius-rounded);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,15 +284,22 @@ img {
   text-transform: uppercase;
   letter-spacing: var(--push-sm);
   overflow: hidden;
-  transition: var(--transition-primary) ;
+  transition: var(--transition-primary);
   transition: var(--transition-3-smooth) !important;
   &:hover {
     letter-spacing: var(--push-md);
-    transform: skewX(-5deg);
+    background-color: var(--primary);
+    a {
+      color: var(--white) !important;
+    }
   }
   &.filled {
     color: var(--white);
     background-color: var(--primary);
+    &:hover {
+      background-color: var(--white);
+      color: var(--primary);
+    }
   }
 }
 
