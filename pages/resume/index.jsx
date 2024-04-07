@@ -14,7 +14,7 @@ const Resume = () => {
     <div className={resumeContainer}>
       <object
         className={pdfObject}
-        data='/resume.pdf#view=FitV'
+        data='/Resume_d5.pdf#view=FitV'
         role='document'
         type='application/pdf'
       />
