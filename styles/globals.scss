@@ -31,6 +31,7 @@
   --white: hsl(0, 0%, 100%);
   --white-fade-20: hsla(0, 0%, 100%, 0.2);
   --blue: #00b7ff;
+  --blue-rgb: 0, 183, 255;
   --mist-blue: #c8d9df;
   --soft-blue: #2191bd;
   --french-blue: #266680;
@@ -131,11 +132,12 @@
   // * role-based tokens * //
 
   /* colors */
-  --primary: var(--blue);
+  --primary: var(--soft-blue);
+  --primary-tr-1: rgba(var(--blue-rgb), 0.25);
   --primary-tr: var(--french-blue-fade-60);
   --primary-light: var(--mist-blue);
   --primary-soft: var(--soft-blue);
-  --primary-mute: var(--french-blue);
+  --primary-mute: var(--soft-blue);
   --primary-muter: var(--ocean-blue);
   --background: var(--white);
   --text-color: var(--black);
@@ -286,19 +288,27 @@ img {
   overflow: hidden;
   transition: var(--transition-primary);
   transition: var(--transition-3-smooth) !important;
+  text-align: center;
+  a {
+    text-align: center;
+    color: var(--primary);
+  }
   &:hover {
     letter-spacing: var(--push-md);
-    background-color: var(--primary);
-    a {
-      color: var(--white) !important;
-    }
+    background-color: var(--primary-tr-1);
   }
   &.filled {
     color: var(--white);
     background-color: var(--primary);
     &:hover {
-      background-color: var(--white);
-      color: var(--primary);
+      background-color: var(--primary-tr-1);
+      color: var(--primary) !important;
+      a {
+        color: var(--primary) !important;
+      }
+    }
+    a {
+      color: var(--white);
     }
   }
 }

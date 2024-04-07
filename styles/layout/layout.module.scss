@@ -1,4 +1,4 @@
-@import '../mixins';
+@import "../mixins";
 
 .layout {
   @include layout;
@@ -32,12 +32,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 25px;
     @media (max-width: 1024px) {
       flex-direction: column;
       margin: var(--vp-lg) 0;
     }
     a {
-      margin-right: var(--space-2xl);
       @media (max-width: 1024px) {
         width: 32.5vw;
         margin: var(--vp-xs);
@@ -46,7 +46,11 @@
   }
   .footerLink {
     min-width: 15% !important;
-    margin-right: var(--space-2xl);
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   .design {
     font-family: var(--font-title);
@@ -56,7 +60,7 @@
       align-items: center;
       justify-content: center;
       padding-bottom: var(--vp-ms);
-      transform: scale(.75);
+      transform: scale(0.75);
       div {
         padding-bottom: var(--vp-xs);
       }

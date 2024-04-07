@@ -38,7 +38,7 @@
     &:hover {
       animation-play-state: paused !important;
       a {
-        color: var(--primary);
+        color: var(--primary) !important;
         transform: skewX(-10deg);
       }
     }
@@ -64,6 +64,7 @@
     text-align: center;
     span {
       color: var(--primary-soft);
+      color: var(--primary);
     }
     br {
       // display: none;
