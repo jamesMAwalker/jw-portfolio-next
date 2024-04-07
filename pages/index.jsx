@@ -22,7 +22,9 @@ import { content } from '../styles/layout/layout.module.scss'
 
 
 
-export default function Home({ projects }) {
+// export default function Home({ projects }) {
+export default function Home(props) {
+  console.log('props: ', props);
   
   // set project data in context API
   const { setProjectData } = useContext(ProjectContext)
@@ -76,10 +78,10 @@ export default function Home({ projects }) {
         <TopNav />
         <Hero />
         <WorkExperience />
-        <ProjectList
+        {/* <ProjectList
           projects={projects}
           isMobile={isMobile}
-        />
+        /> */}
         <TechStack />
         <Contact />
       </main>
@@ -89,18 +91,18 @@ export default function Home({ projects }) {
 }
 
 // get page paths
-export const getStaticProps = async () => {
-  const res = await fetch(`${server}/projects.json`)
+// export const getStaticProps = async () => {
+//   const res = await fetch(`${server}/projects.json`)
 
-  if (res.status !== 200) {
-    throw new Error(
-      `There was an error! Status code is ${res.status}`
-    )
-  }
+//   if (res.status !== 200) {
+//     throw new Error(
+//       `There was an error! Status code is ${res.status}`
+//     )
+//   }
 
-  const data = await res.json()
+//   const data = await res.json()
 
-  return {
-    props: { projects: data, fallback: false },
-  }
-}
+//   return {
+//     props: { projects: data, fallback: false },
+//   }
+// }
