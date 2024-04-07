@@ -9,7 +9,7 @@ import {
   brightBG
 } from '../../styles/project/project-components.module.scss'
 
-export const DoubleMarquee = ({ words, speed="100", separateLines, pauseHover=false }) => {
+export const DoubleMarquee = ({ words, speed="30", separateLines, pauseHover=false }) => {
 
   return (
     <section className={`${projectMarquee} ${separateLines ? brightBG : ''}`}>

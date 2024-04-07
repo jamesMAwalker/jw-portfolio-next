@@ -42,6 +42,8 @@
   margin: 0;
   transition: var(--transition-1-smooth);
   user-select: none;
+  color: var(--primary-light) !important;
+  opacity: 50% !important;
   &:not(:last-child) {
     margin-right: var(--vp-sm);
   }
@@ -70,19 +72,24 @@
   .right {
     height: 100%;
     background-color: var(--primary-tr);
+    overflow: clip;
     img {
-      transform: skewX(10deg);
+      // transform: skewX(10deg);
     }
   }
   .left {
     width: 75%;
-    transform: skewX(-10deg);
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    // transform: skewX(-10deg);
     // clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
   }
   .right {
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
     // margin-left: -6rem;
-    width: 35%;
-    transform: skewX(-10deg);
+    width: full;
+    // transform: skewX(-10deg);
     // clip-path: polygon(27% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
