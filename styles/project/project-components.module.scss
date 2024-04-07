@@ -28,6 +28,7 @@
 }
 
 .heroTitle {
+  z-index: 2;
   @media (max-width: 1024px) {
     position: absolute;
     top: 35%;
@@ -56,50 +57,82 @@
   }
 }
 
+
 .heroImage {
-  position: relative;
-  width: auto;
-  width: 100%;
-  flex-grow: 2;
-  height: 29vh;
-  height: var(--vp-2xl);
-  margin: 0 var(--vp-xl);
-  border-radius: var(--radius-rounded);
-  overflow: hidden;
-  transition: var(--transition-1-smooth);
-  transform-origin: left;
-  @media (min-width: 1024px) {
-    margin: 0 10vw;
-    height: 22.5vh;
-  }
-  @media (max-width: 1024px) {
-    width: 100vw;
-    height: 52vh;
-    border-radius: unset;
-  }
-  &::after {
-    @include pseudoShade;
-    background-color: var(--primary-mute);
-    opacity: 0.5;
-  }
-  &:hover {
-    transform: scale(1.025, 0.975);
-    img {
-      filter: saturate(0.8);
-      transform: scale(1.01, 1.05);
-    }
-    &::after {
-      opacity: 0;
-    }
-  }
-  img {
+  position: absolute;
+  top: 12.5%;
+  left: -5vw;
+  width: 105vw;
+  height: 80%;
+  display: flex;
+  gap: 2rem;
+  .left,
+  .right {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: saturate(0);
-    transition: var(--transition-1-smooth);
+    background-color: var(--primary-tr);
+    img {
+      transform: skewX(10deg);
+    }
+  }
+  .left {
+    width: 75%;
+    transform: skewX(-10deg);
+    // clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
+  }
+  .right {
+    // margin-left: -6rem;
+    width: 35%;
+    transform: skewX(-10deg);
+    // clip-path: polygon(27% 0%, 100% 0%, 100% 100%, 0% 100%);
   }
 }
+
+// .heroImage {
+//   position: relative;
+//   top: 0;
+//   left: 0;
+//   width: auto;
+//   width: 100%;
+//   flex-grow: 2;
+//   height: 29vh;
+//   height: var(--vp-2xl);
+//   margin: 0 var(--vp-xl);
+//   border-radius: var(--radius-rounded);
+//   overflow: hidden;
+//   transition: var(--transition-1-smooth);
+//   transform-origin: left;
+//   @media (min-width: 1024px) {
+//     margin: 0 10vw;
+//     height: 22.5vh;
+//   }
+//   @media (max-width: 1024px) {
+//     width: 100vw;
+//     height: 52vh;
+//     border-radius: unset;
+//   }
+//   &::after {
+//     @include pseudoShade;
+//     background-color: var(--primary-mute);
+//     opacity: 0.5;
+//   }
+//   &:hover {
+//     transform: scale(1.025, 0.975);
+//     img {
+//       filter: saturate(0.8);
+//       transform: scale(1.01, 1.05);
+//     }
+//     &::after {
+//       opacity: 0;
+//     }
+//   }
+//   img {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+//     filter: saturate(0);
+//     transition: var(--transition-1-smooth);
+//   }
+// }
 
 // Only visible on mobile
 .mobileSubtitle {

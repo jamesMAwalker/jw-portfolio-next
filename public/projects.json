@@ -1,6 +1,7 @@
 [
   {
     "name": ["Roots -", "Plantbased Café"],
+    "url": "https://rpbc.vercel.app/",
     "date": "2020 - 2021",
     "number": "1 / 4",
     "abbr": "rpbc",
@@ -66,6 +67,7 @@
   },
   {
     "name": ["Shades - ", "Eyewear Boutique"],
+    "url": "https://www.theshadz.com/",
     "date": "2020 - 2021",
     "number": "2 / 4",
     "abbr": "shdz",
@@ -130,6 +132,7 @@
   },
   {
     "name": ["Plant ", "Power Racing"],
+    "url": "https://ppr-dev.netlify.app/",
     "date": "2020 - 2021",
     "number": "3 / 4",
     "abbr": "ppr",
@@ -196,6 +199,7 @@
   },
   {
     "name": ["Radiance -", "Photography Studio"],
+    "url": "https://www.radiancephotographystudio.com/",
     "date": "2020 - 2021",
     "number": "4 / 4",
     "abbr": "RPS",

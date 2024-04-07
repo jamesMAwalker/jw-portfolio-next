@@ -13,7 +13,12 @@ import {
   smooth,
 } from '../../animation/transition'
 
-export const ProjectHeader = ({ text }) => {
+export const ProjectHeader = ({ text, link }) => {
+  
+  const handleVisitSite = () => {
+    window.open(link, "_blank")
+  }
+
   return (
     <AnimatePresence exitBeforeEnter>
       <motion.div
@@ -27,7 +32,7 @@ export const ProjectHeader = ({ text }) => {
             return <span key={idx}>{ld}</span>
           })}
         </h2>
-        <button className={`pill-btn ${visitBtn}`}>
+        <button className={`pill-btn ${visitBtn}`} onClick={handleVisitSite}>
           Visit Site ↗
         </button>
       </motion.div>

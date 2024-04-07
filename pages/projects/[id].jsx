@@ -99,11 +99,10 @@ const Project = ({
             <span>Development/Design</span>
             <span>Case Study</span>
           </motion.h3>
-          <ProjectHeader text={prj.lead} />
+          <ProjectHeader text={prj.lead} link={prj.url} />
           {descBlocks.map(
             ({ header, blocks, mockup }, idx) => {
-              // ({ header, blocks, mockupUrl, }, idx) => {
-              const device =
+            const device =
                 idx % 2 === 0 ? 'MBP' : 'iPhone'
               return (
                 <DescriptionBlock

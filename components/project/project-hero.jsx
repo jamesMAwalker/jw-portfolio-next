@@ -7,21 +7,26 @@ import { blurFadeIn } from '../../animation/fade'
 
 import { DoubleMarquee } from './double-marquee'
 
+import { smooth } from '../../animation/transition'
+
 import {
   projectHero,
   projectBanner,
   heroTitle,
   heroLetter,
   heroImage,
+  left,
+  right,
   projectMarqueeContainer,
   projectSkills,
   roles,
   tech,
   mobileSubtitle,
 } from '../../styles/project/project-components.module.scss'
-import { smooth } from '../../animation/transition'
 
 export const ProjectHero = ({ prj, isMobile }) => {
+
+
   return (
     <motion.div
       className={projectHero}
@@ -55,10 +60,12 @@ export const ProjectHero = ({ prj, isMobile }) => {
           {...blurFadeIn}
           transition={smooth(1.5)}
         >
-          <img
-            src={basePngUrl(prj.previewImg.long)}
-            alt={prj.abbr}
-          />
+          <div className={left}>
+            <img src={basePngUrl(prj.previewImg.long)} alt={prj.abbr} />
+          </div>
+          <div className={right}>
+            <img src={basePngUrl(prj.previewImg.long)} alt={prj.abbr} />
+          </div>
         </motion.div>
       </div>
       <div className={projectMarqueeContainer}>
@@ -66,11 +73,7 @@ export const ProjectHero = ({ prj, isMobile }) => {
       </div>
       <div className={`${projectSkills}`}>
         {isMobile ? (
-          <Marquee
-            gradient={false}
-            play={isMobile && true}
-            speed={70}
-          >
+          <Marquee gradient={false} play={isMobile && true} speed={70}>
             <div className={roles}>
               {prj.roles.map((rl) => (
                 <span key={rl}>{rl}</span>
