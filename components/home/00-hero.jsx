@@ -19,10 +19,10 @@ import {
   scrollWindow,
   arrow,
   arrowOne,
-  arrowTwo,
+  arrowTwo
 } from '../../styles/home/00-hero.module.scss'
 
-export const HeroAlt = () => {
+export const Hero = () => {
   const [letterResetActive, setLetterResetActive] = useState(false)
 
   // Reset letters to black when user clicks reset bar
@@ -56,11 +56,11 @@ export const HeroAlt = () => {
       <div className={subHero}>
         <p className={about}>
           <span className='emph'>Hi! </span>I’m James. I’m a frontend developer
-          based out of Santa Monica, CA.
+          based in Santa Monica, CA.
           <br />
-          <br /> I specialize in using React and its associated frameworks to
-          create seamless experiences for the web. Currently developing and
-          designing work for Radiance Photography in Los Angeles, CA.
+          <br />I specialize in using React and its associated frameworks to
+          create seamless experiences for the web. Currently leading the web
+          development team at Nerrative Technology Inc.
         </p>
         <Link href='/#projects'>
           <a className={scrollInd}>
