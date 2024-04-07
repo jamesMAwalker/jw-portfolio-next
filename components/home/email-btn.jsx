@@ -22,7 +22,7 @@ import {
 function copyEmail() {
   navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
     if (result.state === 'granted' || result.state === 'prompt') {
-      navigator.clipboard.writeText('me@jmswlkr.dev')
+      navigator.clipboard.writeText('me@jameswalker.dev')
     }
   })
 }
@@ -45,7 +45,7 @@ export const EmailBtn = () => {
 
   return (
     <div className={email} onClick={handleEmailClick}>
-      <div className={emailText}>me@jmswlkr.dev</div>
+      <div className={emailText}>me@jameswalker.dev</div>
       <div className={emailToolTip}>
         <div className={`${toolTipSlider} ${sliderVisible ? off : null}`}>
           <span>{isMobile ? 'touch' : 'click'} to copy</span>
@@ -81,7 +81,7 @@ export const LPEmailBtn = () => {
       onTouchStart={() => setSliderVisible(true)}
       ref={btnRef}
     >
-      <div className={lpEmail}>me@jmswlkr.dev</div>
+      <div className={lpEmail}>me@jameswalker.dev</div>
       <AnimatePresence exitBeforeEnter>
         {sliderVisible && (
           <motion.div {...blurFadeIn} {...phases} className={lpBase}>

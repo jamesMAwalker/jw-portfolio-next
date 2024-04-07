@@ -1,4 +1,4 @@
-[<img src='https://res.cloudinary.com/jameswalker-work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jmswlkr.dev logo'>](https://www.jmswlkr.dev/)
+[<img src='https://res.cloudinary.com/jameswalker-work/image/upload/v1658147322/Portfolio/jwdev-logo_axmkkr.png' alt='jameswalker.dev logo'>](https://www.jameswalker.dev/)
 
 ## A Project Showcase
 
